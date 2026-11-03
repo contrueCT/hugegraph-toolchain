@@ -1,0 +1,540 @@
+{
+    "kind": "http-headroom-original-mount-order-regression-fixture",
+    "scope": "Only preserved original Docker mount arrays; this fixture is not experimental acceptance evidence",
+    "samples": [
+        {
+            "cellId": "b01-r20-cpu2",
+            "receiptSha256": "52d759eb69e03d2884920796e0392e391f59bd273670368e3e49bb31a0f4b24b",
+            "sealedSha256": "57a4b3a2e4ba5fbb4087f6f9e79b5eeda994534c1a1070961460b63334b5ed95",
+            "receiptMounts": [
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r20-cpu2/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r20-cpu2/environment",
+                    "Type": "bind"
+                }
+            ],
+            "sealedMounts": [
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r20-cpu2/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r20-cpu2/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                }
+            ]
+        },
+        {
+            "cellId": "b01-r40-cpu1",
+            "receiptSha256": "b43bdb3e17d4736eb45de1dae1408340e7d538003758f7886c7a9f6deb72a0b2",
+            "sealedSha256": "7f801db19491b42a5d09bb33df1d6ceebb5df87b8409553c7972a1598747ced9",
+            "receiptMounts": [
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu1/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu1/environment",
+                    "Type": "bind"
+                }
+            ],
+            "sealedMounts": [
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu1/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu1/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                }
+            ]
+        },
+        {
+            "cellId": "b01-r40-cpu2",
+            "receiptSha256": "2477ac1a90f5ec8296c4ee496cf4e7378e8cc46ad3c38ff5d27d2b0ebc260392",
+            "sealedSha256": "7eb093bba934b44b9f95a319073f44e2f2834d7ef27942f28617b1bb09427edf",
+            "receiptMounts": [
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu2/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu2/environment",
+                    "Type": "bind"
+                }
+            ],
+            "sealedMounts": [
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu2/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b01-r40-cpu2/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                }
+            ]
+        },
+        {
+            "cellId": "b02-r10-cpu1",
+            "receiptSha256": "33baa808f5cd0ac34133713e42f22c41f2175cb3ca834e2a8e63c73143389b46",
+            "sealedSha256": "cc25ee179b07eaa946300d41d8216a9ade13d62676e02c08034b268329c06409",
+            "receiptMounts": [
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r10-cpu1/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r10-cpu1/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                }
+            ],
+            "sealedMounts": [
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r10-cpu1/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r10-cpu1/environment",
+                    "Type": "bind"
+                }
+            ]
+        },
+        {
+            "cellId": "b02-r20-cpu2",
+            "receiptSha256": "6dca04e15f54891f536aa7eb07298338dca8e8a9e03aa91a371adc534d098abb",
+            "sealedSha256": "c6562c037856bb5b01733a48b219eaba645f13fe39a5905c77ef0d4cfad91a1e",
+            "receiptMounts": [
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu2/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu2/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                }
+            ],
+            "sealedMounts": [
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu2/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu2/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                }
+            ]
+        },
+        {
+            "cellId": "b02-r20-cpu1",
+            "receiptSha256": "51e40f46f054630a7de94201645729737d18c87520fcf5ba66023220483c95ec",
+            "sealedSha256": "69e559583499be1c0b19251922268385551f286645f2011175a3b601a9f651f1",
+            "receiptMounts": [
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu1/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu1/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                }
+            ],
+            "sealedMounts": [
+                {
+                    "Destination": "/opt/hugegraph",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/opt/jdk",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/runtime-builds/20261022-v1/run/runtimes/jdk/jdk-17.0.17+10",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/control",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu1/environment",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": true,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-driver-headroom-002/plan/arms/b02-r20-cpu1/environment/work",
+                    "Type": "bind"
+                },
+                {
+                    "Destination": "/work/scripts",
+                    "Mode": "",
+                    "Propagation": "rprivate",
+                    "RW": false,
+                    "Source": "/home/contrue/hgbench/phase1-20261022/http-candidate-build-v2/source/hugegraph-server/apache-hugegraph-server-1.8.0/scripts",
+                    "Type": "bind"
+                }
+            ]
+        }
+    ]
+}

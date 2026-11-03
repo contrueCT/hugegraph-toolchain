@@ -1,0 +1,30 @@
+# Local execution journals and environment handoffs are retained in the workspace.
+# This list matches the document exclusions in ../.gitignore.
+http-driver-headroom-plan.md
+http-driver-scaling-decision.md
+http-environment-handoff.md
+http-go-executor-evaluation.md
+http-report-revision-proposal.md
+http-standard-feedback-review-20261028.md
+progress.md
+query-throughput-presets-v2-proposal.md
+remote-cleanup-20261025.md
+sf100-environment-handoff.md
+sf100-environment-history-20261028-v14.md
+sf100-environment-history-20261028.md
+sf100-environment-history-20261029-v24.md
+sf100-environment-history-20261030-prefix620.md
+sf100-go-verification-component-decision.md
+sf100-hstore-security-decision.md
+sf100-partial-shard-recovery-decision.md
+sf100-paused-handoff.md
+sf100-preparation-budget-followup.md
+sf100-preparation-timeout-decision.md
+sf100-sequential-verification-proposal.md
+sf100-verification-executor-cost-review.md
+benchmark-implementation-review.md
+benchmark-review-decisions.md
+http-go-40rps-diagnostic.md
+http-preview-delivery.md
+ldbc-local-validation-2026-10-21.md
+local-validation-2026-10-21.md

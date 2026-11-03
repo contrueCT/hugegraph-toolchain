@@ -1,0 +1,153 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-serving-catalog",
+    "suiteId": "hgbench-http-serving-v0.1",
+    "version": "0.1.0-draft.1",
+    "cases": [
+        {
+            "id": "scalar-add",
+            "title": "小整数脚本",
+            "shape": "scalar-number",
+            "body": {
+                "gremlin": "x + y",
+                "bindings": {
+                    "x": 17,
+                    "y": 25
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "sum"
+        },
+        {
+            "id": "structured-one",
+            "title": "单行结构化对象",
+            "shape": "single-map",
+            "body": {
+                "gremlin": "[[id: x, name: 'hgbench', values: [1, 2, 3], active: true]]",
+                "bindings": {
+                    "x": 7
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "map"
+        },
+        {
+            "id": "rows-0016",
+            "title": "16 行结构化结果",
+            "shape": "ordered-maps",
+            "body": {
+                "gremlin": "(0..<n).collect { i -> [id: i, name: 'hgbench', value: i * 3, active: (i % 2 == 0)] }",
+                "bindings": {
+                    "n": 16
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "rows"
+        },
+        {
+            "id": "rows-0256",
+            "title": "256 行结构化结果",
+            "shape": "ordered-maps",
+            "body": {
+                "gremlin": "(0..<n).collect { i -> [id: i, name: 'hgbench', value: i * 3, active: (i % 2 == 0)] }",
+                "bindings": {
+                    "n": 256
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "rows"
+        },
+        {
+            "id": "rows-4096",
+            "title": "4096 行结构化结果",
+            "shape": "ordered-maps",
+            "body": {
+                "gremlin": "(0..<n).collect { i -> [id: i, name: 'hgbench', value: i * 3, active: (i % 2 == 0)] }",
+                "bindings": {
+                    "n": 4096
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "rows"
+        },
+        {
+            "id": "string-0001k",
+            "title": "1 KiB 单值 ASCII 字符串",
+            "shape": "single-string",
+            "body": {
+                "gremlin": "'x' * n",
+                "bindings": {
+                    "n": 1024
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "string"
+        },
+        {
+            "id": "string-0016k",
+            "title": "16 KiB 单值 ASCII 字符串",
+            "shape": "single-string",
+            "body": {
+                "gremlin": "'x' * n",
+                "bindings": {
+                    "n": 16384
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "string"
+        },
+        {
+            "id": "string-0064k",
+            "title": "64 KiB 单值 ASCII 字符串",
+            "shape": "single-string",
+            "body": {
+                "gremlin": "'x' * n",
+                "bindings": {
+                    "n": 65536
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "string"
+        },
+        {
+            "id": "string-0256k",
+            "title": "256 KiB 单值 ASCII 字符串",
+            "shape": "single-string",
+            "body": {
+                "gremlin": "'x' * n",
+                "bindings": {
+                    "n": 262144
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "string"
+        },
+        {
+            "id": "string-1024k",
+            "title": "1024 KiB 单值 ASCII 字符串",
+            "shape": "single-string",
+            "body": {
+                "gremlin": "'x' * n",
+                "bindings": {
+                    "n": 1048576
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "string"
+        },
+        {
+            "id": "string-unicode",
+            "title": "多字节与 JSON 转义单值",
+            "shape": "single-string",
+            "body": {
+                "gremlin": "text * n",
+                "bindings": {
+                    "text": "汉图🙂\"\\\n",
+                    "n": 512
+                },
+                "language": "gremlin-groovy"
+            },
+            "oracle": "unicode"
+        }
+    ]
+}

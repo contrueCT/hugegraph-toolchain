@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-reference-schema",
+  "target": "Neo4j Community 4.4.24",
+  "upstream": {
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f",
+    "path": "adapters/ldbc-reference/upstream/cypher/scripts/indices.cypher",
+    "sha256": "9faf6aba965b8c69c5eef9e2d01d0b7173f93b15e5c3cc9bac3b174ff0e89d19"
+  },
+  "files": [
+    {
+      "path": "neo4j-4.4.cypher",
+      "bytes": 2563,
+      "sha256": "b49be47b68160a25e640c8f52cfa6423e7cecb50fc893a1522fe516d76792a3f"
+    }
+  ],
+  "uniquenessLabels": [
+    "City",
+    "Comment",
+    "Country",
+    "Forum",
+    "Message",
+    "Organisation",
+    "Person",
+    "Post",
+    "Tag",
+    "Place",
+    "TagClass"
+  ],
+  "propertyIndexes": [
+    {
+      "label": "Country",
+      "property": "name",
+      "type": "BTREE"
+    },
+    {
+      "label": "Message",
+      "property": "creationDate",
+      "type": "BTREE"
+    },
+    {
+      "label": "Person",
+      "property": "firstName",
+      "type": "BTREE"
+    },
+    {
+      "label": "Post",
+      "property": "creationDate",
+      "type": "BTREE"
+    },
+    {
+      "label": "Tag",
+      "property": "name",
+      "type": "BTREE"
+    },
+    {
+      "label": "TagClass",
+      "property": "name",
+      "type": "BTREE"
+    }
+  ],
+  "changes": [
+    "Named Neo4j 4.4 FOR/REQUIRE constraint syntax and named BTREE indexes",
+    "Added only Place.id and TagClass.id uniqueness, already required by the full verifier and CSV identity model"
+  ],
+  "databaseExecuted": false,
+  "performanceAccepted": false
+}

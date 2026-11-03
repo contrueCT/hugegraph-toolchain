@@ -1,0 +1,12 @@
+Apache HugeGraph
+Copyright 2022-2026 The Apache Software Foundation
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+The initial codebase was donated to the ASF by HugeGraph Authors, copyright 2017-2021.
+
+This specification package includes reference sources from the Linked Data Benchmark Council.
+Copyright [2020-]2025 Linked Data Benchmark Council (SNB Interactive v1 implementations).
+Copyright [2020-]2026 Linked Data Benchmark Council (SNB Interactive v1 driver).
+Unmodified upstream license and attribution notices are retained under reference/impls/ and reference/driver/.

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "ldbc-snb-interactive-v1-official",
+  "sourcePage": "https://ldbcouncil.org/benchmarks/snb/datasets/",
+  "workload": "SNB Interactive v1",
+  "serializer": "CsvBasic",
+  "dateFormatter": "LongDateFormatter",
+  "driver": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_driver",
+    "commit": "8c6e849a60397eaced9f3cdd08b0efa430366cb9"
+  },
+  "reference": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_impls",
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f"
+  },
+  "assets": [
+    {
+      "id": "initial-sf0.1",
+      "role": "initial",
+      "scale": "0.1",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf0.1-CsvBasic-LongDateFormatter.tar.zst",
+      "sha256": "5c476e25e9074f5b37cfe569f718aa43bef0187747b2c3bb2f02d5714c96820b",
+      "bytes": 18369356,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+    },
+    {
+      "id": "parameters-sf0.1",
+      "role": "parameters",
+      "scale": "0.1",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-parameters/substitution_parameters-sf0.1.tar.zst",
+      "sha256": "c1ac2db1c1b8166dd2d466341e9682fb92e12d856f0b40e1be65da9cb9d008ff",
+      "bytes": 203161,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+    },
+    {
+      "id": "validation-sf0.1-to-sf10",
+      "role": "validation",
+      "scale": "0.1-10",
+      "url": "https://datasets.ldbcouncil.org/interactive-v1/validation_params-interactive-v1.0.0-sf0.1-to-sf10.tar.zst",
+      "sha256": "1fc17c19426c2ea04e4b2119b28a8813323b8d0b4f7a6731bb7b8445dd9cf707",
+      "bytes": 204910419,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+    },
+    {
+      "id": "updates-sf0.1-p1",
+      "role": "updates",
+      "scale": "0.1",
+      "updatePartitions": 1,
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-updates/social_network-sf0.1-numpart-1.tar.zst",
+      "sha256": "6b2f00952a40119685e5428f798d823a096b577bcbb1b852c2b6f202b7521432",
+      "bytes": 6261392,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+    }
+  ]
+}

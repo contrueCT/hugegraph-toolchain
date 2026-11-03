@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "kind": "http-headroom-engineering-assessment-criteria",
+  "id": "headroom-engineering-3case-v1",
+  "operationVersion": "http-driver-headroom-002",
+  "assessmentVersion": 1,
+  "scope": {
+    "mode": "forward",
+    "caseIds": [
+      "scalar-add",
+      "rows-4096",
+      "string-1024k"
+    ],
+    "ratesPerSecond": [
+      10,
+      20,
+      40
+    ],
+    "driverCpuQuotas": [
+      1,
+      2
+    ],
+    "blockIds": [
+      "b01",
+      "b02"
+    ],
+    "cpuOrderByBlock": {
+      "b01": [
+        1,
+        2
+      ],
+      "b02": [
+        2,
+        1
+      ]
+    },
+    "plannedPhysicalArms": 12,
+    "plannedCaseCells": 36,
+    "targetCpus": 2,
+    "targetMemoryBytes": 2147483648,
+    "driverMemoryBytes": 805306368,
+    "maxInFlight": 4,
+    "collector": "enabled",
+    "jvmObservation": "enabled",
+    "validator": "enabled",
+    "trace": "asynchronous-enabled",
+    "warmupMs": 30000,
+    "measurementMs": 120000,
+    "requestTimeoutMs": 5000,
+    "drainMs": 5000,
+    "sourceSelectionSha256": "2b878425d6b5f9968777a14c3bd1622a6fc3349b7d5f88c139c773556dfde89a"
+  },
+  "preregistration": {
+    "requiredBefore": "first original headroom002 operation dispatch claim and any workload raw creation",
+    "bindingFileKind": "http-headroom-engineering-assessment-binding",
+    "requiredReferences": [
+      "criteriaSha256",
+      "planLockSha256",
+      "executionSpecSha256",
+      "sourceSelectionSha256"
+    ],
+    "sourceSelectionMustEqualScope": true,
+    "bindingAlsoMustContain": [
+      "preparedPlanDirectory",
+      "executionDirectory",
+      "preDispatchLaunchRecordReference"
+    ],
+    "rules": [
+      "binding must refer to the actual new prepared plan and frozen execution spec, not the local non-runnable draft",
+      "freeze binding and include its hash in the existing pre-dispatch launch evidence before original operation invocation",
+      "offline report must independently verify the original launch binding and that raw belongs to the bound plan/spec/source",
+      "pending/missing/late binding cannot produce engineering passed; this criteria file alone is not a measurement binding",
+      "do not edit original002 plan or execution spec to insert this separate assessment"
+    ]
+  },
+  "evidenceRequirements": {
+    "allArmsAndCellsRetained": true,
+    "allActualArmRunAndRawIdentitiesUnique": true,
+    "sourceBuildSettingsAndCpuQuotaIndependentlyVerified": true,
+    "sourceFilesIncludeTraceWriter": true,
+    "onceOnlyForegroundHttpAndOriginalTaskDigests": true,
+    "normalExactOwnedContainerLifecycle": true,
+    "prePostModeAndDeclaredUnitObservations": true,
+    "collector": {
+      "sourceOrigin": "linux-procfs",
+      "firstCompleteSampleBeforeHttp": true,
+      "actualCidHostPidStartBootCgroupAndCpuQuotaBinding": true,
+      "controlledStopAndTerminalBeforeAnchorCleanup": true,
+      "independentOriginalRawVerification": true
+    },
+    "jvm": {
+      "captureAndRawComplete": true,
+      "readyPidBootAndEnvironmentPlanBinding": true,
+      "originalAndIndependentParserReplay": true
+    },
+    "noCancellationBudgetExhaustionOomOrKnownOwnershipFailure": true,
+    "independentHttpAnalyzerAndTraceAccounting": true,
+    "inputValuesNeverTakenFromPrivateVerdicts": [
+      "row.status",
+      "warmupDerived",
+      "pressureObserved",
+      "driverHeadroomAccepted",
+      "warmupStable",
+      "cleanupComplete"
+    ]
+  },
+  "httpQuality": {
+    "phases": [
+      "warmup",
+      "measurement"
+    ],
+    "maximumWrongAnswers": 0,
+    "maximumSentErrors": 0,
+    "maximumDropped": 0,
+    "maximumLate": 0,
+    "minimumCorrectMeasurementObservationsPerCase": 1000,
+    "expectedScheduledPerPhase": "ratePerSecond * durationMs / 1000",
+    "allOriginalAnalyzerIssuesRetained": true,
+    "unknownMissingMetricNeverDefaultsToZero": true
+  },
+  "driverPressure": {
+    "phases": [
+      "warmup",
+      "measurement"
+    ],
+    "maximumAverageProcessCpuCores": 0.8,
+    "maximumEventLoopUtilization": 0.8,
+    "comparison": "less-than-or-equal",
+    "processCpuReconstruction": "(phase.cpu.user + phase.cpu.system) / (phase.elapsedMs * 1000)",
+    "recordedCpuMustMatchReconstruction": true,
+    "elu": "recorded source-bound phase utilization must be finite in [0,1]; raw has no active/idle counters, so independent ELU derivation is unavailable",
+    "cpuQuotaNormalized": "diagnostic only; never clears original absolute 0.8-core gate",
+    "scope": "whole Node phase including drain; not per-window or whole-driver cgroup CPU"
+  },
+  "p99EngineeringConsistency": {
+    "metric": "correctEndToEndMs.p99",
+    "observations": "correct measurement observations of each whole 120-second run; never pool arms/windows/blocks",
+    "minimumObservations": 1000,
+    "withinBlockCpuSensitivity": {
+      "groupBy": [
+        "caseId",
+        "ratePerSecond",
+        "blockId"
+      ],
+      "members": [
+        1,
+        2
+      ],
+      "expectedComparisons": 18
+    },
+    "betweenBlockRepeatObservation": {
+      "groupBy": [
+        "caseId",
+        "ratePerSecond",
+        "driverCpus"
+      ],
+      "members": [
+        "b01",
+        "b02"
+      ],
+      "expectedComparisons": 18
+    },
+    "tolerance": {
+      "absoluteMs": 1,
+      "relative": 0.1,
+      "reference": "min(x,y)",
+      "passedWhen": "abs(x-y) <= max(absoluteMs, relative * min(x,y))"
+    },
+    "interpretation": "predeclared engineering consistency under CPU allocation and two repeated observations; no statistical equivalence, confidence interval or true capacity claim",
+    "numberBasis": "prospective engineering tolerance using the existing 1ms/10% descriptive drift budget; the symmetric minimum avoids favoring order or CPU allocation"
+  },
+  "warmupTransition": {
+    "windowMs": 10000,
+    "windowOwnership": "existing arrival cohorts; sentMs or unsent observedMs; each phase has its own zero",
+    "referenceWarmupWindows": [
+      [
+        10000,
+        20000
+      ],
+      [
+        20000,
+        30000
+      ]
+    ],
+    "candidateMeasurementWindows": [
+      [
+        0,
+        10000
+      ],
+      [
+        10000,
+        20000
+      ]
+    ],
+    "metrics": [
+      "correctResponseMs.p50",
+      "correctResponseMs.p95"
+    ],
+    "minimumMetricObservationsPerWindow": 50,
+    "requireAllFourNominalWindowsComplete": true,
+    "summary": "reference=median(last two warmup window quantiles), candidate=median(first two measurement window quantiles), independently for each metric and cell",
+    "tolerance": {
+      "absoluteMs": 1,
+      "relative": 0.1,
+      "reference": "warmup median",
+      "passedWhen": "abs(reference-candidate) <= max(absoluteMs, relative * reference)"
+    },
+    "crossWindowHandling": "retain completed arrival-cohort records and crossing flags; missing terminal/timing/count evidence is unknown; arrival cohorts are not completion-rate windows",
+    "windowP99MinimumObservations": 1000,
+    "windowP99ExpectedStatusAtAllDeclaredRates": "unknown",
+    "passedMeaning": "warmup-transition-consistent within this fixed observation; not whole-measurement steady state"
+  },
+  "measurementCompletionWindows": {
+    "windowMs": 10000,
+    "minimumLatencyObservations": 50,
+    "minimumP99Observations": 1000,
+    "presentationOnly": true,
+    "newThroughputThreshold": null,
+    "newStabilityThreshold": null,
+    "include": [
+      "correct completions per second",
+      "offered/sent/not-sent/errors/late",
+      "backlog and drain",
+      "P50/P95 with sample status, P99 unknown at insufficient counts"
+    ],
+    "fullMeasurementStability": "unassessed",
+    "no95PercentCompletionGate": true
+  },
+  "decision": {
+    "scopeEngineeringPassedWhen": "prospective binding and evidence verified; all36 cells complete and HTTP/pressure/P99-consistency/warmup-transition gates passed; no private verdict substitutes",
+    "observedThresholdViolation": "failed with explicit metric/value/budget; retain all unknown/missing items too",
+    "missingOrInsufficientEvidence": "unknown; engineering acceptance false; known failures remain separately reported",
+    "corruptOrUnboundEvidence": "evidence invalid; engineering acceptance false; do not evaluate untrusted values as passed",
+    "limitedOutputFlags": [
+      "limitedScopeEngineeringAccepted",
+      "driverHeadroomObservedWithinScope",
+      "warmupTransitionEngineeringAccepted"
+    ],
+    "original002FieldsUnchanged": true,
+    "wholeMeasurementWarmupStable": null,
+    "fullElevenCaseEngineeringAccepted": false,
+    "widerRateOr80RpsAccepted": false,
+    "serverCapacityUpperBound": null,
+    "statisticalEquivalenceAccepted": false,
+    "empiricalFalsePositiveCertification": "optional and independent; not a prerequisite for this engineering assessment",
+    "performanceAccepted": false
+  }
+}

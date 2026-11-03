@@ -1,0 +1,27 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-benchmark-preset",
+    "id": "standard",
+    "version": "0.1.0",
+    "planImplemented": false,
+    "realExecutionValidated": false,
+    "scope": "design-only; implementation and calibration pending",
+    "engineeringTargetMilliseconds": { "low": 900000, "high": 1800000 },
+    "design": {
+        "coverage": "all eleven HTTP questions, including multi-row, 1MiB and Unicode paths",
+        "loadDesign": "a small predeclared load ladder selected after driver-headroom calibration",
+        "repeats": "at least four balanced independent pairs; reuse validated calibration policy",
+        "primary": "P50 and P95 comparison; P99 only with its separately satisfied sample requirement",
+        "samplePolicy": "P99 requires at least 1000 correct observations per question/load/arm; no pooled samples or lowered gate",
+        "calibration": "reuse real A/A, known regression, headroom, steady-state and observer-cost evidence after acceptance"
+    },
+    "workload": null,
+    "analysis": null,
+    "lifecycleBudgets": null,
+    "blockIds": null,
+    "limitations": [
+        "The 15–30 minute range is a design range; no executable standard preset is published.",
+        "Question/load/duration and all statistical budgets must be fixed and validated before implementation is marked ready.",
+        "Use quick for the implemented local planning path. Standard/full must not silently fall back to quick."
+    ]
+}

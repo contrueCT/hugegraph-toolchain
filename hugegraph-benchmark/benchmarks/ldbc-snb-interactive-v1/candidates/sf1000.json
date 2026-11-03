@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "ldbc-snb-interactive-v1-official",
+  "sourcePage": "https://ldbcouncil.org/benchmarks/snb/datasets/",
+  "workload": "SNB Interactive v1",
+  "serializer": "CsvBasic",
+  "dateFormatter": "LongDateFormatter",
+  "driver": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_driver",
+    "commit": "8c6e849a60397eaced9f3cdd08b0efa430366cb9"
+  },
+  "reference": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_impls",
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f"
+  },
+  "assets": [
+    {
+      "id": "initial-sf1000",
+      "role": "initial",
+      "scale": "1000",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf1000-CsvBasic-LongDateFormatter.tar.zst",
+      "sha256": null,
+      "bytes": null,
+      "checksumAuthority": "unfrozen-not-downloaded"
+    },
+    {
+      "id": "parameters-sf1000",
+      "role": "parameters",
+      "scale": "1000",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-parameters/substitution_parameters-sf1000.tar.zst",
+      "sha256": null,
+      "bytes": null,
+      "checksumAuthority": "unfrozen-not-downloaded"
+    },
+    {
+      "id": "updates-sf1000",
+      "role": "updates",
+      "scale": "1000",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-updates/social_network-sf1000-numpart-1.tar.zst",
+      "sha256": null,
+      "bytes": null,
+      "checksumAuthority": "unfrozen-not-downloaded",
+      "updatePartitions": 1
+    }
+  ],
+  "validationPolicy": "Reference generation/replay must match this scale, data and driver; never reuse SF0.1 results."
+}

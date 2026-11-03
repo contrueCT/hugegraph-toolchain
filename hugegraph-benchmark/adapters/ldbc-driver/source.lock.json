@@ -1,0 +1,2242 @@
+{
+    "repository": "ldbc/ldbc_snb_interactive_v1_driver",
+    "commit": "8c6e849a60397eaced9f3cdd08b0efa430366cb9",
+    "archiveSha256": "fd7740280cdaf4cdc5db91c19f07514f53b50c1e7327cb64e252224680ee811b",
+    "files": [
+        {
+            "path": ".circleci/config.yml",
+            "sha256": "ff6296fced2a9ca799b9f2b76816fd86856fe1015f58e93487546e5b65c961cd",
+            "bytes": 324
+        },
+        {
+            "path": ".gitignore",
+            "sha256": "8d1234ba56e9482706ec0b67770daf9936f449409c4e20e1cb12feaa9bd44203",
+            "bytes": 145
+        },
+        {
+            "path": "LICENSE.txt",
+            "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+            "bytes": 11560
+        },
+        {
+            "path": "NOTICE.txt",
+            "sha256": "7e89f1ed740055d3802a05669d8fcf696d9e4f1ee29832b00d059de5eaeb8acb",
+            "bytes": 616
+        },
+        {
+            "path": "README.md",
+            "sha256": "847121304dae4f19f3ae2b10c60e66625ad7022a75919aba269f65ea9bda9008",
+            "bytes": 1577
+        },
+        {
+            "path": "docs/Driver-Configuration.md",
+            "sha256": "13eac391489bef242ff3c72fc4092d862422f88850b6f360665d1744bba0935f",
+            "bytes": 6429
+        },
+        {
+            "path": "docs/Implementing-Workload-Operations.md",
+            "sha256": "c5cbcf3ebf48b93abac641746eacf703f9aee4da03cbb17957966556c210ad04",
+            "bytes": 2605
+        },
+        {
+            "path": "docs/Implementing-a-Database-Connector.md",
+            "sha256": "ccd6fb3ac4ce366b4a859adfe5a98f018010e9ccece6ef211083e5c9ff9de81e",
+            "bytes": 8462
+        },
+        {
+            "path": "docs/Introduction.md",
+            "sha256": "14a35a84cf15f5809a90def95d0e1ce443cfa98234091672c4b4951777365d93",
+            "bytes": 7157
+        },
+        {
+            "path": "docs/README.md",
+            "sha256": "260083be65e53d90801ee777740d63fda39db64a5dd44f83c1c654fa568e8974",
+            "bytes": 788
+        },
+        {
+            "path": "docs/Reading-Benchmark-Results.md",
+            "sha256": "20e498935fe4d52db19ef9b4944d45c338ba773bff43fc71ed932ff370eac6b6",
+            "bytes": 5001
+        },
+        {
+            "path": "docs/Running-a-Benchmark.md",
+            "sha256": "75d87c2a1a4bb9a3aa0c37324443151f965f32a3fb46166fbae25a2375371391",
+            "bytes": 1303
+        },
+        {
+            "path": "docs/Validating-a-Database-Connector.md",
+            "sha256": "63b5d0cf8e2a149741d881b13a020a2399214ae6148d67dc731d074f4e854e75",
+            "bytes": 3537
+        },
+        {
+            "path": "docs/gct_pseudo.txt",
+            "sha256": "69b98aac15c9786da6c6669aa51404167aa23391d2f737ac2ce39bbbd0916ff9",
+            "bytes": 2504
+        },
+        {
+            "path": "docs/gct_scenario.txt",
+            "sha256": "c5d5a7702efa6e968fd17137742e92dd5258758ce1369370c5cca13e09314936",
+            "bytes": 4737
+        },
+        {
+            "path": "docs/lct_scenario.txt",
+            "sha256": "e345f60c788a8d1a16078aa4dda114fb407be441d3c44a88839935747325b617",
+            "bytes": 1509
+        },
+        {
+            "path": "docs/new_update_stream_file_format.txt",
+            "sha256": "c03ded8c08127df14e3816fb0ada279328086eb0525ccd4ff20f721a77807718",
+            "bytes": 3701
+        },
+        {
+            "path": "docs/new_update_stream_file_format_parsers.txt",
+            "sha256": "9234ca7c9457c0b2df4d684c1d665806446a38d0ef9d0f9ed5f6092eb095b611",
+            "bytes": 5919
+        },
+        {
+            "path": "docs/window_scheduling.png",
+            "sha256": "40cb0f993edd01c21eebe93b4510308d145587710310fac33f925670e0a11fda",
+            "bytes": 57575
+        },
+        {
+            "path": "docs/window_scheduling.svg",
+            "sha256": "3b19710461f77a294a124eb4944b0237e1513de4191827cf88454e11ad6bf414",
+            "bytes": 43533
+        },
+        {
+            "path": "ldbc-logo.png",
+            "sha256": "1db90857acdd1510687e38039aaad977f1930e5dec2a5c4e5d6666658418f543",
+            "bytes": 9911
+        },
+        {
+            "path": "plotting/make_charts_all_queries_all_metrics.py",
+            "sha256": "bd045602f9cadb64cc33c51aaab027eae5d373096c890519e2add3e76a175831",
+            "bytes": 3792
+        },
+        {
+            "path": "plotting/make_charts_all_queries_one_metric.py",
+            "sha256": "70dccb6a12acd2a470b59a422c6da02ca522bb14d85387f635e50db4d1cbe4d9",
+            "bytes": 2980
+        },
+        {
+            "path": "plotting/make_charts_select_queries_all_metrics.py",
+            "sha256": "51d33f4c19c58fd86f131f661982add2792460fd901a3ae9be920027b3915879",
+            "bytes": 3845
+        },
+        {
+            "path": "plotting/make_compare_charts.py",
+            "sha256": "19545349c2b32bd3196de43298028b38dc39832b00ded8b0311cafa213c76f44",
+            "bytes": 3210
+        },
+        {
+            "path": "plotting/make_workload_tracking_chart.py",
+            "sha256": "84a84ce1fd15edc5f6e050218ac1e65986a4bd119cce970ee7067797f6c939e3",
+            "bytes": 5419
+        },
+        {
+            "path": "pom.xml",
+            "sha256": "f103068795906bd1f9532acf846d8f417964c84619b1b3d117346a783709e754",
+            "bytes": 7429
+        },
+        {
+            "path": "query_mix_forumae.xlsx",
+            "sha256": "78d56fd41a50b1499900ae359869f7dae5d4b228ac70c15b64c73a57c7fc225c",
+            "bytes": 11061
+        },
+        {
+            "path": "scripts/install.sh",
+            "sha256": "07a8981279d1ad0c87d3312cc12997ab34825b71bc667427133a2a5389be89aa",
+            "bytes": 146
+        },
+        {
+            "path": "scripts/package-mvn-artifacts.sh",
+            "sha256": "4338ae6b2edcc61a8b72fa255eb53e126078753b3d755961ff81797a9a9c6072",
+            "bytes": 185
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/ChildOperationGenerator.java",
+            "sha256": "99ac22b3f06940f543f7e8f081f8a62bb62ce9405c98720edda7ca5ed1f74891",
+            "bytes": 428
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/Client.java",
+            "sha256": "2892132192dc6897115ad90247f81b7d0dccc2ec39e0cb97a9f97af4d820525c",
+            "bytes": 5091
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/ClientException.java",
+            "sha256": "7b855caa66ea16c9976ea936e876ca3d51c27a56bd357eda6251f1f6536cb8b6",
+            "bytes": 334
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/Db.java",
+            "sha256": "81d5cd8c07f935072a85c62047398dbf1731eaa4f6c93d01161f6239390ff0ce",
+            "bytes": 6572
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/DbConnectionState.java",
+            "sha256": "e69aee3a80052b1a92225c01caa384b977db59d651fce9b4b345dfbd1802b76a",
+            "bytes": 129
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/DbException.java",
+            "sha256": "ba70e1249e266229f2764cfe0b98cb3c7a3d593a6107b078fbea92cd554001b4",
+            "bytes": 472
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/InstantiatingOperationHandlerRunnerFactory.java",
+            "sha256": "49f8030b279070204022e325df995ca52f5761139699aedac55420977283ffc1",
+            "bytes": 932
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/Operation.java",
+            "sha256": "6e59d85a5387f39df1bb5cfc5bdf5bf69cb5f3bb406beaa98a5e94d4bb6db2fd",
+            "bytes": 6506
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/OperationException.java",
+            "sha256": "b7bccc8f294cbef71d77381f4a2a567ee7ffa30f5c510e0a50f6c19093a4b5e9",
+            "bytes": 343
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/OperationHandler.java",
+            "sha256": "d4cd9c650379d892c56da2cb1313fb4ab8b777ef3eca98dabeea43b635c1fb83",
+            "bytes": 307
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/OperationHandlerRunnableContext.java",
+            "sha256": "f99fa0822c728776c2e333a6fb21b401cf01f2beb000925fbdf148052dfad21c",
+            "bytes": 6954
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/OperationHandlerRunnerFactory.java",
+            "sha256": "db719ee18659ae9caacfa58f76287bf53aaace55d4ba9538eb3cb5e7d1f8e765",
+            "bytes": 226
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/PoolingOperationHandlerRunnerFactory.java",
+            "sha256": "d493765e435de7113b4deb638e15c0319c2241fccff2d17e1d7d1a16a178a0e0",
+            "bytes": 8532
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/ResultReporter.java",
+            "sha256": "bfbc6a2c03c0816b327f38806d9a525c274110af88b6dca2358d6186407643e9",
+            "bytes": 2867
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/SerializingMarshallingException.java",
+            "sha256": "bd51d1b2f3496892289b29218f10312bf891e0f4f157c78678021bfb08f587f2",
+            "bytes": 382
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/Workload.java",
+            "sha256": "e8be4285365fe168d267544b1e9aa0e54e96e5c209976444eb0ce2971f449c2a",
+            "bytes": 5713
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/WorkloadException.java",
+            "sha256": "e4c465631af571414daaae23c9d80361dd667db97079d62f573e98bc5d11e3bf",
+            "bytes": 340
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/WorkloadStreams.java",
+            "sha256": "19865a3ab572864065416ea7a3b1f9879dfc8ca03109a68c5e19b65520cfcd33",
+            "bytes": 28999
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/CalculateWorkloadStatisticsMode.java",
+            "sha256": "6354e808f0a3d8244bc9d4a96db2c76de50b6a099021e2b66ddcd87bc4a27ded",
+            "bytes": 4664
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/ClientMode.java",
+            "sha256": "70a997ba80b9fca2a60213576d87de944b5fb45c37ed8816c6daa6b31f2efd06",
+            "bytes": 235
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/CreateValidationParamsMode.java",
+            "sha256": "23403e6adc7942d05f04aff114edab90977d1c1e4d20ae1f5568869ae66ceb74",
+            "bytes": 8299
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/ExecuteWorkloadMode.java",
+            "sha256": "d026a6a879e29792c1aa973e7b3ddef1c45944c169ee64cd34bbada2098f884c",
+            "bytes": 21772
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/PrintHelpMode.java",
+            "sha256": "7996f66c18b29f8ca22bc714a707acf893821f87f09f6f2b9e2fe0c52e4a2236",
+            "bytes": 876
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/ResultsDirectory.java",
+            "sha256": "154b83fc8d1e36247931aa1a772d8550dbdbbece85133abd2b210c9153d0d9d1",
+            "bytes": 14439
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/client/ValidateDatabaseMode.java",
+            "sha256": "d4cbbfa4deb933656f7a52f5e48e5bd8a503bd7fa50837028e6d7fefea8e58f6",
+            "bytes": 8163
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/ConsoleAndFileDriverConfiguration.java",
+            "sha256": "b5656c18ea960c095f651c2249d9c3baaed8c16d92979d36d7eb1c147eb6a41f",
+            "bytes": 72544
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/ControlService.java",
+            "sha256": "430c9fa0e84035e88408ea06aba3fc0bea3daf03ca57fb382cad2e09b576b687",
+            "bytes": 390
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/DriverConfiguration.java",
+            "sha256": "3c0a2835330900f9dcfb0550276b2d9b4075cf916c61f24b990bf4ad57f17271",
+            "bytes": 1322
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/DriverConfigurationException.java",
+            "sha256": "1d6e186282741d6becc16df7de4e78f0c42608fb5dc90df7f839e8b9d2d4be8a",
+            "bytes": 559
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/DriverConfigurationFileHelper.java",
+            "sha256": "1e214a009d528a7f359289d02f1dbe0ba7f8e130cf114b24f19cec243482e225",
+            "bytes": 4856
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/LocalControlService.java",
+            "sha256": "edbe719c09d9bcb5c2590a420d379dd06f20c8e2ece3887f236293585d43c004",
+            "bytes": 1786
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/Log4jLoggingService.java",
+            "sha256": "876fb39880009a22fff436201874e8ebb333fb27fbeb4797235fc913c913057d",
+            "bytes": 6207
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/Log4jLoggingServiceFactory.java",
+            "sha256": "5cd2d8da0d4e3dcac4532aa575ec37215f3a259321dd89d06c49aae530fa4d1c",
+            "bytes": 590
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/LoggingService.java",
+            "sha256": "8104dae57da95b0559c9ddd791d71e8538f56b536153403a9e3868c7ac69a939",
+            "bytes": 590
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/LoggingServiceException.java",
+            "sha256": "bb6ec4833b94911b2a1bef3c01ebdc7477fe857829ad19ab5a6b69e18e5cf2a8",
+            "bytes": 540
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/LoggingServiceFactory.java",
+            "sha256": "0cb9999520bb40f476d5cb5ec8ec32cf5e1128ae3df521dc582aa46b1eb60260",
+            "bytes": 142
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/NullLoggingService.java",
+            "sha256": "5152a8b5032f9d450b843fea0c2e1946ac25cab8b446ea8c18f9d1584cdb0456",
+            "bytes": 844
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/NullLoggingServiceFactory.java",
+            "sha256": "fa41d6c5c8c81648dfc554e76778d004a64bc1490f89982e8898d85d550e8f8c",
+            "bytes": 248
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/OperationMode.java",
+            "sha256": "4ccf7a67f92b89b653d92ff2a35d9d3812ef8c530233f9186ac944656154e67e",
+            "bytes": 166
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/control/RecentThroughputAndDuration.java",
+            "sha256": "796d7d003334c64a7a5ddb9bb74fbe948c22abf4973618131bde658b91666dfc",
+            "bytes": 140
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/BufferedCharSeeker.java",
+            "sha256": "3b568aed5e857774ab0cdcfb514bbfb5c3de78bd4cf4fd486ce8b5c1d935d60f",
+            "bytes": 8531
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/CharReadable.java",
+            "sha256": "b589733d48274f0f40fc7f014069da0731af8c8c317f43e382cd8e53cabc8a1d",
+            "bytes": 2390
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/CharSeeker.java",
+            "sha256": "6e5cb15d118eee7a87e232ce3ee0af7c2d39768e43cce8240a0d86bca95a644b",
+            "bytes": 3483
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/CharSeekerParams.java",
+            "sha256": "69cb4da63c4c9cccdcd580356f855decbc49ac6e072eb8c758710bdc7e1a584c",
+            "bytes": 839
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/CharSeekers.java",
+            "sha256": "ab980cb6744a32867c5979c318672087a941797409798ee150e8a6df604d64f1",
+            "bytes": 2871
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/Extractor.java",
+            "sha256": "6517402f8731918d55d2257fb9d010fadcf8e5bc549c93ae12e354db08deb88e",
+            "bytes": 1854
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/Extractors.java",
+            "sha256": "5fd640633daad6a99d2b45bfacc4a8d82cf8638f140a5a9be0a190a7882f3f6e",
+            "bytes": 27077
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/Mark.java",
+            "sha256": "fa24ce2d75bac88ea59a8321b3a95fe6d36a719141c42ff128239feee4f6162d",
+            "bytes": 2485
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/MultiReadable.java",
+            "sha256": "f1cd10bbb848e66fca9ad979afe7fe59db86693bdcf6f184371df6a59ff77784",
+            "bytes": 2733
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/RawFunction.java",
+            "sha256": "9f70a40027f9a407c91b3664f3210ba37232e37d91471f10c2f05c53e762bfc9",
+            "bytes": 1296
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/RawIterator.java",
+            "sha256": "a4b3442e27438774e94a761b2dcb64232ce8d0e7dc6d4ea0ac0fa27845681e51",
+            "bytes": 1336
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/Readables.java",
+            "sha256": "ad4e453d32d7feb3c7db09ae649c4f0464efb71fa65be5c29a997d7c284a9b45",
+            "bytes": 8419
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/charseeker/ThreadAheadReadable.java",
+            "sha256": "c71ee042d09be2eb2c4fa80717793a9152f8a97a6b493f674b0e04294c74f8b2",
+            "bytes": 5017
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/simple/SimpleCsvFileReader.java",
+            "sha256": "b22ba792d3e720cbd737623def73b390174d5ef46aaea68c8d77916827d0a7ed",
+            "bytes": 3291
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/csv/simple/SimpleCsvFileWriter.java",
+            "sha256": "cd036476b48daebfec451e660198280a6ede115977f1bbce599e8c382eea4f2a",
+            "bytes": 1597
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/ConstantGenerator.java",
+            "sha256": "33b69b024f3652b67dbef90b9e6e7c1e1d8d995081e1905b3f63d611b5d2fce3",
+            "bytes": 340
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/CsvEventStreamReaderBasicCharSeeker.java",
+            "sha256": "d9b0d5631a7084668713bb045b78749168de3d1271d596c537dfca25879effcb",
+            "bytes": 2259
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/CsvEventStreamReaderTimedTypedCharSeeker.java",
+            "sha256": "5ce1657a8c365bfd4a51fd4030b49a4e87d011a6a07b78f258600b4f1e6f75e9",
+            "bytes": 4324
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/CsvEventStreamReaderTimedTypedCsvReader.java",
+            "sha256": "63ef4be9bf0b873333b7121c69df402fb9ee3913371a6d42451a16431877c74b",
+            "bytes": 2011
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/DiscreteGenerator.java",
+            "sha256": "0ad9d1f0f3c1310e69f44fc7787a5833ce48f32ce4fd6cbbededb6fc214fd086",
+            "bytes": 2187
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/DiscreteListGenerator.java",
+            "sha256": "a601111a2a24865a31822fd1b3dd0c7873d411cf227ece5c597e7f616f398c4f",
+            "bytes": 3624
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/DynamicRangeUniformNumberGenerator.java",
+            "sha256": "c3f6716a6cef340a0b1bf75634c7f22c174d4afbd8c3fe8a64a2773c451b3bc6",
+            "bytes": 1195
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/ExponentialNumberGenerator.java",
+            "sha256": "078b463ecd1b836932c1ff8c0212d8eb863552ab73a517547630bbd33c4a7450",
+            "bytes": 974
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/Generator.java",
+            "sha256": "cf794d59236b3424834057906a64d868a34de77176981b889dbcc07936862ce2",
+            "bytes": 915
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/GeneratorException.java",
+            "sha256": "b35f84a535a49c5c052d87717ef6e80e6c7674dc9e1c92bc5e3942b63204bbb8",
+            "bytes": 361
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/GeneratorFactory.java",
+            "sha256": "946f672a5e32bee18bd404286660144e54a7ae1737d7bf02f20369ce1fa5ab41",
+            "bytes": 43531
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/IdentityGenerator.java",
+            "sha256": "4bae0ffd199d940cbf4b6f81a38ac4bdef33fee92c082fa6bb9c327766b31857",
+            "bytes": 469
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/IncrementingGenerator.java",
+            "sha256": "3e889c0a333b347ec21028ddc44ed4e63a42800f0948f75b60575e3e9e00f770",
+            "bytes": 1015
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/InterleaveGenerator.java",
+            "sha256": "d07272bcbac466f30152bed97775d27d73489dd61fc8798d144a2ad159bb3f0b",
+            "bytes": 1605
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/IteratorDereferencingGenerator.java",
+            "sha256": "bbb6b66597c8edb647b0410b872308b95dae301af9aed2ca0be75ef1261e5862",
+            "bytes": 510
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/LimitGenerator.java",
+            "sha256": "66b8cc98c2b44950abee6c310756b76750d3625857fe1841d649717c189cda4b",
+            "bytes": 662
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/MappingGenerator.java",
+            "sha256": "5647a7364c8c192e3e66a1784a366b369f4b63231018413c4c0e0ebe6017e08e",
+            "bytes": 893
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/MergingGenerator.java",
+            "sha256": "46cb888ac3ecc8fb9324127937b256ea65ae96539e8608721a50e96cacb11ebb",
+            "bytes": 1133
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/MinMaxGenerator.java",
+            "sha256": "ce8fed67509eb112e60aa6a353f6f873553d0f422d0462b7b3e5f439ca9ca61d",
+            "bytes": 1185
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/NaiveBoundedRangeNumberGenerator.java",
+            "sha256": "eaa26e1c7bc85e8f5eead4759e6a540756c9fa55774c822bd2d54948dabc4238",
+            "bytes": 1588
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/NoRemoveIterator.java",
+            "sha256": "c64a40782130aee754a8cf62f3266022b4366b57fe842c650634e3c21e14dd38",
+            "bytes": 361
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/OrderedMultiGenerator.java",
+            "sha256": "cd2ea65669282c374c08e0cacfc248573001114e5756b5ccd99f6828d4f2ecdd",
+            "bytes": 5246
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/RandomDataGeneratorFactory.java",
+            "sha256": "893e6f59ab74610db68652422731db12a9de6ea9642618a6bf670aed388132bf",
+            "bytes": 1632
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/RepeatingGenerator.java",
+            "sha256": "e50aa566c1b07b7311334fc9d107d1c0723bdf25cb8973f8082d013a3068f362",
+            "bytes": 843
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/SizedUniformByteGeneratorGenerator.java",
+            "sha256": "5f4cb94febbaa060bf023aff01f749c65db110f70b6110d6b62806408b44f01c",
+            "bytes": 536
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/TimeMappingOperationGenerator.java",
+            "sha256": "fe047e506e3d9f47883032436388aa22fa4b0decdb4e7dc5c07765b81e308716",
+            "bytes": 4479
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/generator/UniformByteGenerator.java",
+            "sha256": "0d8a5651bb6c6b19700a4c7c30c51ab63c846b9e9d53d85a1f8433033cb97c18",
+            "bytes": 1519
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/ConcurrentErrorReporter.java",
+            "sha256": "b1f345bacdbca4bca5b37dab7b50d1e084601bdb12df4e7b11e9ff83dd97bdca",
+            "bytes": 2948
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/DefaultQueues.java",
+            "sha256": "a873959391b1ad7298a6bc45e04a74888f03964cbe5489f775407a78778a07f9",
+            "bytes": 1825
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/QueueEventFetcher.java",
+            "sha256": "7050a3aaed8b9ada6a1273161d9fa40475a07ffa2e625a3abcc600529685ff4b",
+            "bytes": 1659
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/QueueEventSubmitter.java",
+            "sha256": "f7e5ff649902a5fa1e29ef96fa6c5149e75924372f210077dac522c496aa6770",
+            "bytes": 1651
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/WorkloadRunner.java",
+            "sha256": "c2820a8f9a51846ce489c4f6ba3df2e7279270266e6479f23d5551ec79177187",
+            "bytes": 23715
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/WorkloadStatusThread.java",
+            "sha256": "9a61f72ed46ba3e0aa3015899a7e017418ffffd4405ded844aa1896f898b7d0c",
+            "bytes": 5906
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeEvent.java",
+            "sha256": "151fb0f824bc1ec3b2f27dbfd2a9bcb71819c8be4952f0c168387e520b1cef94",
+            "bytes": 6122
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeException.java",
+            "sha256": "f9160cda834d0a84697b179a8cee77b5bacb1afaf8f3c3ed7c71f1737161c7a0",
+            "bytes": 391
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeReader.java",
+            "sha256": "fd64816b327f6365dd45ab05b00810bdeba701f7e8837b271f8ddf3951b68405",
+            "bytes": 244
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeReaderWriter.java",
+            "sha256": "218113eddebd520fd02a78cc1a378a1635584c1fa7df93c1fad8e27aef21503e",
+            "bytes": 156
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeService.java",
+            "sha256": "6425d81be15e1ea7fbf92cf3125cd501178ec68a5e6432757debc625f5ca32a0",
+            "bytes": 485
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeServiceAssistant.java",
+            "sha256": "8ce5c1b53af60e914f4be67cf9c0231be09ceb08995b7e147b4253f3edb30f7c",
+            "bytes": 2323
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeStateManager.java",
+            "sha256": "367cabd8e70fc3799bdcc84c47b09d00510fba5ec8e0094d9f346a2b7d68fd21",
+            "bytes": 13821
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeWriter.java",
+            "sha256": "c5a631ce40fd974e1acd728621f38e3cd16426e038a02c301686b2cca2ae0d7d",
+            "bytes": 262
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/DummyCompletionTimeWriter.java",
+            "sha256": "e5f40c270cf7e72cad6d8ddf27a327fbecac7767190e372d6fa75b0e29af8775",
+            "bytes": 391
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/MultiWriterCompletionTimeStateManager.java",
+            "sha256": "0fe7fd1c3e1689ff54b32be2b4e7ebf6ace3f79f9719548f5c60e945891febf3",
+            "bytes": 6358
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/MultiWriterCompletionTimeStateManagerWriter.java",
+            "sha256": "10f51e866c4c1c51ea7e4b834b74c5c0002223c3d3f910c5325c8b2e25a09375",
+            "bytes": 1074
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/SynchronizedCompletionTimeService.java",
+            "sha256": "65bea6307aa5e72454023d90d098650b9eaa176616ffae960f018e33fbc4c76c",
+            "bytes": 4951
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/ThreadedQueuedCompletionTimeService.java",
+            "sha256": "cd54be1732aca090ce5e9c9e4ed77f28d101a74075187f4074fd7d66883fb075",
+            "bytes": 12394
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/coordination/ThreadedQueuedCompletionTimeServiceThread.java",
+            "sha256": "6fa0aaf51fb1e8751e5126722e14818db1c7857c56e86ef40bd54a57001ad59d",
+            "bytes": 9546
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/ChildOperationExecutor.java",
+            "sha256": "d5bb6031c0fe981c3b69dcdcb93d41ac4b69765a5c82fb89ac59e79cc20c06ae",
+            "bytes": 2429
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/InitiatedTimeSubmittingOperationRetriever.java",
+            "sha256": "61e1b367e76327968968c71d1108fe74eaa1c213426178e0b5df9c277f2fe710",
+            "bytes": 3674
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/OperationExecutor.java",
+            "sha256": "7ed79cccaa34533f599f3209fc0ca02e1057c94a6cc7bb49a85b2793bc6f1760",
+            "bytes": 627
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/OperationExecutorException.java",
+            "sha256": "812abc736222d19b69c1c852b194ac863ac21550eb40b2a91d0e6ba7db0a557b",
+            "bytes": 385
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/OperationHandlerRunnableContextRetriever.java",
+            "sha256": "6f5fb5207357c8708b44770c4a431534c37e3425323b97a6e3ac75f4cb284ebf",
+            "bytes": 4339
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/OperationStreamExecutorService.java",
+            "sha256": "157dca9728e561cb27ee793d5b3bdac64f18556d5168fff65612d7a09a276ae6",
+            "bytes": 3122
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/OperationStreamExecutorServiceThread.java",
+            "sha256": "da33b3ea3650e8828c3a8741f9e1dc5cecd25d3082fbf609d06fe6f4605292d7",
+            "bytes": 2624
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/SameThreadOperationExecutor.java",
+            "sha256": "30cca3b13d8085069564312c85134a3c52f3a4c41e42fa9ef716da1fd17d44c4",
+            "bytes": 3877
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/SingleThreadOperationExecutor.java",
+            "sha256": "6a5ebebf9be7440fa799ec24768fcbb90d833918126ab2ef8ee364d624143ada",
+            "bytes": 4740
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/SingleThreadOperationExecutorThread.java",
+            "sha256": "dafe95b68d1a02d23911570f7ac40aa007f285eeacde3fd28b54a04e30a9dfd1",
+            "bytes": 3781
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/executor/ThreadPoolOperationExecutor.java",
+            "sha256": "e12d14a3af0fc90be74fa9ab6eb37324a410b09bb798f2013385f5369cbb1514",
+            "bytes": 9709
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ContinuousMetricManager.java",
+            "sha256": "edb6f1a6a1af16bb741d951b726b81051b6912e14e67f1ef3869e3c19fed1de2",
+            "bytes": 3562
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ContinuousMetricSnapshot.java",
+            "sha256": "1ddb2480fe2ed87276bbeaf786ab14416c7fed0cb6b05f6023af09c396a51700",
+            "bytes": 4260
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/DiscreteMetricManager.java",
+            "sha256": "d23e069c8ac55545c4897f1f6e608262af7dd60487d44550d497b71dfc5aebaf",
+            "bytes": 1633
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/DiscreteMetricSnapshot.java",
+            "sha256": "3b10dc4e69bfa4e69f4a95de69666ad3abac8254a890942ecb3b9c74796843bb",
+            "bytes": 1813
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/DisruptorExceptionHandler.java",
+            "sha256": "f1854b6a7ac219afcdfa723f1ec5145e76b279b78daa212008ea25f68ee679dc",
+            "bytes": 1626
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/DisruptorSbeMetricsEvent.java",
+            "sha256": "f2f68a3ff07e9a495f60c4eb016b6f7c3a2825c34413398bcd7d1c7a26386f6e",
+            "bytes": 3294
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/DisruptorSbeMetricsEventHandler.java",
+            "sha256": "a7989c40806cda5cfbb1a75ef6cd2437067d4d01bcbc684e461b9d4500ca8a2e",
+            "bytes": 5085
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/DisruptorSbeMetricsService.java",
+            "sha256": "057eacd486e8048e18db458296cde5f2245aea9b7bace92ab192df8ba1b30813",
+            "bytes": 14274
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/JsonWorkloadMetricsFormatter.java",
+            "sha256": "d16b0581e68e2b2b9134b0db422dbc51b4c4451b0e8c2981120cc1a870266e18",
+            "bytes": 279
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/MetricsCollectionException.java",
+            "sha256": "1b74c14d822c4c04be74235fdc67945ad4e42aae29667f8f5d14bd17c72c7a6e",
+            "bytes": 395
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/MetricsManager.java",
+            "sha256": "5449035be0d8164cf0990a7946587c45c5cd4c758faeca608cd845506c61fb61",
+            "bytes": 9566
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/MetricsService.java",
+            "sha256": "004d063a0e3994b3badbba81faa072d45c8190c913d62f3194d41d88317a513a",
+            "bytes": 729
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/NullResultsLogWriter.java",
+            "sha256": "1a6eb234983ba6d06c3e8bb2b4b379e99a4299f15962e77a6f727300e82fbd49",
+            "bytes": 547
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/OperationMetricsSnapshot.java",
+            "sha256": "79e7337ca3a9b1a9da89c3fce365454742aa54303a6e91e24d79bad5e46b78db",
+            "bytes": 2384
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/OperationTypeMetricsManager.java",
+            "sha256": "16be6404d2627c8f0f90dc967c3cbe57709f3aafee8f4247d7bb88cd8578f6b9",
+            "bytes": 4245
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ResultsLogReader.java",
+            "sha256": "c43f73b0e7bc13088208e80335d942e624c5257ce4fcb7b95f90b215f40274f9",
+            "bytes": 400
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ResultsLogWriter.java",
+            "sha256": "91be44a8164d4178100535f06d3621310d2c310468110d30b76d9a30ed41b14d",
+            "bytes": 974
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/SimpleDetailedWorkloadMetricsFormatter.java",
+            "sha256": "a1715afa28d7e1569280d6f059cdbf500ec43e760052e2a33504f64e1f348560",
+            "bytes": 5735
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/SimpleResultsLogReader.java",
+            "sha256": "301887025d4fb87ce3ce775272c5a92bd1a62a4fd1ef0f56c55d47374ff5b311",
+            "bytes": 3658
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/SimpleResultsLogWriter.java",
+            "sha256": "1928a825542ce3b134b3490b0cb323a04a7982b17591677873fd37830004d030",
+            "bytes": 1709
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/SimpleSummaryWorkloadMetricsFormatter.java",
+            "sha256": "7d92cfdc9a7ac4dc46cb46bd7040d115a4cee4e31a0cf4e10b4904e09c3e5f0f",
+            "bytes": 3989
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ThreadedQueuedMetricsEvent.java",
+            "sha256": "e077a4bf04b54acf4efa9a97c67654fafb8266dade8e2c25f7a522978b331bcd",
+            "bytes": 3818
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ThreadedQueuedMetricsService.java",
+            "sha256": "73332ac003169fb7a83b7fc9eeba17f7574f6b8f72cf868e211a9c7bbdf7cd9c",
+            "bytes": 15109
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/ThreadedQueuedMetricsServiceThread.java",
+            "sha256": "0d0f0d41b1100cb9d072e32fb9f6da20dd18a2247918f8d621371b0bbef6791b",
+            "bytes": 8282
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/WorkloadMetricsFormatter.java",
+            "sha256": "faf7663571eb963e1720aab38d0a96caa84c0c50c0668ca90884e094abd0427d",
+            "bytes": 168
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/WorkloadResultsSnapshot.java",
+            "sha256": "b15a3c896f0b441d33f71ddefcb3cf5e27c8d23e417a13edfae6c99d7be1dd92",
+            "bytes": 5661
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/WorkloadStatusSnapshot.java",
+            "sha256": "f764ea5ffd9c72d2c3f0607bbabbaa5fdb2e18f6d37b7626bd1b8bcb2597c1e0",
+            "bytes": 1085
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/sbe/MessageHeader.java",
+            "sha256": "f59674f7e19ca8fb4945c5fd5cbb9784bdf84081c399c1f7097f14d8888396db",
+            "bytes": 2704
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/sbe/MetaAttribute.java",
+            "sha256": "ed39b8b4b4d509a346c5ea85321872d73fd88e31153b10acbed87f6e510e3a12",
+            "bytes": 189
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/metrics/sbe/MetricsEvent.java",
+            "sha256": "4098b04d253c9b47db2d459b0585dca213fd4980a0f2c2611a26161ca407da10",
+            "bytes": 8771
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/scheduling/CtDependencyCheck.java",
+            "sha256": "b3e882e17dd2b16f325a4c8391a3b5dfd953b50fc218e91057bb0dcdcb68db6a",
+            "bytes": 2834
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/scheduling/Spinner.java",
+            "sha256": "de60c7e74bf70015ecac0acab23b95056530c4ae35b626452c2a5a198f4ce60a",
+            "bytes": 5289
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/runtime/scheduling/SpinnerCheck.java",
+            "sha256": "64d0b63b97e0f8c7f956a4a6ad50838b42ca57ec3c45d102992b581701f5b0e7",
+            "bytes": 677
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/statistics/WorkloadStatistics.java",
+            "sha256": "0302e0c701536bed56f1f4a456fc8d38668c5a4380b0c3f3f71f51483b17a0b7",
+            "bytes": 13666
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/statistics/WorkloadStatisticsCalculator.java",
+            "sha256": "1f79f82e17e1fda9826115483ca1437cede7626d722737ad02c5a1194555974f",
+            "bytes": 10496
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/temporal/ManualTimeSource.java",
+            "sha256": "da56b590841f030dc5793c1058f5c0381f1efb67a3f1ca250354f3fde606888e",
+            "bytes": 693
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/temporal/SystemTimeSource.java",
+            "sha256": "589eb51c666e7300c167873d6e7197d12ba6e27d38d93646c71f24e8fa3796a3",
+            "bytes": 284
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/temporal/TemporalException.java",
+            "sha256": "27fa0dd989228c029ddcadcd395bd43bc55a7204742e82d2729d6ffc95653e15",
+            "bytes": 518
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/temporal/TemporalUtil.java",
+            "sha256": "a5edf8674c6d15e652f1a9990df40fff0ddaec69ea8d3e0c0aa2d3107928e493",
+            "bytes": 3903
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/temporal/TimeSource.java",
+            "sha256": "75316070088c8c004a880fdfb35f8eada5a251543eb6c7827a3866090b57ee96",
+            "bytes": 263
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Bucket.java",
+            "sha256": "af47f974540cc2ee384d9ea8d126d6786fe3da7bdec31c975873cde0290c9bd0",
+            "bytes": 3117
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/ClassLoaderHelper.java",
+            "sha256": "160fe8f73fba89c7dc341bb360106c2ddd26062ec589253ee7b63730f4b42f16",
+            "bytes": 3567
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/ClassLoadingException.java",
+            "sha256": "eadee0d8c1576a1d93535a61fbc88a095de5d17b9fae48402c0938b84fb87e89",
+            "bytes": 527
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/FileUtils.java",
+            "sha256": "7139ce5050411054000e7a0c25628f1413789046fb4016f17613a0e06fc3eaca",
+            "bytes": 6865
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Function0.java",
+            "sha256": "5ab780d62b92d114e347a4dc19f1e851f96bf7106d19f07b36d25f940f0d4fff",
+            "bytes": 146
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Function1.java",
+            "sha256": "08d90d0ebb49233aa3c1e1d8d1b24fe4149a02baac483421db8bb2928055722f",
+            "bytes": 166
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Function2.java",
+            "sha256": "506338580e533a98384556ce26ac8efabef1d5792a253307b269586e5a858131",
+            "bytes": 192
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Histogram.java",
+            "sha256": "f8627aa73192a8599027ee7c2900577520e5d7fa9a3f8e94b20de9d5c487cffa",
+            "bytes": 10750
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/ListUtils.java",
+            "sha256": "1217e215c97f7e26ce2fa36d73167f2cb9a5a400f41b20c0a5fabe004424a8c7",
+            "bytes": 1077
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/MapUtils.java",
+            "sha256": "e384328c68851e78bad0eae6a60b82b3aa9b9d56afc3a005676605dcce1ff64d",
+            "bytes": 8188
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/NumberHelper.java",
+            "sha256": "b47c0a283808ef9c175975e6b7a8534a2a2552a124cf32efd39ecde8ab4af3f2",
+            "bytes": 8453
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Tuple.java",
+            "sha256": "f4572e86d66cc41243471541770f827df8f4b297891d6669ac8fda9b5e84406a",
+            "bytes": 358
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Tuple2.java",
+            "sha256": "182b2423135cd6d94ce25f4692afd3a0814c342849b98e9e67435183e0bcea4e",
+            "bytes": 1437
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/Tuple3.java",
+            "sha256": "8b521e345404df021586ad67deb5227e423c9158664b0141cd1bf66f1be32f5b",
+            "bytes": 1852
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/util/TypeChangeFun.java",
+            "sha256": "60b4cc013a066cc4c85e484a38bbccf1ae305544987c93ebd91864b85442b5ae",
+            "bytes": 1140
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/DbValidationResult.java",
+            "sha256": "c73c05e53d3a21ddde775e323b56efa8404312fa91e6c7d4f8e74e5166d5fbb2",
+            "bytes": 13157
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/DbValidator.java",
+            "sha256": "2be2812edbe818781ab617f52600467229e1ad803a87fedd94fbc97081b128a1",
+            "bytes": 6144
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidationResult.java",
+            "sha256": "ac8be449d0f74b9d76c69e4ae820d7e1814b9611aa5ccab7cb562f441bea87cf",
+            "bytes": 2713
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidationSummary.java",
+            "sha256": "51bd8bbf7756ce77b0aad5dd6db77b112dc64d93aa57583282cf41700f64a495",
+            "bytes": 6443
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidationSummaryCalculator.java",
+            "sha256": "00d33fb5a3174fabaf800b8582954d060dcd7e3267968fb87a727fab595e1f55",
+            "bytes": 3717
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidationTolerances.java",
+            "sha256": "c28508ad516c849968add153691d7d7b45c6275e9853215c4901b9c815948a3b",
+            "bytes": 765
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidator.java",
+            "sha256": "b47b791a4878c46662bdc6f81fc80def44bb7a86ddf90930f4c467a05a469659",
+            "bytes": 7313
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ValidationEquality.java",
+            "sha256": "15be6aba0c5cd293c2041dd9bc68fc875810e8f6f81ae1eaf55f836124e0b3c3",
+            "bytes": 582
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ValidationException.java",
+            "sha256": "a28eed0cf2c82a0a47c9dfc605f95b69985ba606acf5db3ac76c691c853bd48e",
+            "bytes": 517
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ValidationParam.java",
+            "sha256": "cd42af7261d827c2110b8433cd6edcd44f5d2412ed68ebfaeaada88ffa61f3a9",
+            "bytes": 1818
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ValidationParamsFromCsvRows.java",
+            "sha256": "0da6f8f75bf836feadf25d19cee1981cfa043ec8c31d54539f6b4ea7b8095ea9",
+            "bytes": 1995
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ValidationParamsGenerator.java",
+            "sha256": "e8224421ccf461240ec0df04eef02ad3c214681e7030489a3ebb9e5a15fb7743",
+            "bytes": 6081
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/validation/ValidationParamsToCsvRows.java",
+            "sha256": "1bd367ac4cad59c3a8ffd88290ca99819c590208048eaeed1cf434160a42c436",
+            "bytes": 4287
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/ClassNameWorkloadFactory.java",
+            "sha256": "92cb4ca4e6d053317e1020f3a20b472fe263ed55c698f8eefdc0e06a61b590cf",
+            "bytes": 821
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/OperationMixBuilder.java",
+            "sha256": "5c363a202be2e70f219de324a1208e905057a6fb89e166d18210c39b131e1489",
+            "bytes": 4007
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/WorkloadFactory.java",
+            "sha256": "38b87beb4a6d6940142c4a1c79ee13a91fa6b0821060beb17ae1b2f407d40221",
+            "bytes": 235
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcNoResult.java",
+            "sha256": "70749ee13f1e68b03f0850e04006168768254b580c7900d051ee5069a5e6aea6",
+            "bytes": 424
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcNoResultJsonSerializer.java",
+            "sha256": "5ee06d55afdfb16650268d2e8d55fa6de2054a8acd2917cd95677fe544dfe169",
+            "bytes": 879
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery1.java",
+            "sha256": "a83cb3d681a81886090c29e2b48889ddb7279743c6689849557395eacd5a14ae",
+            "bytes": 3524
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery10.java",
+            "sha256": "26c2b7bddf881741989ea868e634cadd53989697be33407486c288ca15a7ad4e",
+            "bytes": 3755
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery10Result.java",
+            "sha256": "b694db3a684e5e95fba4a23b84b1195c6dffbeb3843e57bab8e48428bfdd22ba",
+            "bytes": 3477
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery11.java",
+            "sha256": "734463f05788b5c716f13e515b58ea28260afd94c600f026a649f897ff27ae07",
+            "bytes": 3955
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery11Result.java",
+            "sha256": "cd4c43bc0011fa86007698bd3853e0e53f465d80fb849ef9355161f5e6b35ba8",
+            "bytes": 2641
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery12.java",
+            "sha256": "e67a35c74652149120ca7257ad3f549ef4fd3011b608f8539a8ff85e9dd34e07",
+            "bytes": 3889
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery12Result.java",
+            "sha256": "4fbcd23b9266ef9a8c6777ed255d5b0a7b235a73dc3eee4fa3770cd8563700b2",
+            "bytes": 2446
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery13.java",
+            "sha256": "8bf956c889992c7508a01196effa2b4eba864421141a99227f384240daffc134",
+            "bytes": 3191
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery13Result.java",
+            "sha256": "d4cf3752c8639bcffdcdd01a38a9ed8af3ed7cfa5f81792080333f6f5ec5ef26",
+            "bytes": 930
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery14.java",
+            "sha256": "de4e2f4d3e2637ccb6c355eb502050573a491fa1e238f3b9bb8d37ac1e318ed7",
+            "bytes": 4024
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery14Result.java",
+            "sha256": "b8d5f07b099b187ee66bcfb07be99d65d8259cc3786f83c63f4662a72c0de200",
+            "bytes": 4474
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery1Result.java",
+            "sha256": "4b1bb44eb01e39d1c3c4498132939dd814cac3db53991920014a6b868dc64cfe",
+            "bytes": 8465
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery2.java",
+            "sha256": "42fab868a28541043968101b676c00d128d2e483da74fad99e1728662437f55a",
+            "bytes": 3410
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery2Result.java",
+            "sha256": "bc3ff5966348b82c07e5e1fe07a11e9ef717abb002040609959d0e9e992b1996",
+            "bytes": 2858
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3.java",
+            "sha256": "5580127064deec916c4e572ba9bb1714bd2cd5c488848b364dda1d1257660662",
+            "bytes": 5329
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3Result.java",
+            "sha256": "f6a97be6b214d33a1b210c621689c6783478ed8859ea0804d3824cf960f76e7a",
+            "bytes": 2476
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery4.java",
+            "sha256": "be4656542818fff3660000fc7434a6bbb8e0f676e4c45d2a89fc8a9315f96d28",
+            "bytes": 4012
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery4Result.java",
+            "sha256": "515a8abe525e9be652505ff83610f66d0c68ce1918909a8f7c146fb1e3c0c50f",
+            "bytes": 1154
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery5.java",
+            "sha256": "5bca3a678ec8a047652bc4e468350c0fbcee93c321147fb33a8feaa2e8dd90fe",
+            "bytes": 3501
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery5Result.java",
+            "sha256": "6632e053c89eadbfa4eef971ba2a9b9a75e34442082d42cfe0504e0a6407daa2",
+            "bytes": 1200
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery6.java",
+            "sha256": "c490f040685c9cbcfbf806dd7a68abc1a72f124348accfd2379f55de8223bd04",
+            "bytes": 3508
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery6Result.java",
+            "sha256": "60f564db69205072796af2e4d780f6cf8bb59143d2ad2ce490042aa30f157652",
+            "bytes": 1154
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery7.java",
+            "sha256": "2c1f618680e62cdf0832c3b88e904adb62cb11aaee19d5663e2f2d58a9a5d0cd",
+            "bytes": 3229
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery7Result.java",
+            "sha256": "2dfd087d84558f2aadf41c342ced0132236aa806c087d7ea6dfa0131c921dc39",
+            "bytes": 3829
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery8.java",
+            "sha256": "621a78c4c4f877939639c2979317dec5a6bae26eccfdd608cbedd2ad9263dc70",
+            "bytes": 2939
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery8Result.java",
+            "sha256": "2980e307c790bbdb3b474ebe3fa933eed76b6aa0fcd42d73b25e49a6fd87b747",
+            "bytes": 2837
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery9.java",
+            "sha256": "a1e0acb693543579cb4e8b9c2767bcc73baeb1f89a129692bf43eee39463d60d",
+            "bytes": 3432
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery9Result.java",
+            "sha256": "77cae6533963be8f85c1ab47b4ee69eab071d83bd9295dc18b4de7512d40f97f",
+            "bytes": 2837
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery1PersonProfile.java",
+            "sha256": "54e2ace370fbb2f0215b0394e92fcbb3056025fba02f1e25080219d586c913a3",
+            "bytes": 2427
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery1PersonProfileResult.java",
+            "sha256": "f6b7ec32cae1b79bbb538d40a0d8b961729f058b2b6c61d1f08f9ce755544ec0",
+            "bytes": 3919
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery2PersonPosts.java",
+            "sha256": "1297dc6547f482d098f464b36bc87230267e0edae53b054031ca6131db4ce3d8",
+            "bytes": 3199
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery2PersonPostsResult.java",
+            "sha256": "3535af6bba61d482b755502c0aa48c01ca0f701669b7edc1109609b4744b2d79",
+            "bytes": 4443
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery3PersonFriends.java",
+            "sha256": "35ed2bd0cb771dfdfb114069742cf8442507de7578c0f8d953d5136f85f95276",
+            "bytes": 2489
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery3PersonFriendsResult.java",
+            "sha256": "9f656ee1c5c849538bb48ddeb478139471315306ca6190672a9cbf7bd285cf70",
+            "bytes": 2454
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery4MessageContent.java",
+            "sha256": "1f544490b719eeddd8f22f264bec82c001c2119ede2a53dd4e1ccbbb5782d2c5",
+            "bytes": 2450
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery4MessageContentResult.java",
+            "sha256": "1a2e471c29d606f7312a7b46e962b28d00dafb3bb6865d14faafc67f419193ba",
+            "bytes": 1708
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery5MessageCreator.java",
+            "sha256": "bc89858d05e70ffbd2719f5ef1518c42d244d89f08459e700d6b6bb51c274a51",
+            "bytes": 2431
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery5MessageCreatorResult.java",
+            "sha256": "97d5d28bf08eb19e684eafe3a785acc8419c487b54aef8c41bbd8078d0f03e4b",
+            "bytes": 1893
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery6MessageForum.java",
+            "sha256": "18a98465f68082fd6c08fa972df6c3de525f609cdbe0481843def6ce9c067e9a",
+            "bytes": 2608
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery6MessageForumResult.java",
+            "sha256": "38a3c47d58ac94779febd9ae74081e2ce12f7693b4c97f98d386dd03a20382e2",
+            "bytes": 3019
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery7MessageReplies.java",
+            "sha256": "80ecff4350e8db0acbb932f66d9150e50f886e73cd86cbb52cd072ad46b14fb0",
+            "bytes": 2769
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery7MessageRepliesResult.java",
+            "sha256": "5db40cfc4657649f04bd8bfafa4cb48a4258b723801b503a933b204d831f4260",
+            "bytes": 4520
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcSnbInteractiveDbValidationParametersFilter.java",
+            "sha256": "25f68c2466e8c97036d509b159d28d9f014fc577aff279e8776bd709c25a80f3",
+            "bytes": 13025
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcSnbInteractiveWorkload.java",
+            "sha256": "039281733fbe2c3bae268d584fb59d78ad7080d94d5d1aaf98fffe7ccde669a3",
+            "bytes": 81871
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcSnbInteractiveWorkloadConfiguration.java",
+            "sha256": "586cb636a73c3c4f054b51205bcecbf71fe3b37646920c2c3bb39af9d8e62ab6",
+            "bytes": 31780
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcSnbShortReadGenerator.java",
+            "sha256": "fe8776f4a68766f99d069fd258ce79279c71b64dc555020e6176f92bc2fb9050",
+            "bytes": 58426
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate1AddPerson.java",
+            "sha256": "56786c54300ccd25f1e22650a5c6076ba4f3212ea0c56c935aff46d19d19ff1e",
+            "bytes": 10740
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate2AddPostLike.java",
+            "sha256": "586636f114aaba31d755299b36509c39a561f58f756475a0720ecb2bc64a9213",
+            "bytes": 2861
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate3AddCommentLike.java",
+            "sha256": "576c5b55ef9fbb6ce85cb920e28f8b817210daceffb92905cfcd8cc3be193edd",
+            "bytes": 2944
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate4AddForum.java",
+            "sha256": "b46acd72f55a16566eee3f4787bf10765d57c6e66b5d5b81ca23f5b5cc5ce022",
+            "bytes": 4239
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate5AddForumMembership.java",
+            "sha256": "e926b2f6ce0dd75d26bfb1a01016cadd89c76ed0ecd55ceac503ce521cb3096c",
+            "bytes": 2874
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate6AddPost.java",
+            "sha256": "614ff8865eca1cba2245ac750b567ffc79cf52e34653e925d748f183804f5be6",
+            "bytes": 7743
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate7AddComment.java",
+            "sha256": "0b59729563084984c38bae2d2f5af66dd8af43fb104f08d9355e44b1fc1e39af",
+            "bytes": 7519
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate8AddFriendship.java",
+            "sha256": "1ed39bad152fc134d409d24eeec5315a622447bc7385b51933a1d763a7126fc8",
+            "bytes": 2969
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query10EventStreamReader.java",
+            "sha256": "8b8fdc659adaad61e011440145476b7a746f01382af444757d5768e3e861b450",
+            "bytes": 2484
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query11EventStreamReader.java",
+            "sha256": "1399c03fff6e0035981f9d907f3bc70eae3bafb373371c53ab38fa7d81991fd4",
+            "bytes": 2898
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query12EventStreamReader.java",
+            "sha256": "af76725635d1255cd13d8baa75893ee9e83fde64d254747e9cd4dc350a9649b7",
+            "bytes": 2505
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query13EventStreamReader.java",
+            "sha256": "7622020803136ca177ebed3e5e37d5c9add077bd59ebfe1eb810ede4b9849478",
+            "bytes": 2482
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query14EventStreamReader.java",
+            "sha256": "0c915cd5d42cc3177b4934748f1ebd8bfccd67b57af96457beef1e910fd97b83",
+            "bytes": 2484
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query1EventStreamReader.java",
+            "sha256": "fc438f1c4cefe09acffe5e12c6e29e03b0543a88f3c68979cc057572d0449116",
+            "bytes": 2515
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query2EventStreamReader.java",
+            "sha256": "7d2cbdd7ed8a477859a8d6f9062bc4102895ac030455e36b127648ecbf9dd616",
+            "bytes": 2520
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query3EventStreamReader.java",
+            "sha256": "bebeb18b2b5fec75f9708a6dcd0772f1304707b36094d926d978962b3e590ffa",
+            "bytes": 3729
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query4EventStreamReader.java",
+            "sha256": "947f990110464412b24921c596d63b7a5e08928f5a88e987796b6a4402c8bb33",
+            "bytes": 2933
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query5EventStreamReader.java",
+            "sha256": "569358f5c1a1eb989a6ae2fd6b1bfa03fb8c26a30398f3befa4131d19ddb40a6",
+            "bytes": 2525
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query6EventStreamReader.java",
+            "sha256": "62ba8212ebc651baab4c489c15d7981385013a34fde97fdb44a5df3a85289b91",
+            "bytes": 2493
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query7EventStreamReader.java",
+            "sha256": "00fb02db4e417ab7bf3bbfd93def899b48a8cd30f82d2dd61d99209c447e7950",
+            "bytes": 2048
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query8EventStreamReader.java",
+            "sha256": "2051065f47680038ef67ec132ead4fc0634ee6d323640b49dde12395e6ad5456",
+            "bytes": 2048
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/Query9EventStreamReader.java",
+            "sha256": "d5f216936246b52c48e6fcfbcbf16d94ef0fd6eee73723c9d4406f178c3f7217",
+            "bytes": 2526
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/WriteEventStreamReaderCharSeeker.java",
+            "sha256": "3691bf81a3dcc37fee7b0d20586dbebbf8053d373e5cc2fe17654e1702ece9fc",
+            "bytes": 29071
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/WriteEventStreamReaderRegex.java",
+            "sha256": "e4489d92a476a97c531943b40c340d77b5b23ff38f5f6acd99e170c9e9713a77",
+            "bytes": 16277
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/db/DummyLdbcSnbInteractiveDb.java",
+            "sha256": "4c7b12fded60f99cb7b2a8e472e75834b6cbdccd9668d7e2b3ad68b5be5040d6",
+            "bytes": 29823
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/db/DummyLdbcSnbInteractiveOperationInstances.java",
+            "sha256": "eb9fa7a8a2dd72a8021b4d75f4f2ba2e8eca21593db953e3ec373bc0af4cecde",
+            "bytes": 3909
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/db/DummyLdbcSnbInteractiveOperationResultInstances.java",
+            "sha256": "96cb335dc369a405e81eeb65a785a7ddd24b74e0b306735886ff1335497ad8b1",
+            "bytes": 3523
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/db/DummyLdbcSnbInteractiveOperationResultSets.java",
+            "sha256": "21214a83b274f43b471081e0ae2612af60fb3a1db6f358a5d1d0105c47cd38df",
+            "bytes": 22116
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/InsertOperation.java",
+            "sha256": "493ed65e657558480b59d086fbfad7872477f810336b8a39c0781eb469d3e65d",
+            "bytes": 2422
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/InsertOperationGenerator.java",
+            "sha256": "46f429345febcca4b3811cbf239df4659cec50e2ae9b0f12f9c1cc7f1243ed0e",
+            "bytes": 988
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/ReadModifyWriteOperation.java",
+            "sha256": "c0f691167b7f16ed7b2187d44fafdd6f01bf42e8a6896cd37feb4f513e94aec2",
+            "bytes": 3127
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/ReadModifyWriteOperationGenerator.java",
+            "sha256": "6072c879f204729683ba80445e922bdd8196b5acd5554fcd867664387ad7ba24",
+            "bytes": 1217
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/ReadOperation.java",
+            "sha256": "b470479fac0ab66d1eb49957e3aa4cfa30dc95080c94156fbd062e28222b407b",
+            "bytes": 2416
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/ReadOperationGenerator.java",
+            "sha256": "2a6d57f49d9b6f2819b8212627ce98fa1da3ed52ea57d13ad92177a96a11b04f",
+            "bytes": 884
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/ScanOperation.java",
+            "sha256": "aef7970d924e1cd371be956433388a3707acfe775868918de36a7f79f6c005ff",
+            "bytes": 3001
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/ScanOperationGenerator.java",
+            "sha256": "8d99e4fbcdc4b77d3f19112ff02cbac7e17679f675b78b009422d23348a87b05",
+            "bytes": 1178
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/SimpleWorkload.java",
+            "sha256": "2f8a300d8c780548edd53c870bb9e6d5e6ab46af5d36e506aceae040dca80160",
+            "bytes": 16553
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/UpdateOperation.java",
+            "sha256": "04d43efb03e016ca10c7bfd94a8756c322f3274b39da5e14af9eee7d1d8934ef",
+            "bytes": 2404
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/UpdateOperationGenerator.java",
+            "sha256": "c0626cf3470c17b0b23ec96e9f2b7e9d4875aeef2bee884cf27e8bd3e3c23b33",
+            "bytes": 988
+        },
+        {
+            "path": "src/main/java/org/ldbcouncil/snb/driver/workloads/simple/db/SimpleDb.java",
+            "sha256": "048e6bf08f056ce5196be4029ec66c43c379e854f95d8ed42d35e4c067608188",
+            "bytes": 7717
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/README.md",
+            "sha256": "8c6a9ea135bda9aa538ccb326d33816bc48faffeef6027bf6d0a520f78e3b08e",
+            "bytes": 446
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf0.1.properties",
+            "sha256": "4eac67fffed801e98a2f35bf4485575a0c3ffac146e225a1a408ddffbfa1b9ff",
+            "bytes": 597
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf0.3.properties",
+            "sha256": "62c15b00f3901e71c112eb4da530dd6d3901b60b779e98ffc5bdd96215009b5e",
+            "bytes": 597
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf1.properties",
+            "sha256": "70b276d2f9ecc866e0ef7356f690b8ea445841c8aedb35b21624c5f3da9b8a9a",
+            "bytes": 612
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf10.properties",
+            "sha256": "de4df7cb7049adb2983d9da484e89b2e8db60baeda3e093fdcbb13db37227609",
+            "bytes": 611
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf100.properties",
+            "sha256": "4f1b05b7f875bb3626d2d67ce6d3c92ff11a277c6b12f334ed78c138338b0b21",
+            "bytes": 610
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf1000.properties",
+            "sha256": "efd3a1e34960ba1fc6ebb31e1b176c94b89323657a3340bf213e47a82ad36b47",
+            "bytes": 609
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf3.properties",
+            "sha256": "12b64841766f821102a6b2316532e3d5bbbe445b0cab89964a2c36e8d33dad8c",
+            "bytes": 612
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf30.properties",
+            "sha256": "b2a4331fc268eb0ca554594513455a9fa818f9795c49a3fae315d7199b916eeb",
+            "bytes": 611
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf300.properties",
+            "sha256": "b12b3760ca1198ce344ebb981fda624054e789a2428367556c9b1e7e77be0894",
+            "bytes": 610
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf3000.properties",
+            "sha256": "1d731147bf790785af14e2a67c3b7f119c739319f2b796ca2500be79525abb1d",
+            "bytes": 611
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sf_internal_test.properties",
+            "sha256": "675eafe02172b2930c21e5cbd7dd42c7308c5dc3a866fc69014368d5ee36ad54",
+            "bytes": 2922
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc/snb/interactive/sftest.properties",
+            "sha256": "537a491a2ea7ee249b87975ba3224bdd5ba179f2ede4de5d6d80de6cd63c49a8",
+            "bytes": 598
+        },
+        {
+            "path": "src/main/resources/configuration/ldbc_driver_default.properties",
+            "sha256": "9fc415b20910838e79bf0e44cf2207dcc4263fdb254ee319031297f1c246dcd2",
+            "bytes": 3661
+        },
+        {
+            "path": "src/main/resources/configuration/simple/simpleworkload.properties",
+            "sha256": "4e4ea14b8fab1201ff3ac847e529e83bb3dce7703bbbec780cab03c9ad827e68",
+            "bytes": 224
+        },
+        {
+            "path": "src/main/resources/log4j.properties",
+            "sha256": "f187003d2c1826a4a14157e2a4f53e94a072c0521f43de425c7a4a83824e2c9c",
+            "bytes": 757
+        },
+        {
+            "path": "src/main/resources/metrics-schema.xml",
+            "sha256": "7ad3268d0e70dd12dc39ef5ae5d02d264f9fe913f759bc8a6dfc0efd8f2dd82e",
+            "bytes": 1383
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/OperationHandlerRunnableContextFactoryTest.java",
+            "sha256": "e3a44942ded73d8133761e981cd11f09f8568eb3c7c603c8c247db0a123f6235",
+            "bytes": 3299
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/WorkloadStreamsTest.java",
+            "sha256": "edbc6505db4edffeca8bff3f4beebbf827c82de5874fc721717a4c95f81906b1",
+            "bytes": 50076
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/control/ConsoleAndFileDriverConfigurationTest.java",
+            "sha256": "002d6eb1358fe440e4dbc6a650e3861527f223077a8f952ad417f702dc9b2656",
+            "bytes": 35718
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/csv/ExtractorsTest.java",
+            "sha256": "0ed74a86d4e231df457534ab6f8850c4bf834306681c1c805f5baa38c8f045be",
+            "bytes": 2373
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/ConservativeDependencyTimeAssigningOperationGeneratorTest.java",
+            "sha256": "38d3d8f604af58d31ebfc9ee437a9d28c80b224a4ead995dd5d59d75bb45132f",
+            "bytes": 12958
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/ConstantNumberGeneratorTest.java",
+            "sha256": "fbf9ffe1ff7820d7e86e0dcd0d153726ff70809b9464ed2e0789f016e6c7299f",
+            "bytes": 1062
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DereferencingGeneratorTest.java",
+            "sha256": "4ecdfcbe007b7b78dfa0af697ed8b890cb2b5af7592033459a90c2ebc7f59c7a",
+            "bytes": 1924
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DiscreteGeneratorTest.java",
+            "sha256": "82889d605ead123ccb07fb1d7a49e67a652007010436374f72ef251eba994a56",
+            "bytes": 2171
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DiscreteListGeneratorConstantProbabilitiesVariableSizeTest.java",
+            "sha256": "8afd774b49a8d5fe34d65488877ab1edd91d47024cd8cb888c66029d2689e2a4",
+            "bytes": 4826
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DiscreteListGeneratorVariableProbabilitiesConstantSizeTest.java",
+            "sha256": "85992a99821dfcfc12054d06ef1b279a4eb6b69da610db2bf484c07cffbb02cb",
+            "bytes": 3466
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DiscreteMapGeneratorConstantProbabilitiesConstantSizeConstantValuesTest.java",
+            "sha256": "db265c02a41517d51d6c1c153cbca7f5d1f0300b690a8abd3ef534e44d6ac30f",
+            "bytes": 2369
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DiscreteMapGeneratorVariableProbabilitiesConstantSizeConstantValuesTest.java",
+            "sha256": "c1703ce5b739306ab142fae0eea63648a3e216387f50a1491f2046c833845575",
+            "bytes": 2320
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/DynamicRangeUniformNumberGeneratorTest.java",
+            "sha256": "cb167a2da8970f973717988fbc26e68035a51989b9590e4168ccbbf5e4c1d1a7",
+            "bytes": 2052
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/ExponentialNumberGeneratorTest.java",
+            "sha256": "c6b9607b49fe024cb3ba6478279b270bac7d0db0d7bca73bc9fb718e2b909e3f",
+            "bytes": 1288
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/FilteringGeneratorTest.java",
+            "sha256": "e98b92d02d40dafd41170d76ad6f072979dd4f1872f572bb2d6e1e4bb86239ea",
+            "bytes": 2486
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/GeneratorFactoryDeterminismTest.java",
+            "sha256": "8438bcf443dc2697016b8039703de5c5b73f120c9067dd0baf2531326ee0de5a",
+            "bytes": 3662
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/GeneratorTest.java",
+            "sha256": "3d73c8e867229209bbdda509f543af7cbba04a43721dfd2cc9a58626234a9cc9",
+            "bytes": 3936
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/IdentityGeneratorTest.java",
+            "sha256": "a26ed4e7a8407f34a0947d83bcc4c7f57849bd58bec3cab5050cd53f55b5cc74",
+            "bytes": 738
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/IncrementingGeneratorTest.java",
+            "sha256": "5aed0b37038f9ed6557359ba3733de9496dcbf5012ad270ba9fe0c55d4d55cbf",
+            "bytes": 1679
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/InterleaveGeneratorTest.java",
+            "sha256": "b7305547b9b3965bcec2d4ea61606bfd1bbd4773f1ed4271b1528397c9314273",
+            "bytes": 3711
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/LimitGeneratorTest.java",
+            "sha256": "c3afb05538ccee9ebe0a37a0958ab2b50a83d6b6c75a877fa0c8d0bfc1af7ce1",
+            "bytes": 671
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/MinMaxGeneratorWrapperTest.java",
+            "sha256": "4366e871f003ae341a338514e4f3face7dc3574eeb62e7ab4295f8b80246539b",
+            "bytes": 988
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/NaiveBoundedRangeNumberGeneratorTest.java",
+            "sha256": "fe075524c4dddf0c9085c16f42caabfd1e7b18f47c3631c6ac6633bad4369a7a",
+            "bytes": 1822
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/NumberGeneratorTest.java",
+            "sha256": "8db90c3d2bfb0bf5bfabe52b2ffd72cd9fc0acb392776636656d8174c5de177f",
+            "bytes": 1532
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/OrderedMultiGeneratorTest.java",
+            "sha256": "08babd31342136e9479d2cc0679683650ef735394d979be5654e4788dc57dd82",
+            "bytes": 7094
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/PrefixGeneratorWrapperTest.java",
+            "sha256": "80f3d8d6334e332da078cb84378aecc81e6a4d1f01f9e0d089832e9f02982306",
+            "bytes": 1176
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/RepeatingGeneratorTest.java",
+            "sha256": "115d9ea47fd0402cf207c66b065eda5b0ecb150e0fe970b8269970cdee9c57a8",
+            "bytes": 1419
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/SizedUniformBytesGeneratorGeneratorTest.java",
+            "sha256": "fecabeebb53419d653c9d35f6d05a6f281336e81acb4aba84028b7c961fa814e",
+            "bytes": 1891
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/StartTimeAssigningOperationGeneratorTest.java",
+            "sha256": "ed18fae2f8f13a9893f011d6251f784661646e51f8ccaf2e7d6176256cf9bcfe",
+            "bytes": 1961
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/TimeMappingOperationGeneratorTest.java",
+            "sha256": "92f362b48521fc79e083aef9e9e776295e7e011febb2b8b5e23b25f2dac3f1bd",
+            "bytes": 32527
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/UniformNumberGeneratorByteTest.java",
+            "sha256": "ee6b1eacbcbb4dae49d3bb129b9988dbd82d9f0fd7dbf851fb5223ed51c76b49",
+            "bytes": 1305
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/UniformNumberGeneratorDoubleTest.java",
+            "sha256": "380d8fe0d6c2eda75c24fe497f4555ee489cc8dc6ee0154dae3e2cd97a055de9",
+            "bytes": 1633
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/UniformNumberGeneratorIntegerTest.java",
+            "sha256": "26b06c7b6d728c2e043f6a1128fa08fffe2217205ae9adbc6ff968ac19a2bac5",
+            "bytes": 1637
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/UniformNumberGeneratorLongTest.java",
+            "sha256": "0b2d7bfa0af51e16ad8736bfffd7c3e6a55be363fc669b71972e82b3a0024d0e",
+            "bytes": 1618
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/generator/WeightedDiscreteDereferencingGeneratorTest.java",
+            "sha256": "3af5e5ae73a4b49eb40f4eb22f2db639f49a8fa17e05a1d542aa795340d251ea",
+            "bytes": 2220
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/ConcurrentErrorReporterTest.java",
+            "sha256": "187e360b3d06c552e281a9ab4f78da0aa63eac86b4bbf3302305d13cc85e4ce1",
+            "bytes": 4575
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/QueuePerformanceTests.java",
+            "sha256": "b02f8b98c1402418cd89fca805f016ae7a82c4ac9cf62e330fbc62817d6e2f8a",
+            "bytes": 15453
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/WorkloadRunnerComplexScenarioTests.java",
+            "sha256": "3b8e16876c648828c4e2b232dc5519791d5a734d867c2b59cdaa839cf2e91e32",
+            "bytes": 109833
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/WorkloadRunnerTest.java",
+            "sha256": "5e721849b9d85ed08030a151670bf9da035ebb08da09c5f6ce102aa1405bf1dd",
+            "bytes": 46410
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletedTimeTrackerTest.java",
+            "sha256": "07b1635d2ca5ebd37bec7d367277d108b01fb1672f1d9fb87fcfed61eb4e3288",
+            "bytes": 8830
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeServiceAdvancedTest.java",
+            "sha256": "28876f1fc8638455897ab6d2f6a8a8d687d332b80f49e2b611313032b37a152c",
+            "bytes": 14709
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeServiceAssistantTest.java",
+            "sha256": "f023e8fa17e719af0581757b5874fa42a3b7f379c2abf1029dfdb138951b91dc",
+            "bytes": 3458
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeServiceTest.java",
+            "sha256": "f41b4a26820cad03546db2d09661f2adb9e50ece007c4bc36a87f52c492c10d5",
+            "bytes": 22857
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/CompletionTimeStateManagerTest.java",
+            "sha256": "c9c818d1df8510a4795cee31f7fa8bfc5e7baf5c42ed62d3c20ea2083e24b6af",
+            "bytes": 36518
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/DummyCompletionTimeReader.java",
+            "sha256": "759162980e7ba373816b22f5041af000e11814f46e9a0d9a4cb142d5fceb5403",
+            "bytes": 668
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/InitiatedTimeTrackerTest.java",
+            "sha256": "4bc6e1991ca6eef3dd7f8f8e2b312e2d3a1276205e6ee2041ad448fbeefa7177",
+            "bytes": 9120
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/coordination/MultiWriterCompletionTimeStateManagerTest.java",
+            "sha256": "57520c8edb40e6af1fde4bc044bfb8d9718946e04d0179e402323210056e58c3",
+            "bytes": 79406
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/executor/OperationStreamExecutorPerformanceTest.java",
+            "sha256": "22f11d1a9a25b96bef4d812248e2591293f0ecce98e1c2e9ce2a5becdc604882",
+            "bytes": 17014
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/executor/ThreadPoolOperationExecutorTest.java",
+            "sha256": "af3f623d4db4bf65ce89c0fce13a71b5cda87a68d58e9ac6c7c25254eacbd5e2",
+            "bytes": 10100
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/ContinuousMetricManagerTest.java",
+            "sha256": "e3cfbad72c0a3370fef2a5e6f5b21bc316fdbc696a622d0e9726ec79a38090c8",
+            "bytes": 4964
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/DisruptorSbeMetricsServiceTest.java",
+            "sha256": "4b5cfb40857028167331f1705531d69f2469a5ac806b6f579babc6366ba9b5dc",
+            "bytes": 6254
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/DummyCountingMetricsService.java",
+            "sha256": "1df527d06ee9b5d139a8469fe8a882ea10cb7a361aa3f884adc64450bc5924f7",
+            "bytes": 1543
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/MetricsManagerTest.java",
+            "sha256": "10b8d9c2423d4c8c74035e79842dd761fc0777424945bc0a880512e1061caeb9",
+            "bytes": 2640
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/ResultsLogReaderWriterTest.java",
+            "sha256": "18bbf69a2b90788a45dadd61cbc9ab051180972c33553ec8a36f2b7ee51dc155",
+            "bytes": 4658
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/SbeEventTest.java",
+            "sha256": "fe8b1c233aed9317ced9a511c96f5c2e70244c07bdc3607cca3ae9fb26b4cd96",
+            "bytes": 3730
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/ThreadedQueuedMetricsServiceTest.java",
+            "sha256": "3cfe2e1ec7bc7e59f1e6e88f0ac363293c80426a5e5c3932fdfde26d7f8a83c7",
+            "bytes": 9281
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/metrics/WorkloadResultsSnapshotTest.java",
+            "sha256": "83e2db3c6cec27729380b0a1a487b50c6f760c2ce7405216f63c89ef4b5a8d38",
+            "bytes": 4323
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/scheduling/CtDependencyCheckTest.java",
+            "sha256": "3e451f60813296cff6af0f190e473ea9220bcd9de2159a5621b07620db604efa",
+            "bytes": 2303
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/scheduling/SettableSpinnerCheck.java",
+            "sha256": "47a20faff5d274b5b969bc85da935a53b01405866aa6ca5cc6f42f656b412feb",
+            "bytes": 623
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/runtime/scheduling/SpinnerTests.java",
+            "sha256": "dbf5121c9c441b6fc4eb0f6bbc26c3097cfc458436438d4f31edc12f4c159629",
+            "bytes": 13072
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/testutils/TestUtils.java",
+            "sha256": "103ab12e2977587b3e308095e5c27852eb7aa3d0de036cfc42ca1e6b44bbfb8f",
+            "bytes": 1961
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/testutils/ThreadPoolLoadGenerator.java",
+            "sha256": "c08cbcadcd6d6645349a654147b62f042b63322e6bed6fd01e1434e324a83de0",
+            "bytes": 2843
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/util/HistogramTest.java",
+            "sha256": "ed999254ec02eab740da68bffed5a41065ff96c6676c4cbbfa72ec7d0efcf09e",
+            "bytes": 8839
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/util/MapUtilsTest.java",
+            "sha256": "a75c4a090450665b79641efa6d394ecdfaf148a3541f79bf2df3778c2010b30b",
+            "bytes": 11513
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/util/NumberHelperTest.java",
+            "sha256": "70ef8784fba279824cdf15419329e7aa235e7ab365f46f9604f45ce7cd458128",
+            "bytes": 3599
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/util/TupleTest.java",
+            "sha256": "8ac5d68be32208d47b8bd1f780067e9f1bafcf23902f1ecd6514d1d87785a96c",
+            "bytes": 2291
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/DbValidatorTest.java",
+            "sha256": "1639d571e1baae790b91d83c1e76e37f53c2ffa2eff84da69dc7a3b1295e3506",
+            "bytes": 15023
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidationTest.java",
+            "sha256": "da2780af650ad5af8514698fa0a00b7b3e52adc3aefce2d00d7bd90920ff34a3",
+            "bytes": 10598
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/ValidationEqualityTest.java",
+            "sha256": "ea90c914567cbb73bd9dd76826b0f3bac624665279149ed6553d46b353a8e6e8",
+            "bytes": 1721
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/ValidationParamsToCsvRowsToValidationParamsTest.java",
+            "sha256": "a0197f678c6817b7b0362391bdf9c0de7ef8d3bfc4cd581869973e75484f6ea6",
+            "bytes": 21046
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/WorkloadStatisticsCalculatorTest.java",
+            "sha256": "1dd660aa57fa4cfbc52dc06ffc73d61e31a4a62da321cee1bc324139d90d169c",
+            "bytes": 14425
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/WorkloadValidationResult.java",
+            "sha256": "f0fcc623cdd20ced9387cbf931c5b91b45ff978f5ebb8518dff2138b24092e44",
+            "bytes": 1495
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/WorkloadValidator.java",
+            "sha256": "c27fbf7e05e19484b91ceb91be042d0f7ca2d8c8dc7cd6221c16875a3e0557de",
+            "bytes": 23937
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/validation/WorkloadValidatorTest.java",
+            "sha256": "a9c794742f9ec95fc612bf62eea1078afc1c8856b38cddcfb780930cd3233c84",
+            "bytes": 37998
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/OperationMixTest.java",
+            "sha256": "5a8fe8e3125080434b8b1445a17e8c038841b02b3acff43166227d1ed6f5cad7",
+            "bytes": 6195
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/OperationTest.java",
+            "sha256": "e635a58321b474c76dece052d5c71af83788ed407881617815b75d717dbad257",
+            "bytes": 4439
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/WorkloadTest.java",
+            "sha256": "5718dc9d9fa14e5d25bec6e71727599f6c8c9b261edcd59e989d040cc1f1045a",
+            "bytes": 27461
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/DummyDb.java",
+            "sha256": "e3ab83d395ffa8576b445b0f2cc974baee32a013b03c7fabc818684441969d43",
+            "bytes": 5120
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/DummyResult.java",
+            "sha256": "e5691cfa76039ce85d4c86f9791c09a1f1c4045bbce442828b21ff5c778b6463",
+            "bytes": 160
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/DummyWorkload.java",
+            "sha256": "db3225a2e7845d0a4573a6f642775fee97d55d1091e952d1a78f7c3e41dfcfc2",
+            "bytes": 5752
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/DummyWorkloadFactory.java",
+            "sha256": "2def0f1a7b8e52ae17864e29e4bdb7acc8acb32bc3708138b4eacabd7fa69be8",
+            "bytes": 2450
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/NothingOperation.java",
+            "sha256": "f0865e957e6610a32f7dadd7781d694822bf27fca8508b256aabfb5cf3fb6504",
+            "bytes": 654
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/NothingOperationFactory.java",
+            "sha256": "617f81a38e0aa80e4f1ab620bf824822bc01968330576fb1f44be6ad8f017b93",
+            "bytes": 465
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/NothingOperationHandler.java",
+            "sha256": "4ec35fdd97660226ea07789caae0f7e758e05473bbd6da052597a89001fab977",
+            "bytes": 527
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/TimedNamedOperation1.java",
+            "sha256": "0eda8c47e27640e9cf57d51a0316d1ea6f144aedadc16c84c08159da1f558bd3",
+            "bytes": 1881
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/TimedNamedOperation1Factory.java",
+            "sha256": "ca6675ab070c14d84bf3ef430acd6d525f5bc9d8f801d4e0da2b9883a744cce6",
+            "bytes": 1168
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/TimedNamedOperation2.java",
+            "sha256": "85bd732feb6dd5532d0bd885a3390504fa051dfd27132e2bb646234e7a6dba4e",
+            "bytes": 1867
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/TimedNamedOperation2Factory.java",
+            "sha256": "391bc66f8cfe6c91e655a576330f4fda245af1ce6b3159d969e4318074fc176b",
+            "bytes": 1167
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/TimedNamedOperation3.java",
+            "sha256": "543a022cc965d6daa8ccaacdd118c6ecd26c8d6ebb13ad37c4ceb0392e7e730b",
+            "bytes": 1871
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/dummy/TimedNamedOperation3Factory.java",
+            "sha256": "f3b121999e55ec52b1f0e8e400e4f477015e1cfc0a8ea723bbda7ccf11088bf1",
+            "bytes": 1084
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveOperationEqualityTest.java",
+            "sha256": "55547b65afce3f8fb43bc3863970fe4e47c3be689b2581771b06059590b1bf37",
+            "bytes": 27449
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveOperationResultEqualityTest.java",
+            "sha256": "ff2ca72fbeea4c61c53e3b003c21f50c49c7551515a22f6c7cb57abcbb499996",
+            "bytes": 20469
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveReadEventStreamReadersTest.java",
+            "sha256": "d86134655df0ef017baf67db7741d59ab2e5ce28fed563c5b53e92230b04a728",
+            "bytes": 28329
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveReadEventStreamReadersTestData.java",
+            "sha256": "d56e1aba08646353abe6753f0a0eabcbf81f808601605e8a69df444d31df56a8",
+            "bytes": 4939
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveShortReadGeneratorTest.java",
+            "sha256": "c1b0c4b34b123f73d5cf0f9ee7ced9e2d17691eda29a1d5d52b0282aeb15b269",
+            "bytes": 37200
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveWorkloadTest.java",
+            "sha256": "856cc1794f1d2b500d644b543ac93564bbef4268397e5947d6398077a19983e9",
+            "bytes": 42099
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveWriteEventStreamReaderTest.java",
+            "sha256": "0177ac69ee9891f37102928d209e962bb34cc9766fdae2f8e0be9269b4b36bb2",
+            "bytes": 61394
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/InteractiveWriteEventStreamReaderTestData.java",
+            "sha256": "316f6600f8468745c1fd2230ae55c516e834a17796f868eabb38ad59e3a6d1df",
+            "bytes": 5053
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/performance/InteractiveEventStreamReaderPerformanceTest.java",
+            "sha256": "e511fefd634b09c22c89c6a8931e4acc9503357a412c3f81b53f3d6c8dff5403",
+            "bytes": 57819
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/interactive/performance/InteractiveWorkloadPerformanceTest.java",
+            "sha256": "51ddb7d50bb44344ac77aaef1fbaab85f56e1fb91d8610bb727ccc6af49498de",
+            "bytes": 16657
+        },
+        {
+            "path": "src/test/java/org/ldbcouncil/snb/driver/workloads/simple/SimpleWorkloadTest.java",
+            "sha256": "ce8e77c9c9f5ec4787806ee1ed426a2f3616e24d4493e1dd6afa835783907593",
+            "bytes": 4225
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_10_param.txt",
+            "sha256": "695788f2e3397943628137fbc9804fb5057ce33703baef0aabed4c518e4d05ec",
+            "bytes": 153
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_11_param.txt",
+            "sha256": "0e52eabd6df407e2051d63914966b0bdcfe8b6220a1da91db9f6b4e16cc1b4db",
+            "bytes": 267
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_12_param.txt",
+            "sha256": "06a612381ef393df3691fdf684fbaf0b55850f44f81a5cfe34b30e4a5123d1df",
+            "bytes": 262
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_13_param.txt",
+            "sha256": "1b5233542379203831aefa2e73b5fc1abeff9d724481068391d4795700594a9b",
+            "bytes": 252
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_14_param.txt",
+            "sha256": "7b793bd1a487ae460ec196df042db213954f05cdd48b4ef582274265105584cc",
+            "bytes": 222
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_1_param.txt",
+            "sha256": "d9d03b42e7b9e1d20da995365183b089c57e9cd6c7f8ae07be27da14bf23b21f",
+            "bytes": 183
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_2_param.txt",
+            "sha256": "9cbad8bfa39ad324663153c91515e1a619b30346ed21b8e1dd4ebe4eb3723353",
+            "bytes": 269
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_3_param.txt",
+            "sha256": "5107b5b47ce78930903ec1d45a9e738b72ea5e6a44bc2f3882777fce8362b1dc",
+            "bytes": 458
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_4_param.txt",
+            "sha256": "312149902ec31afd51adb44e16598875196722b27d4c4e8556facb18e34332f2",
+            "bytes": 311
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_5_param.txt",
+            "sha256": "a5a98e6b37da5604d7f846a70c11dab998c057a179cd49752f4979121818ff5c",
+            "bytes": 249
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_6_param.txt",
+            "sha256": "e0b29a0607e9b06237dc856c6ba8b53ed933dc7b430e2c284702fd4dddd7e076",
+            "bytes": 269
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_7_param.txt",
+            "sha256": "ead9b19a0ac187b3f0023976334f3e37e543c6113321197cfb57128864cc2955",
+            "bytes": 135
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_8_param.txt",
+            "sha256": "b8e5f5ba60e05941dac44637a16a77670b1eae17ed4fcaeff07653b59d462002",
+            "bytes": 135
+        },
+        {
+            "path": "src/test/resources/snb/interactive/interactive_9_param.txt",
+            "sha256": "35f14de0af5fb0e7aa50b7bb81ded47c0405879ff290a373dda438bcf152a814",
+            "bytes": 249
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream.properties",
+            "sha256": "4dc558233eb4dd623d78d13c0ca4015d66d8d8ba8e2277b6a91e48c52df5d6f1",
+            "bytes": 253
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_0_forum.csv",
+            "sha256": "26fa17b541e4fc683317506ea67c44514795db5337b9f8d6c81a26467704ae1a",
+            "bytes": 1019487
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_0_person.csv",
+            "sha256": "e07ecca8c0722ed1f4d041b16e0785b0ef3408388867ea8b80aa97c56765e143",
+            "bytes": 4931
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_1_forum.csv",
+            "sha256": "d5d37089a6eec3ddef84c159cb8d57c8917bd235f7047a470f778441622487c4",
+            "bytes": 847804
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_1_person.csv",
+            "sha256": "daf6aca0d2bb09c77e4d661501c5d46bfca24b79fa1db9d1460051203fd16cf9",
+            "bytes": 5825
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_2_forum.csv",
+            "sha256": "b449a0ce84681a06b8053c49c28e93f1065fd56359786aee3744718ba423f733",
+            "bytes": 628157
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_2_person.csv",
+            "sha256": "eea4c6bbb40900c0d5bdb57a196e59d644a26bea9eb03b9a84c72d57258532ae",
+            "bytes": 4637
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_3_forum.csv",
+            "sha256": "63eb41534f5369300914484874560c91fa5244cc6be4b1ff9ce5388451c535fb",
+            "bytes": 799198
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_3_person.csv",
+            "sha256": "70265200b43e379858196b9f1fa7caacb6da573be82778e81c93e50d987594b7",
+            "bytes": 5157
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_4_forum.csv",
+            "sha256": "d9fedf9b43b0e338ab3de4a8a48521e82ff6f463620007049d9f7b1dc96a039f",
+            "bytes": 718828
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_4_person.csv",
+            "sha256": "009a66077eea49bd884fb367ff4ecb9f92a5596af787fea84404a5e67d9ff3cd",
+            "bytes": 5019
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_5_forum.csv",
+            "sha256": "b6a47cc23401ba3ef9c229b7aa9ea17d53da76e4a0926633f86b56152789871c",
+            "bytes": 630917
+        },
+        {
+            "path": "src/test/resources/snb/interactive/updateStream_0_5_person.csv",
+            "sha256": "01f96203d05460c6e81a036c6a4897d4cf904de7df9c9810afb943a648d43876",
+            "bytes": 4466
+        }
+    ]
+}

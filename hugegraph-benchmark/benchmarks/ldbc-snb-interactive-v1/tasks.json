@@ -1,0 +1,1659 @@
+{
+  "schemaVersion": 1,
+  "id": "hgbench-snb-interactive-v1-sf100",
+  "version": "0.1.0-draft.3",
+  "scale": "100",
+  "operationCount": 29,
+  "resultOrganizationFields": [
+    {
+      "name": "organizationName",
+      "javaType": "String"
+    },
+    {
+      "name": "year",
+      "javaType": "int"
+    },
+    {
+      "name": "placeName",
+      "javaType": "String"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "IC1",
+      "title": "三跳内同名朋友",
+      "family": "complex",
+      "driverClass": "LdbcQuery1",
+      "driverType": 1,
+      "parameters": [
+        {
+          "name": "personIdQ1",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ1"
+        },
+        {
+          "name": "firstName",
+          "javaType": "String",
+          "constructorJsonName": "firstName"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-1.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery1.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery1Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "friendId",
+          "javaType": "long",
+          "constructorJsonName": "friendId"
+        },
+        {
+          "name": "friendLastName",
+          "javaType": "String",
+          "constructorJsonName": "friendLastName"
+        },
+        {
+          "name": "distanceFromPerson",
+          "javaType": "int",
+          "constructorJsonName": "distanceFromPerson"
+        },
+        {
+          "name": "friendBirthday",
+          "javaType": "long",
+          "constructorJsonName": "friendBirthday"
+        },
+        {
+          "name": "friendCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "friendCreationDate"
+        },
+        {
+          "name": "friendGender",
+          "javaType": "String",
+          "constructorJsonName": "friendGender"
+        },
+        {
+          "name": "friendBrowserUsed",
+          "javaType": "String",
+          "constructorJsonName": "friendBrowserUsed"
+        },
+        {
+          "name": "friendLocationIp",
+          "javaType": "String",
+          "constructorJsonName": "friendLocationIp"
+        },
+        {
+          "name": "friendEmails",
+          "javaType": "Iterable<String>",
+          "constructorJsonName": "friendEmails"
+        },
+        {
+          "name": "friendLanguages",
+          "javaType": "Iterable<String>",
+          "constructorJsonName": "friendLanguages"
+        },
+        {
+          "name": "friendCityName",
+          "javaType": "String",
+          "constructorJsonName": "friendCityName"
+        },
+        {
+          "name": "friendUniversities",
+          "javaType": "Iterable<Organization>",
+          "constructorJsonName": "friendUniversities"
+        },
+        {
+          "name": "friendCompanies",
+          "javaType": "Iterable<Organization>",
+          "constructorJsonName": "friendCompanies"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [
+        "friendEmails",
+        "friendLanguages",
+        "friendUniversities",
+        "friendCompanies"
+      ],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC2",
+      "title": "朋友最近的消息",
+      "family": "complex",
+      "driverClass": "LdbcQuery2",
+      "driverType": 2,
+      "parameters": [
+        {
+          "name": "personIdQ2",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ2"
+        },
+        {
+          "name": "maxDate",
+          "javaType": "Date",
+          "constructorJsonName": "maxDate"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-2.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery2.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery2Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "messageId",
+          "javaType": "long",
+          "constructorJsonName": "messageId"
+        },
+        {
+          "name": "messageContent",
+          "javaType": "String",
+          "constructorJsonName": "messageContent"
+        },
+        {
+          "name": "messageCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "messageCreationDate"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC3",
+      "title": "到访两个国家的朋友及二度朋友",
+      "family": "complex",
+      "driverClass": "LdbcQuery3",
+      "driverType": 3,
+      "parameters": [
+        {
+          "name": "personIdQ3",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ3"
+        },
+        {
+          "name": "countryXName",
+          "javaType": "String",
+          "constructorJsonName": "countryXName"
+        },
+        {
+          "name": "countryYName",
+          "javaType": "String",
+          "constructorJsonName": "countryYName"
+        },
+        {
+          "name": "startDate",
+          "javaType": "Date",
+          "constructorJsonName": "startDate"
+        },
+        {
+          "name": "durationDays",
+          "javaType": "int",
+          "constructorJsonName": "durationDays"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-3.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "xCount",
+          "javaType": "long",
+          "constructorJsonName": "xCount"
+        },
+        {
+          "name": "yCount",
+          "javaType": "long",
+          "constructorJsonName": "yCount"
+        },
+        {
+          "name": "count",
+          "javaType": "long",
+          "constructorJsonName": "count"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC4",
+      "title": "朋友讨论的新话题",
+      "family": "complex",
+      "driverClass": "LdbcQuery4",
+      "driverType": 4,
+      "parameters": [
+        {
+          "name": "personIdQ4",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ4"
+        },
+        {
+          "name": "startDate",
+          "javaType": "Date",
+          "constructorJsonName": "startDate"
+        },
+        {
+          "name": "durationDays",
+          "javaType": "int",
+          "constructorJsonName": "durationDays"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 10,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-4.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery4.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery4Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "tagName",
+          "javaType": "String",
+          "constructorJsonName": "tagName"
+        },
+        {
+          "name": "postCount",
+          "javaType": "int",
+          "constructorJsonName": "postCount"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC5",
+      "title": "朋友新加入的论坛",
+      "family": "complex",
+      "driverClass": "LdbcQuery5",
+      "driverType": 5,
+      "parameters": [
+        {
+          "name": "personIdQ5",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ5"
+        },
+        {
+          "name": "minDate",
+          "javaType": "Date",
+          "constructorJsonName": "minDate"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-5.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery5.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery5Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "forumTitle",
+          "javaType": "String",
+          "constructorJsonName": "forumTitle"
+        },
+        {
+          "name": "postCount",
+          "javaType": "int",
+          "constructorJsonName": "postCount"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC6",
+      "title": "标签共现",
+      "family": "complex",
+      "driverClass": "LdbcQuery6",
+      "driverType": 6,
+      "parameters": [
+        {
+          "name": "personIdQ6",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ6"
+        },
+        {
+          "name": "tagName",
+          "javaType": "String",
+          "constructorJsonName": "tagName"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 10,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-6.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery6.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery6Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "tagName",
+          "javaType": "String",
+          "constructorJsonName": "tagName"
+        },
+        {
+          "name": "postCount",
+          "javaType": "int",
+          "constructorJsonName": "postCount"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC7",
+      "title": "最近的点赞者",
+      "family": "complex",
+      "driverClass": "LdbcQuery7",
+      "driverType": 7,
+      "parameters": [
+        {
+          "name": "personIdQ7",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ7"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-7.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery7.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery7Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "likeCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "likeCreationDate"
+        },
+        {
+          "name": "messageId",
+          "javaType": "long",
+          "constructorJsonName": "messageId"
+        },
+        {
+          "name": "messageContent",
+          "javaType": "String",
+          "constructorJsonName": "messageContent"
+        },
+        {
+          "name": "minutesLatency",
+          "javaType": "int",
+          "constructorJsonName": "minutesLatency"
+        },
+        {
+          "name": "isNew",
+          "javaType": "boolean",
+          "constructorJsonName": "isNew"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC8",
+      "title": "最近的回复",
+      "family": "complex",
+      "driverClass": "LdbcQuery8",
+      "driverType": 8,
+      "parameters": [
+        {
+          "name": "personIdQ8",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ8"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-8.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery8.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery8Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "commentCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "commentCreationDate"
+        },
+        {
+          "name": "commentId",
+          "javaType": "long",
+          "constructorJsonName": "commentId"
+        },
+        {
+          "name": "commentContent",
+          "javaType": "String",
+          "constructorJsonName": "commentContent"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC9",
+      "title": "朋友及二度朋友的最近消息",
+      "family": "complex",
+      "driverClass": "LdbcQuery9",
+      "driverType": 9,
+      "parameters": [
+        {
+          "name": "personIdQ9",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ9"
+        },
+        {
+          "name": "maxDate",
+          "javaType": "Date",
+          "constructorJsonName": "maxDate"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-9.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery9.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery9Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "messageId",
+          "javaType": "long",
+          "constructorJsonName": "messageId"
+        },
+        {
+          "name": "messageContent",
+          "javaType": "String",
+          "constructorJsonName": "messageContent"
+        },
+        {
+          "name": "messageCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "messageCreationDate"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC10",
+      "title": "朋友推荐",
+      "family": "complex",
+      "driverClass": "LdbcQuery10",
+      "driverType": 10,
+      "parameters": [
+        {
+          "name": "personIdQ10",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ10"
+        },
+        {
+          "name": "month",
+          "javaType": "int",
+          "constructorJsonName": "month"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 10,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-10.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery10.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery10Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "commonInterestScore",
+          "javaType": "int",
+          "constructorJsonName": "commonInterestScore"
+        },
+        {
+          "name": "personGender",
+          "javaType": "String",
+          "constructorJsonName": "personGender"
+        },
+        {
+          "name": "personCityName",
+          "javaType": "String",
+          "constructorJsonName": "personCityName"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC11",
+      "title": "工作推荐",
+      "family": "complex",
+      "driverClass": "LdbcQuery11",
+      "driverType": 11,
+      "parameters": [
+        {
+          "name": "personIdQ11",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ11"
+        },
+        {
+          "name": "countryName",
+          "javaType": "String",
+          "constructorJsonName": "countryName"
+        },
+        {
+          "name": "workFromYear",
+          "javaType": "int",
+          "constructorJsonName": "workFromYear"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 10,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-11.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery11.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery11Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "organizationName",
+          "javaType": "String",
+          "constructorJsonName": "organizationName"
+        },
+        {
+          "name": "organizationWorkFromYear",
+          "javaType": "int",
+          "constructorJsonName": "organizationWorkFromYear"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC12",
+      "title": "主题专家",
+      "family": "complex",
+      "driverClass": "LdbcQuery12",
+      "driverType": 12,
+      "parameters": [
+        {
+          "name": "personIdQ12",
+          "javaType": "long",
+          "constructorJsonName": "personIdQ12"
+        },
+        {
+          "name": "tagClassName",
+          "javaType": "String",
+          "constructorJsonName": "tagClassName"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 20,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-12.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery12.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery12Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "tagNames",
+          "javaType": "Iterable<String>",
+          "constructorJsonName": "tagNames"
+        },
+        {
+          "name": "replyCount",
+          "javaType": "int",
+          "constructorJsonName": "replyCount"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [
+        "tagNames"
+      ],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC13",
+      "title": "最短路径长度",
+      "family": "complex",
+      "driverClass": "LdbcQuery13",
+      "driverType": 13,
+      "parameters": [
+        {
+          "name": "person1IdQ13StartNode",
+          "javaType": "long",
+          "constructorJsonName": "person1IdQ13StartNode"
+        },
+        {
+          "name": "person2IdQ13EndNode",
+          "javaType": "long",
+          "constructorJsonName": "person2IdQ13EndNode"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-13.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery13.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery13Result.java",
+      "resultShape": "row",
+      "resultFields": [
+        {
+          "name": "shortestPathLength",
+          "javaType": "int",
+          "constructorJsonName": "shortestPathLength"
+        }
+      ],
+      "comparison": "exact-row",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IC14",
+      "title": "全部最短路径及互动权重",
+      "family": "complex",
+      "driverClass": "LdbcQuery14",
+      "driverType": 14,
+      "parameters": [
+        {
+          "name": "person1IdQ14StartNode",
+          "javaType": "long",
+          "constructorJsonName": "person1IdQ14StartNode"
+        },
+        {
+          "name": "person2IdQ14EndNode",
+          "javaType": "long",
+          "constructorJsonName": "person2IdQ14EndNode"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-interactive-parameter-file",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-complex-14.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery14.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery14Result.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personIdsInPath",
+          "javaType": "Iterable<? extends Number>",
+          "constructorJsonName": "personIdsInPath"
+        },
+        {
+          "name": "pathWeight",
+          "javaType": "double",
+          "constructorJsonName": "pathWeight"
+        }
+      ],
+      "comparison": "ordered-paths-with-unordered-equal-weight-ties",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS1",
+      "title": "用户资料",
+      "family": "short",
+      "driverClass": "LdbcShortQuery1PersonProfile",
+      "driverType": 101,
+      "parameters": [
+        {
+          "name": "personIdSQ1",
+          "javaType": "long",
+          "constructorJsonName": "personIdSQ1"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-1.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery1PersonProfile.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery1PersonProfileResult.java",
+      "resultShape": "row",
+      "resultFields": [
+        {
+          "name": "firstName",
+          "javaType": "String",
+          "constructorJsonName": "firstName"
+        },
+        {
+          "name": "lastName",
+          "javaType": "String",
+          "constructorJsonName": "lastName"
+        },
+        {
+          "name": "birthday",
+          "javaType": "long",
+          "constructorJsonName": "birthday"
+        },
+        {
+          "name": "locationIp",
+          "javaType": "String",
+          "constructorJsonName": "locationIp"
+        },
+        {
+          "name": "browserUsed",
+          "javaType": "String",
+          "constructorJsonName": "browserUsed"
+        },
+        {
+          "name": "cityId",
+          "javaType": "long",
+          "constructorJsonName": "cityId"
+        },
+        {
+          "name": "gender",
+          "javaType": "String",
+          "constructorJsonName": "gender"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "long",
+          "constructorJsonName": "creationDate"
+        }
+      ],
+      "comparison": "exact-row",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS2",
+      "title": "用户最近的消息及原始帖子",
+      "family": "short",
+      "driverClass": "LdbcShortQuery2PersonPosts",
+      "driverType": 102,
+      "parameters": [
+        {
+          "name": "personIdSQ2",
+          "javaType": "long",
+          "constructorJsonName": "personIdSQ2"
+        },
+        {
+          "name": "limit",
+          "javaType": "int",
+          "constructorJsonName": "limit"
+        }
+      ],
+      "defaultLimit": 10,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-2.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery2PersonPosts.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery2PersonPostsResult.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "messageId",
+          "javaType": "long",
+          "constructorJsonName": "messageId"
+        },
+        {
+          "name": "messageContent",
+          "javaType": "String",
+          "constructorJsonName": "messageContent"
+        },
+        {
+          "name": "messageCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "messageCreationDate"
+        },
+        {
+          "name": "originalPostId",
+          "javaType": "long",
+          "constructorJsonName": "originalPostId"
+        },
+        {
+          "name": "originalPostAuthorId",
+          "javaType": "long",
+          "constructorJsonName": "originalPostAuthorId"
+        },
+        {
+          "name": "originalPostAuthorFirstName",
+          "javaType": "String",
+          "constructorJsonName": "originalPostAuthorFirstName"
+        },
+        {
+          "name": "originalPostAuthorLastName",
+          "javaType": "String",
+          "constructorJsonName": "originalPostAuthorLastName"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS3",
+      "title": "用户的朋友",
+      "family": "short",
+      "driverClass": "LdbcShortQuery3PersonFriends",
+      "driverType": 103,
+      "parameters": [
+        {
+          "name": "personIdSQ3",
+          "javaType": "long",
+          "constructorJsonName": "personIdSQ3"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-3.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery3PersonFriends.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery3PersonFriendsResult.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "firstName",
+          "javaType": "String",
+          "constructorJsonName": "firstName"
+        },
+        {
+          "name": "lastName",
+          "javaType": "String",
+          "constructorJsonName": "lastName"
+        },
+        {
+          "name": "friendshipCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "friendshipCreationDate"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS4",
+      "title": "消息内容",
+      "family": "short",
+      "driverClass": "LdbcShortQuery4MessageContent",
+      "driverType": 104,
+      "parameters": [
+        {
+          "name": "messageIdContent",
+          "javaType": "long",
+          "constructorJsonName": "messageIdContent"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-4.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery4MessageContent.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery4MessageContentResult.java",
+      "resultShape": "row",
+      "resultFields": [
+        {
+          "name": "messageContent",
+          "javaType": "String",
+          "constructorJsonName": "messageContent"
+        },
+        {
+          "name": "messageCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "messageCreationDate"
+        }
+      ],
+      "comparison": "exact-row",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS5",
+      "title": "消息作者",
+      "family": "short",
+      "driverClass": "LdbcShortQuery5MessageCreator",
+      "driverType": 105,
+      "parameters": [
+        {
+          "name": "messageIdCreator",
+          "javaType": "long",
+          "constructorJsonName": "messageIdCreator"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-5.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery5MessageCreator.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery5MessageCreatorResult.java",
+      "resultShape": "row",
+      "resultFields": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "firstName",
+          "javaType": "String",
+          "constructorJsonName": "firstName"
+        },
+        {
+          "name": "lastName",
+          "javaType": "String",
+          "constructorJsonName": "lastName"
+        }
+      ],
+      "comparison": "exact-row",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS6",
+      "title": "消息所属论坛",
+      "family": "short",
+      "driverClass": "LdbcShortQuery6MessageForum",
+      "driverType": 106,
+      "parameters": [
+        {
+          "name": "messageForumId",
+          "javaType": "long",
+          "constructorJsonName": "messageForumId"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-6.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery6MessageForum.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery6MessageForumResult.java",
+      "resultShape": "row",
+      "resultFields": [
+        {
+          "name": "forumId",
+          "javaType": "long",
+          "constructorJsonName": "forumId"
+        },
+        {
+          "name": "forumTitle",
+          "javaType": "String",
+          "constructorJsonName": "forumTitle"
+        },
+        {
+          "name": "moderatorId",
+          "javaType": "long",
+          "constructorJsonName": "moderatorId"
+        },
+        {
+          "name": "moderatorFirstName",
+          "javaType": "String",
+          "constructorJsonName": "moderatorFirstName"
+        },
+        {
+          "name": "moderatorLastName",
+          "javaType": "String",
+          "constructorJsonName": "moderatorLastName"
+        }
+      ],
+      "comparison": "exact-row",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IS7",
+      "title": "消息的直接回复",
+      "family": "short",
+      "driverClass": "LdbcShortQuery7MessageReplies",
+      "driverType": 107,
+      "parameters": [
+        {
+          "name": "messageRepliesId",
+          "javaType": "long",
+          "constructorJsonName": "messageRepliesId"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-driver-correlated-short-read",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-short-7.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery7MessageReplies.java",
+      "resultSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery7MessageRepliesResult.java",
+      "resultShape": "rows",
+      "resultFields": [
+        {
+          "name": "commentId",
+          "javaType": "long",
+          "constructorJsonName": "commentId"
+        },
+        {
+          "name": "commentContent",
+          "javaType": "String",
+          "constructorJsonName": "commentContent"
+        },
+        {
+          "name": "commentCreationDate",
+          "javaType": "long",
+          "constructorJsonName": "commentCreationDate"
+        },
+        {
+          "name": "replyAuthorId",
+          "javaType": "long",
+          "constructorJsonName": "replyAuthorId"
+        },
+        {
+          "name": "replyAuthorFirstName",
+          "javaType": "String",
+          "constructorJsonName": "replyAuthorFirstName"
+        },
+        {
+          "name": "replyAuthorLastName",
+          "javaType": "String",
+          "constructorJsonName": "replyAuthorLastName"
+        },
+        {
+          "name": "isReplyAuthorKnowsOriginalMessageAuthor",
+          "javaType": "boolean",
+          "constructorJsonName": "isReplyAuthorKnowsOriginalMessageAuthor"
+        }
+      ],
+      "comparison": "ordered-exact-rows",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU1",
+      "title": "添加用户",
+      "family": "update",
+      "driverClass": "LdbcUpdate1AddPerson",
+      "driverType": 1001,
+      "parameters": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "personFirstName",
+          "javaType": "String",
+          "constructorJsonName": "personFirstName"
+        },
+        {
+          "name": "personLastName",
+          "javaType": "String",
+          "constructorJsonName": "personLastName"
+        },
+        {
+          "name": "gender",
+          "javaType": "String",
+          "constructorJsonName": "gender"
+        },
+        {
+          "name": "birthday",
+          "javaType": "Date",
+          "constructorJsonName": "birthday"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        },
+        {
+          "name": "locationIp",
+          "javaType": "String",
+          "constructorJsonName": "locationIp"
+        },
+        {
+          "name": "browserUsed",
+          "javaType": "String",
+          "constructorJsonName": "browserUsed"
+        },
+        {
+          "name": "cityId",
+          "javaType": "long",
+          "constructorJsonName": "cityId"
+        },
+        {
+          "name": "languages",
+          "javaType": "List<String>",
+          "constructorJsonName": "languages"
+        },
+        {
+          "name": "emails",
+          "javaType": "List<String>",
+          "constructorJsonName": "emails"
+        },
+        {
+          "name": "tagIds",
+          "javaType": "List<Long>",
+          "constructorJsonName": "tagIds"
+        },
+        {
+          "name": "studyAt",
+          "javaType": "List<Organization>",
+          "constructorJsonName": "studyAt"
+        },
+        {
+          "name": "workAt",
+          "javaType": "List<Organization>",
+          "constructorJsonName": "workAt"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-1.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate1AddPerson.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU2",
+      "title": "添加帖子点赞",
+      "family": "update",
+      "driverClass": "LdbcUpdate2AddPostLike",
+      "driverType": 1002,
+      "parameters": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "postId",
+          "javaType": "long",
+          "constructorJsonName": "postId"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-2.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate2AddPostLike.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU3",
+      "title": "添加评论点赞",
+      "family": "update",
+      "driverClass": "LdbcUpdate3AddCommentLike",
+      "driverType": 1003,
+      "parameters": [
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "commentId",
+          "javaType": "long",
+          "constructorJsonName": "commentId"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-3.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate3AddCommentLike.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU4",
+      "title": "添加论坛",
+      "family": "update",
+      "driverClass": "LdbcUpdate4AddForum",
+      "driverType": 1004,
+      "parameters": [
+        {
+          "name": "forumId",
+          "javaType": "long",
+          "constructorJsonName": "forumId"
+        },
+        {
+          "name": "forumTitle",
+          "javaType": "String",
+          "constructorJsonName": "forumTitle"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        },
+        {
+          "name": "moderatorPersonId",
+          "javaType": "long",
+          "constructorJsonName": "moderatorPersonId"
+        },
+        {
+          "name": "tagIds",
+          "javaType": "List<Long>",
+          "constructorJsonName": "tagIds"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-4.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate4AddForum.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU5",
+      "title": "添加论坛成员",
+      "family": "update",
+      "driverClass": "LdbcUpdate5AddForumMembership",
+      "driverType": 1005,
+      "parameters": [
+        {
+          "name": "forumId",
+          "javaType": "long",
+          "constructorJsonName": "forumId"
+        },
+        {
+          "name": "personId",
+          "javaType": "long",
+          "constructorJsonName": "personId"
+        },
+        {
+          "name": "joinDate",
+          "javaType": "Date",
+          "constructorJsonName": "joinDate"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-5.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate5AddForumMembership.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU6",
+      "title": "添加帖子",
+      "family": "update",
+      "driverClass": "LdbcUpdate6AddPost",
+      "driverType": 1006,
+      "parameters": [
+        {
+          "name": "postId",
+          "javaType": "long",
+          "constructorJsonName": "postId"
+        },
+        {
+          "name": "imageFile",
+          "javaType": "String",
+          "constructorJsonName": "imageFile"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        },
+        {
+          "name": "locationIp",
+          "javaType": "String",
+          "constructorJsonName": "locationIp"
+        },
+        {
+          "name": "browserUsed",
+          "javaType": "String",
+          "constructorJsonName": "browserUsed"
+        },
+        {
+          "name": "language",
+          "javaType": "String",
+          "constructorJsonName": "language"
+        },
+        {
+          "name": "content",
+          "javaType": "String",
+          "constructorJsonName": "content"
+        },
+        {
+          "name": "length",
+          "javaType": "int",
+          "constructorJsonName": "length"
+        },
+        {
+          "name": "authorPersonId",
+          "javaType": "long",
+          "constructorJsonName": "authorPersonId"
+        },
+        {
+          "name": "forumId",
+          "javaType": "long",
+          "constructorJsonName": "forumId"
+        },
+        {
+          "name": "countryId",
+          "javaType": "long",
+          "constructorJsonName": "countryId"
+        },
+        {
+          "name": "tagIds",
+          "javaType": "List<Long>",
+          "constructorJsonName": "tagIds"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-6.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate6AddPost.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    },
+    {
+      "id": "IU7",
+      "title": "添加评论",
+      "family": "update",
+      "driverClass": "LdbcUpdate7AddComment",
+      "driverType": 1007,
+      "parameters": [
+        {
+          "name": "commentId",
+          "javaType": "long",
+          "constructorJsonName": "commentId"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        },
+        {
+          "name": "locationIp",
+          "javaType": "String",
+          "constructorJsonName": "locationIp"
+        },
+        {
+          "name": "browserUsed",
+          "javaType": "String",
+          "constructorJsonName": "browserUsed"
+        },
+        {
+          "name": "content",
+          "javaType": "String",
+          "constructorJsonName": "content"
+        },
+        {
+          "name": "length",
+          "javaType": "int",
+          "constructorJsonName": "length"
+        },
+        {
+          "name": "authorPersonId",
+          "javaType": "long",
+          "constructorJsonName": "tagIdauthorPersonIds"
+        },
+        {
+          "name": "countryId",
+          "javaType": "long",
+          "constructorJsonName": "countryId"
+        },
+        {
+          "name": "replyToPostId",
+          "javaType": "long",
+          "constructorJsonName": "replyToPostId"
+        },
+        {
+          "name": "replyToCommentId",
+          "javaType": "long",
+          "constructorJsonName": "tagreplyToCommentIdIds"
+        },
+        {
+          "name": "tagIds",
+          "javaType": "List<Long>",
+          "constructorJsonName": "tagIds"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-7.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate7AddComment.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": [
+        "Pinned constructor JSON names tagIdauthorPersonIds and tagreplyToCommentIdIds differ from Java fields/getters authorPersonId and replyToCommentId. Unmodified operation and result DTOs pass the Jackson 2.13.2 round-trip contract check, including parameterMap equality and distinct >2^53 IDs; full ordered driver validation remains required."
+      ]
+    },
+    {
+      "id": "IU8",
+      "title": "添加朋友关系",
+      "family": "update",
+      "driverClass": "LdbcUpdate8AddFriendship",
+      "driverType": 1008,
+      "parameters": [
+        {
+          "name": "person1Id",
+          "javaType": "long",
+          "constructorJsonName": "person1Id"
+        },
+        {
+          "name": "person2Id",
+          "javaType": "long",
+          "constructorJsonName": "person2Id"
+        },
+        {
+          "name": "creationDate",
+          "javaType": "Date",
+          "constructorJsonName": "creationDate"
+        }
+      ],
+      "defaultLimit": null,
+      "parameterSource": "official-SF100-update-stream",
+      "referenceQuery": "reference/impls/cypher/queries/interactive-update-8.cypher",
+      "operationSource": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate8AddFriendship.java",
+      "resultSource": null,
+      "resultShape": "none",
+      "resultFields": [],
+      "comparison": "committed-update-and-dependent-reads",
+      "unorderedFields": [],
+      "compatibilityNotes": []
+    }
+  ]
+}

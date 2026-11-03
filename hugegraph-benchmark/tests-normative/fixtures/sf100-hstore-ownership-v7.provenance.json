@@ -1,0 +1,14 @@
+{
+  "kind": "frozen-supervisor-regression-functions",
+  "originalSource": "phase1-sf100-real-v1/source-v7/supervise-hstore-v4.py",
+  "originalSourceSha256": "37b37e57ae8dd6d0ea2178323e8caeddb090bc7c4155df787919c26481b2ebb4",
+  "selectedFunctions": [
+    "owned_ids",
+    "stop_owned",
+    "guard"
+  ],
+  "fixtureSha256": "e2d6d32f6a7bfd797a9eb4094b67a050a678dd0662bc348828a5e14a3636a879",
+  "scope": "Same historical functions tested before packaging; mocked I/O, no Docker or SF100 operation",
+  "currentSupervisorVersionVerified": false,
+  "selectedFunctionsSha256": "996dc6ffb7bc1f675ec801d7e5324809f2f6942ed432ac883cb9ef2941ac1e5c"
+}

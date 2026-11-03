@@ -1,0 +1,146 @@
+{
+    "repository": "ldbc/ldbc_snb_interactive_v1_impls",
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f",
+    "files": [
+        {
+            "path": "LICENSE.txt",
+            "bytes": 11560,
+            "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+        },
+        {
+            "path": "NOTICE.txt",
+            "bytes": 616,
+            "sha256": "ae123faf9c92773ae36a34c6b58a72cbdaf275cf466eabe55566c55cf01017e3"
+        },
+        {
+            "path": "common/pom.xml",
+            "bytes": 1606,
+            "sha256": "3f00786a6d52edafae177d3bc51e01c73f6772f5eb61e0e4f085668724e29e6c"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/BaseDbConnectionState.java",
+            "bytes": 1169,
+            "sha256": "8f2e368af61f0124438b743f3de52307766fc47db64248e5dd3552c17f27b32b"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/QueryStore.java",
+            "bytes": 44998,
+            "sha256": "4fd966030507c82e3ff626e2260cb6a2f62b92255df867e8f13dc8c7f963612e"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/QueryType.java",
+            "bytes": 3797,
+            "sha256": "b37411e25f957312e3cdba2959d7a772cdd5e4a1f1f8023701b8e60015c2b5a0"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/SnbTest.java",
+            "bytes": 1624,
+            "sha256": "0760c0f010cd4729f3fdf90b323fdd412ad1bfeaa1e6e852e5a0d7cd33f822e9"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/converter/Converter.java",
+            "bytes": 3567,
+            "sha256": "e27be5903d11af7152bbd3f307449821013a847051f83eeeaeada0df5b9cb311"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/db/BaseDb.java",
+            "bytes": 562,
+            "sha256": "32613d6da0e833a8f22c861f5dcdad49094e6db7a632c33f0a94535f248c1f7b"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/interactive/InteractiveTest.java",
+            "bytes": 8633,
+            "sha256": "d7e371d5bb75744c1a26c1817b8a8ee14051e98a1fcbce9f898e619f03b5c81a"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/operationhandlers/ListOperationHandler.java",
+            "bytes": 809,
+            "sha256": "aedebd6182ac6ae33347d66654ca9f7b7810399aee5dc247779f4b8c41b14a9f"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/operationhandlers/MultipleUpdateOperationHandler.java",
+            "bytes": 858,
+            "sha256": "ef8e31384d36c97916a70e84c16973f655d3150e7998c25df160cfb335726d34"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/operationhandlers/SingletonOperationHandler.java",
+            "bytes": 784,
+            "sha256": "535d41119a9845d1f6321f5c78032bff5d366f0b431528d74d7d1dfe148ba9b0"
+        },
+        {
+            "path": "common/src/main/java/org/ldbcouncil/snb/impls/workloads/operationhandlers/UpdateOperationHandler.java",
+            "bytes": 820,
+            "sha256": "256897d5e1b9ae268e9f4104de6fcea0b6d9c13dab709eab466405e5021c1f31"
+        },
+        {
+            "path": "cypher/pom.xml",
+            "bytes": 1642,
+            "sha256": "f1c4b11a8f9dfc4142fa1fe7c12e06617b5b257e4a46bad848968a3c413bf09b"
+        },
+        {
+            "path": "cypher/scripts/headers.txt",
+            "bytes": 2295,
+            "sha256": "b930c6e87f4f7d058a6f56d46b3d380d4d6e0a7bb19fd6375f8eaa4a67bf8263"
+        },
+        {
+            "path": "cypher/scripts/import-to-neo4j.sh",
+            "bytes": 3567,
+            "sha256": "cf94f4d0fb6306ab1be44a8f01746004da0c956bcad845694039fd993226d4e3"
+        },
+        {
+            "path": "cypher/scripts/indices.cypher",
+            "bytes": 755,
+            "sha256": "9faf6aba965b8c69c5eef9e2d01d0b7173f93b15e5c3cc9bac3b174ff0e89d19"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/CypherDb.java",
+            "bytes": 38766,
+            "sha256": "1ea022e96352419fc2a6f05e78609783b8f44ecd8cd3fda05c675d3c60def1bf"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/CypherDbConnectionState.java",
+            "bytes": 1174,
+            "sha256": "b2d58e23dd99b56f35c545d7827531ddfc98542fe462c3d3cf3b049b1b939886"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/CypherQueryStore.java",
+            "bytes": 7662,
+            "sha256": "cc7e3662e4e009ce01ad885745b8cd672dea4773a70cb2d48ccf7f839a9acce2"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/converter/CypherConverter.java",
+            "bytes": 1137,
+            "sha256": "7112db3b1843587ae6e0ae8b8227b959ad8844a1906958da32b62ed44692a5bb"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/interactive/CypherInteractiveDb.java",
+            "bytes": 5252,
+            "sha256": "4517a0aedece471098d1d370b72c39168ba4302dd1f7d0aae355d826b3ef2345"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/operationhandlers/CypherIC13OperationHandler.java",
+            "bytes": 2525,
+            "sha256": "a20d6b18812314d009833e34c4522e3ac10aad08bcf76905b2978457b795ab1d"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/operationhandlers/CypherListOperationHandler.java",
+            "bytes": 2154,
+            "sha256": "7df1bf0eced1a05f7428b26ad23c448794f6d3e65eb29e91c92e2a383b52209a"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/operationhandlers/CypherSingletonOperationHandler.java",
+            "bytes": 2176,
+            "sha256": "aa5e64525f388878cd62e5033d2c1172ff2ec5bf82a4e6e85e165cbad6f1d30e"
+        },
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/operationhandlers/CypherUpdateOperationHandler.java",
+            "bytes": 1783,
+            "sha256": "037c49484bc5979a197e06cd382e6b684a7604b2dfd41fd0949d2eaac4fa68b0"
+        },
+        {
+            "path": "pom.xml",
+            "bytes": 4212,
+            "sha256": "8f8bcfae7c64a18720c087b0bbe875bce43d9f8575bddf420b28ada61bc34d3d"
+        }
+    ]
+}

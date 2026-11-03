@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "suiteVersion": "0.1.0-draft.3",
+  "status": "local-specification-candidate",
+  "gates": [
+    {
+      "id": "specification-and-29-task-contracts",
+      "status": "local-verification-available",
+      "evidence": "bundle.lock.json"
+    },
+    {
+      "id": "answer-evidence-checker",
+      "status": "local-verification-available",
+      "evidence": "verify.py; tests-normative/test_ldbc_spec.py"
+    },
+    {
+      "id": "sf100-asset-and-reference-lock",
+      "status": "assets-and-inventories-frozen; reference-answers-pending",
+      "evidence": "assets/sf100/inventories.json"
+    },
+    {
+      "id": "driver-serialization-compatibility",
+      "status": "full-driver-built-and-official-validator-unit-verified; SF100-stream-pending",
+      "evidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "complete-hugegraph-adapter-and-live-correctness",
+      "status": "29-operation-adapter-and-HugeGraph-memory-unit-verified; HStore-SF100-pending",
+      "evidence": "coverage.json"
+    },
+    {
+      "id": "loader-full-shard-reconciliation",
+      "status": "implemented-unit-verified; SF100-live-import-pending",
+      "evidence": "tools/ldbc-reconcile.py; tests-normative/test_ldbc_reconcile.py; evidence/phase1-adapter/hugegraph.json (tool repository)"
+    },
+    {
+      "id": "environment-profile-values-and-calibration",
+      "status": "pending-resource-task",
+      "evidence": "calibration-plan.json"
+    },
+    {
+      "id": "independent-reproduction",
+      "status": "pending",
+      "evidence": null
+    },
+    {
+      "id": "repository-review-and-publication",
+      "status": "pending",
+      "evidence": null
+    }
+  ]
+}

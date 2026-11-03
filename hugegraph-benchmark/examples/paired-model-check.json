@@ -1,0 +1,9 @@
+{
+    "schemaVersion": 1,
+    "kind": "paired-model-check",
+    "seed": "p0-frozen-20261022-v1",
+    "trials": 200,
+    "pairs": 20,
+    "replicates": 4000,
+    "maxMilliseconds": 300000
+}

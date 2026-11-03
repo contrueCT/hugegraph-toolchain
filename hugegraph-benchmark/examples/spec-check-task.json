@@ -1,0 +1,15 @@
+{
+    "schemaVersion": 1,
+    "kind": "component-task",
+    "name": "sf100-specification-integrity",
+    "command": ["python3", "benchmarks/ldbc-snb-interactive-v1/verify.py", "verify"],
+    "cwd": "..",
+    "trackedFiles": [
+        "benchmarks/ldbc-snb-interactive-v1/verify.py",
+        "benchmarks/ldbc-snb-interactive-v1/bundle.lock.json"
+    ],
+    "effect": "read-only",
+    "timeoutMs": 30000,
+    "terminateGraceMs": 1000,
+    "maxLogBytes": 1048576
+}

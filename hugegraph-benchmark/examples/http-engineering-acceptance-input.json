@@ -1,0 +1,12 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-engineering-acceptance-input",
+    "evidence": {
+        "aa005": null,
+        "repeatabilityAa": null,
+        "knownRegression": null,
+        "driverHeadroom": null,
+        "observerCost": null
+    },
+    "comparison": null
+}

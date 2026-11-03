@@ -1,0 +1,12 @@
+{
+    "graphs": {
+        "tiny-numeric": "http://127.0.0.1:8080/graphspaces/DEFAULT/graphs/hgbench_numeric",
+        "tiny-string": "http://127.0.0.1:8080/graphspaces/DEFAULT/graphs/hgbench_string"
+    },
+    "sut": {
+        "name": "HugeGraph",
+        "revision": "REPLACE_WITH_EXACT_COMMIT_OR_ARTIFACT_DIGEST",
+        "backend": "hstore",
+        "environmentRef": "REPLACE_WITH_ENVIRONMENT_EVIDENCE_PATH"
+    }
+}

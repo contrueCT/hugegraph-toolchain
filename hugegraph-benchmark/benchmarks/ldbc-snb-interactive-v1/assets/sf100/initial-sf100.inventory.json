@@ -1,0 +1,910 @@
+{
+  "schemaVersion": 1,
+  "asset": {
+    "id": "initial-sf100",
+    "role": "initial",
+    "scale": "100",
+    "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf100-CsvBasic-LongDateFormatter.tar.zst",
+    "sha256": "9116c6ae0f634076eb56881e8f93cdb64e751726e66d644a5b6e6ab76fb16dac",
+    "bytes": 26153676880,
+    "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+  },
+  "files": [
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_0_0.csv",
+      "bytes": 37765344,
+      "sha256": "037f0dca925d712c4466c1138d3bd0ac6e0c2d5859222a06445d4ae4eb6d1374",
+      "rows": 448626,
+      "columns": [
+        "id",
+        "firstName",
+        "lastName",
+        "gender",
+        "birthday",
+        "creationDate",
+        "locationIP",
+        "browserUsed"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_0_0.csv.crc",
+      "bytes": 295052,
+      "sha256": "774f58a5690f988981b06d5ea5c53faa22a563aa7ba6cfa5bddfc01a3419f7d5"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_speaks_language_0_0.csv",
+      "bytes": 17037885,
+      "sha256": "97d3526c68288a2f65d984905d715bbf56ada5bd088b59cba990de4cc5c087a0",
+      "rows": 988599,
+      "columns": [
+        "Person.id",
+        "language"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_speaks_language_0_0.csv.crc",
+      "bytes": 133120,
+      "sha256": "2195f9e8e995e31a1246e87422fcfd470c242f1a1e1179f72f375165daac5aa9"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_email_emailaddress_0_0.csv",
+      "bytes": 42128806,
+      "sha256": "6a50c2b5911a86eab98aa7a4f1173789021725d1b75ec1ea8a3c1ba88317ce0a",
+      "rows": 956821,
+      "columns": [
+        "Person.id",
+        "email"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_email_emailaddress_0_0.csv.crc",
+      "bytes": 329140,
+      "sha256": "9dba38b27ad19b2f45fa56d68759318639aa19edb59ffc4952befb199899003e"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_isLocatedIn_place_0_0.csv",
+      "bytes": 8335223,
+      "sha256": "9c121d816bf74dc8eaaf86480f579f50b26992ac40c593e4d85d768fd02f707d",
+      "rows": 448626,
+      "columns": [
+        "Person.id",
+        "Place.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_isLocatedIn_place_0_0.csv.crc",
+      "bytes": 65128,
+      "sha256": "0b8d7b285de7929d14115f717b86c7e0b3482391e2717cf2163e5af897109774"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_hasInterest_tag_0_0.csv",
+      "bytes": 200337678,
+      "sha256": "4fca5027d5f9f3fac8e7d79a17ab34f77e4406f5f4dae8faaff0b47f04f54fa5",
+      "rows": 10471962,
+      "columns": [
+        "Person.id",
+        "Tag.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_hasInterest_tag_0_0.csv.crc",
+      "bytes": 1565148,
+      "sha256": "05f841eb160a408792b0cc9bc2d21a23b3f64c3ca9a655f40985ca9a3f518e8b"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_workAt_organisation_0_0.csv",
+      "bytes": 22861400,
+      "sha256": "c7d1691e2117bdf9053852ba00114ca9b943b5e3bfe9b33f11988c488a7e4cac",
+      "rows": 976349,
+      "columns": [
+        "Person.id",
+        "Organisation.id",
+        "workFrom"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_workAt_organisation_0_0.csv.crc",
+      "bytes": 178616,
+      "sha256": "c51abf7b80d90da7e683e09e7a2c1c73277c0cc266768f6aad4af48d3d614f19"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_studyAt_organisation_0_0.csv",
+      "bytes": 8705428,
+      "sha256": "a9780050fa7a638b03d0dd23d426f30ece07b835d1bf44cfff4a25df28c67c3a",
+      "rows": 359212,
+      "columns": [
+        "Person.id",
+        "Organisation.id",
+        "classYear"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_studyAt_organisation_0_0.csv.crc",
+      "bytes": 68020,
+      "sha256": "3eccb6e95b08014a0eb5d1d3190831cb25ba21f2b1213a2152e4f3a5d51db1da"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_knows_person_0_0.csv",
+      "bytes": 846927323,
+      "sha256": "2bdb10a63b11a975f7fe95679c63bf99489983f5ca49a753d589b805eefe2e1b",
+      "rows": 19941198,
+      "columns": [
+        "Person.id",
+        "Person.id",
+        "creationDate"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_knows_person_0_0.csv.crc",
+      "bytes": 6616628,
+      "sha256": "5610dd7bf98bfe9ddb4e3fb634910edc2bfca9509f681ee3892eb55baf7fd0ef"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/forum_0_0.csv",
+      "bytes": 218472868,
+      "sha256": "1e79fe56b37cb5a9b1c29d32c0066b05c4cf0977db55ee0dce6aa26114ae6297",
+      "rows": 4080604,
+      "columns": [
+        "id",
+        "title",
+        "creationDate"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.forum_0_0.csv.crc",
+      "bytes": 1706828,
+      "sha256": "76b7dc8c96f74cc2e9af33c6df541dceead13f604f3a73fbc7fae5d59be7c3db"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/forum_containerOf_post_0_0.csv",
+      "bytes": 1712125198,
+      "sha256": "8359377e79f5e7483665079d580b074fc2c9d3f13edcb5f8ee23b6965f65c82c",
+      "rows": 57987023,
+      "columns": [
+        "Forum.id",
+        "Post.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.forum_containerOf_post_0_0.csv.crc",
+      "bytes": 13375988,
+      "sha256": "c3e730e869ead689858df2a2e2dfdee6c5ddbc0b244b68fe282a4f014943d300"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/forum_hasMember_person_0_0.csv",
+      "bytes": 7710579303,
+      "sha256": "46f1f58ae922b45c4fd93f9bed98c34bfc83a6151b6d96d77c937a142aa337fe",
+      "rows": 179874360,
+      "columns": [
+        "Forum.id",
+        "Person.id",
+        "joinDate"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.forum_hasMember_person_0_0.csv.crc",
+      "bytes": 60238912,
+      "sha256": "125fc400d702ac14d182f3c14eaa4d57ac6687550bda8c767814eb4f98ea1f3e"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/forum_hasModerator_person_0_0.csv",
+      "bytes": 116550372,
+      "sha256": "e153e2e18bd0217afd09a699d5e3a84afaaf90eba2022debc45672504293c680",
+      "rows": 4080604,
+      "columns": [
+        "Forum.id",
+        "Person.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.forum_hasModerator_person_0_0.csv.crc",
+      "bytes": 910560,
+      "sha256": "27295d8fbef343854902ac641296a4867ec10d6581396d895f78b86eaf55dabc"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/forum_hasTag_tag_0_0.csv",
+      "bytes": 274489559,
+      "sha256": "1ddbb962c0b9c201ccc873851b9e6b3c62acc4528401279b49d90b2784eb1680",
+      "rows": 14103940,
+      "columns": [
+        "Forum.id",
+        "Tag.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.forum_hasTag_tag_0_0.csv.crc",
+      "bytes": 2144460,
+      "sha256": "e7f9de3a8af409e0304b74c52b64e23e25a01a0b063b28ce4383d2bba8609284"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_likes_post_0_0.csv",
+      "bytes": 4297841389,
+      "sha256": "82fd38ac7c7ee05333814d2c5f5c2588a821c6895fc484fcb132a445cbac3a7c",
+      "rows": 99515108,
+      "columns": [
+        "Person.id",
+        "Post.id",
+        "creationDate"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_likes_post_0_0.csv.crc",
+      "bytes": 33576896,
+      "sha256": "76eb56795db2a76a66aa2c82f16fd431f0717f9c9375021d16facd3346a26b29"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/person_likes_comment_0_0.csv",
+      "bytes": 10467754839,
+      "sha256": "a371fdab89dbc24215558c11659ac0f0ca2abbad4d719feeb075a498efe76c0d",
+      "rows": 241957834,
+      "columns": [
+        "Person.id",
+        "Comment.id",
+        "creationDate"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.person_likes_comment_0_0.csv.crc",
+      "bytes": 81779344,
+      "sha256": "f0ce66aeeefeb076e5625a6826b4b6b13ee27d8a2a657f925f42d9a23936dd0f"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/post_0_0.csv",
+      "bytes": 6814449360,
+      "sha256": "44d6a5fbbf12458e8180ad017530109b31c2498bd85507b9da7fcc7b01bc4300",
+      "rows": 57987023,
+      "columns": [
+        "id",
+        "imageFile",
+        "creationDate",
+        "locationIP",
+        "browserUsed",
+        "language",
+        "content",
+        "length"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.post_0_0.csv.crc",
+      "bytes": 53237896,
+      "sha256": "e0a94759fb2d972b687eb6893427829203cf4187e5a63670de8899182e850e58"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/post_hasCreator_person_0_0.csv",
+      "bytes": 1653384689,
+      "sha256": "9ef90ee8156466aa1bee77429cfd8b334ac28f9af8afe1d85acacf5640b5a560",
+      "rows": 57987023,
+      "columns": [
+        "Post.id",
+        "Person.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.post_hasCreator_person_0_0.csv.crc",
+      "bytes": 12917076,
+      "sha256": "331197dc41784b84c1b4d88a451403d663f32fb826d18fbea0d28228d684477a"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/post_hasTag_tag_0_0.csv",
+      "bytes": 1528687029,
+      "sha256": "1ac73a11b911f9daeb72c291102f431d7e5ccbfe572f76afdd99614bd8bd1d48",
+      "rows": 77342991,
+      "columns": [
+        "Post.id",
+        "Tag.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.post_hasTag_tag_0_0.csv.crc",
+      "bytes": 11942876,
+      "sha256": "27f10f5e938b24b7af7072f3445c2289817651c8bc875c7217e032cf23a22489"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/post_isLocatedIn_place_0_0.csv",
+      "bytes": 1027934869,
+      "sha256": "59746736b5bd021bdbb491f1c47f749a457edc81d5db68b55842b1683afd93c0",
+      "rows": 57987023,
+      "columns": [
+        "Post.id",
+        "Place.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.post_isLocatedIn_place_0_0.csv.crc",
+      "bytes": 8030752,
+      "sha256": "f7dd6761e904ce2d270b146eb8198100ec52f81e712c37bc702144678f9a6aad"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/comment_0_0.csv",
+      "bytes": 19635627085,
+      "sha256": "b79d993e97ee2f2de777cb489c9922442f470cd3c3e316b9e17310a83b520122",
+      "rows": 220096052,
+      "columns": [
+        "id",
+        "creationDate",
+        "locationIP",
+        "browserUsed",
+        "content",
+        "length"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.comment_0_0.csv.crc",
+      "bytes": 153403348,
+      "sha256": "73d461e1ec1a6f78c66d81aab511fe6374b08c8f591d8d631501523f07716a77"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/comment_hasCreator_person_0_0.csv",
+      "bytes": 6245647863,
+      "sha256": "501695b9a2ca9ae932ce3939c5f91c9cf7c8c108dc52f54fcfbd0ad3f0270a9b",
+      "rows": 220096052,
+      "columns": [
+        "Comment.id",
+        "Person.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.comment_hasCreator_person_0_0.csv.crc",
+      "bytes": 48794132,
+      "sha256": "d31d3610780d02269e485f42ef1f0126bf5f04750c1bfe8017aa8ead3d8f3e9d"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/comment_hasTag_tag_0_0.csv",
+      "bytes": 5834636660,
+      "sha256": "6d8bdd7b79b743dfea887ab74a53e9f4cab6d0391df9134f35d2e7bff8f3bcc2",
+      "rows": 292166773,
+      "columns": [
+        "Comment.id",
+        "Tag.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.comment_hasTag_tag_0_0.csv.crc",
+      "bytes": 45583108,
+      "sha256": "fbb85efbd6d5b2d07f41d70dac1b25408c574a6fa914d299e21a3df87cd44a3f"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/comment_isLocatedIn_place_0_0.csv",
+      "bytes": 3896374562,
+      "sha256": "a85b102efd41a755407a71216838e2c4b116a66d4e8f4d63aa2089eabcc4991c",
+      "rows": 220096052,
+      "columns": [
+        "Comment.id",
+        "Place.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.comment_isLocatedIn_place_0_0.csv.crc",
+      "bytes": 30440436,
+      "sha256": "2c6548623d98bb1cf60b742f1dee931d2e15151842adfc7fd02b465ad6c80d22"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/comment_replyOf_post_0_0.csv",
+      "bytes": 3237474414,
+      "sha256": "5110a36406da72f3da6e46674a24b6b7dd4c57712d9ea2612e507fa611e859d4",
+      "rows": 108455486,
+      "columns": [
+        "Comment.id",
+        "Post.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.comment_replyOf_post_0_0.csv.crc",
+      "bytes": 25292780,
+      "sha256": "a8e5a2416ebdadb6234f03395f6fa77f620ec9166c146b395b1de227c4f8eb7b"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/comment_replyOf_comment_0_0.csv",
+      "bytes": 3332590840,
+      "sha256": "b7e38e2ff71d3fe075db686b761c8ccdb2b77805ee606b51267067749aedac66",
+      "rows": 111640566,
+      "columns": [
+        "Comment.id",
+        "Comment.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/dynamic/.comment_replyOf_comment_0_0.csv.crc",
+      "bytes": 26035876,
+      "sha256": "edb53d1d04d77acc911c87107e8f2b08772e36662328bfea4cb2c48fa54ed641"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/updateStream_0_0_person.csv",
+      "bytes": 16276717,
+      "sha256": "dc2aec2266653f4c34f83f0ba80bfc2aa9da65ebaf5aa25ac62c801b18721295",
+      "rows": 50374
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/.updateStream_0_0_person.csv.crc",
+      "bytes": 127172,
+      "sha256": "3e80754c7624306e83180c4defc85f0ca49617e82424b9b52fbbe8a0a14dec0c"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/updateStream_0_0_forum.csv",
+      "bytes": 28466732836,
+      "sha256": "129e72169ba92578b532cae15b471755d1d94d03a646f18687ddbe2cadd4623c",
+      "rows": 323440133
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/.updateStream_0_0_forum.csv.crc",
+      "bytes": 222396360,
+      "sha256": "0bd26c39faba0dbbf55cb7b8257de539a4a5da64bbfcefbc28d1e0635e3c6ed4"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/updateStream.properties",
+      "bytes": 253,
+      "sha256": "c8a80a6b362672820b2dd02953040afc6703e92718d64a080eec1c0fc5d9cdd9"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/.updateStream.properties.crc",
+      "bytes": 12,
+      "sha256": "cbc8d24f9510f0479df6ee6770e1bc98f1d759794df32cc5e3e2d211add80322"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/tag_0_0.csv",
+      "bytes": 1106348,
+      "sha256": "a1c976ef974519d52261800631e9038ddd9cd29e99727b06f1eda130b7700f1f",
+      "rows": 16080,
+      "columns": [
+        "id",
+        "name",
+        "url"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.tag_0_0.csv.crc",
+      "bytes": 8652,
+      "sha256": "14dcae6baaa63c1acc18ef7ac43b31a3d0617ab5d66e6fb1136fe418d94286a8"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/tag_hasType_tagclass_0_0.csv",
+      "bytes": 147267,
+      "sha256": "6afdf21e6a8c96b72e33f384a335b6cc69297b690376a367a9af05ca00ac4205",
+      "rows": 16080,
+      "columns": [
+        "Tag.id",
+        "TagClass.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.tag_hasType_tagclass_0_0.csv.crc",
+      "bytes": 1160,
+      "sha256": "eb0ea370f1311733127e6b5e39eb00aae963ec8e3ce6ba3bfcd0132b0f441103"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/tagclass_0_0.csv",
+      "bytes": 3874,
+      "sha256": "433b19e0b95b0c9b8a3a1a4ca1c638fadc6fbd28f7501e57abd0b3f5b8d56a92",
+      "rows": 71,
+      "columns": [
+        "id",
+        "name",
+        "url"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.tagclass_0_0.csv.crc",
+      "bytes": 40,
+      "sha256": "7f48a854e380eac27fbdb2fef0af2dcc14e7885037987de02a1c0d504d17c30a"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/tagclass_isSubclassOf_tagclass_0_0.csv",
+      "bytes": 545,
+      "sha256": "9302ffa1c37648743864e32c2cca872abea3bf34f841729d5448f53976aa9d4d",
+      "rows": 70,
+      "columns": [
+        "TagClass.id",
+        "TagClass.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.tagclass_isSubclassOf_tagclass_0_0.csv.crc",
+      "bytes": 16,
+      "sha256": "43a449719fdbeebad7514bd802d7f23cdc4de4ee43aa887e0501b04f7a8c7c6f"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/place_0_0.csv",
+      "bytes": 81884,
+      "sha256": "f2ecc4db415c122d5de97931f4b0c3aea93c318c849390ed01006fe860c48236",
+      "rows": 1460,
+      "columns": [
+        "id",
+        "name",
+        "url",
+        "type"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.place_0_0.csv.crc",
+      "bytes": 648,
+      "sha256": "f3c3b6d122a598ec09a8a8d9002ca668901d787496d6f34236b9c31c6748a3df"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/place_isPartOf_place_0_0.csv",
+      "bytes": 10458,
+      "sha256": "b3892a6708fe8315f3212382d903cde7b06238dece86d8c15776d64b996762b8",
+      "rows": 1454,
+      "columns": [
+        "Place.id",
+        "Place.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.place_isPartOf_place_0_0.csv.crc",
+      "bytes": 92,
+      "sha256": "a6a9f1394dfe4b3f5263a601dd60a80ea7fd8dac56e9533cc1c68dd580194af2"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/organisation_0_0.csv",
+      "bytes": 819926,
+      "sha256": "37415355e0d524be6f2f8321e4dd9290da7f94b955284bf8be443478fcbfe366",
+      "rows": 7955,
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "url"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.organisation_0_0.csv.crc",
+      "bytes": 6416,
+      "sha256": "9f76096f091a26bc6f8e0e02514484b191616741d3b2db6b240969d1fe9a3d9c"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/organisation_isLocatedIn_place_0_0.csv",
+      "bytes": 70928,
+      "sha256": "9783fac3ea1293775c80e9657c107679b4b9ac458555eae014a284ed2d9e8465",
+      "rows": 7955,
+      "columns": [
+        "Organisation.id",
+        "Place.id"
+      ]
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/static/.organisation_isLocatedIn_place_0_0.csv.crc",
+      "bytes": 564,
+      "sha256": "8c0b4ea9ef46f5a2172ecf8001ffa6bd62c7315bc34acaa33b88e7b15202a5b4"
+    },
+    {
+      "path": "social_network-sf100-CsvBasic-LongDateFormatter/params.ini",
+      "bytes": 674,
+      "sha256": "b789cf148ec03e4fd5dee82fef51e4b95ca54419844f562e0dca6792d65cf1fa"
+    }
+  ],
+  "expandedBytes": 108515174948,
+  "tables": {
+    "person": {
+      "kind": "vertex",
+      "rows": 448626,
+      "parts": 1,
+      "columns": [
+        "id",
+        "firstName",
+        "lastName",
+        "gender",
+        "birthday",
+        "creationDate",
+        "locationIP",
+        "browserUsed"
+      ]
+    },
+    "person_speaks_language": {
+      "kind": "multi-property",
+      "rows": 988599,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "language"
+      ]
+    },
+    "person_email_emailaddress": {
+      "kind": "multi-property",
+      "rows": 956821,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "email"
+      ]
+    },
+    "person_isLocatedIn_place": {
+      "kind": "edge",
+      "rows": 448626,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Place.id"
+      ]
+    },
+    "person_hasInterest_tag": {
+      "kind": "edge",
+      "rows": 10471962,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Tag.id"
+      ]
+    },
+    "person_workAt_organisation": {
+      "kind": "edge",
+      "rows": 976349,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Organisation.id",
+        "workFrom"
+      ]
+    },
+    "person_studyAt_organisation": {
+      "kind": "edge",
+      "rows": 359212,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Organisation.id",
+        "classYear"
+      ]
+    },
+    "person_knows_person": {
+      "kind": "edge",
+      "rows": 19941198,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Person.id",
+        "creationDate"
+      ]
+    },
+    "forum": {
+      "kind": "vertex",
+      "rows": 4080604,
+      "parts": 1,
+      "columns": [
+        "id",
+        "title",
+        "creationDate"
+      ]
+    },
+    "forum_containerOf_post": {
+      "kind": "edge",
+      "rows": 57987023,
+      "parts": 1,
+      "columns": [
+        "Forum.id",
+        "Post.id"
+      ]
+    },
+    "forum_hasMember_person": {
+      "kind": "edge",
+      "rows": 179874360,
+      "parts": 1,
+      "columns": [
+        "Forum.id",
+        "Person.id",
+        "joinDate"
+      ]
+    },
+    "forum_hasModerator_person": {
+      "kind": "edge",
+      "rows": 4080604,
+      "parts": 1,
+      "columns": [
+        "Forum.id",
+        "Person.id"
+      ]
+    },
+    "forum_hasTag_tag": {
+      "kind": "edge",
+      "rows": 14103940,
+      "parts": 1,
+      "columns": [
+        "Forum.id",
+        "Tag.id"
+      ]
+    },
+    "person_likes_post": {
+      "kind": "edge",
+      "rows": 99515108,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Post.id",
+        "creationDate"
+      ]
+    },
+    "person_likes_comment": {
+      "kind": "edge",
+      "rows": 241957834,
+      "parts": 1,
+      "columns": [
+        "Person.id",
+        "Comment.id",
+        "creationDate"
+      ]
+    },
+    "post": {
+      "kind": "vertex",
+      "rows": 57987023,
+      "parts": 1,
+      "columns": [
+        "id",
+        "imageFile",
+        "creationDate",
+        "locationIP",
+        "browserUsed",
+        "language",
+        "content",
+        "length"
+      ]
+    },
+    "post_hasCreator_person": {
+      "kind": "edge",
+      "rows": 57987023,
+      "parts": 1,
+      "columns": [
+        "Post.id",
+        "Person.id"
+      ]
+    },
+    "post_hasTag_tag": {
+      "kind": "edge",
+      "rows": 77342991,
+      "parts": 1,
+      "columns": [
+        "Post.id",
+        "Tag.id"
+      ]
+    },
+    "post_isLocatedIn_place": {
+      "kind": "edge",
+      "rows": 57987023,
+      "parts": 1,
+      "columns": [
+        "Post.id",
+        "Place.id"
+      ]
+    },
+    "comment": {
+      "kind": "vertex",
+      "rows": 220096052,
+      "parts": 1,
+      "columns": [
+        "id",
+        "creationDate",
+        "locationIP",
+        "browserUsed",
+        "content",
+        "length"
+      ]
+    },
+    "comment_hasCreator_person": {
+      "kind": "edge",
+      "rows": 220096052,
+      "parts": 1,
+      "columns": [
+        "Comment.id",
+        "Person.id"
+      ]
+    },
+    "comment_hasTag_tag": {
+      "kind": "edge",
+      "rows": 292166773,
+      "parts": 1,
+      "columns": [
+        "Comment.id",
+        "Tag.id"
+      ]
+    },
+    "comment_isLocatedIn_place": {
+      "kind": "edge",
+      "rows": 220096052,
+      "parts": 1,
+      "columns": [
+        "Comment.id",
+        "Place.id"
+      ]
+    },
+    "comment_replyOf_post": {
+      "kind": "edge",
+      "rows": 108455486,
+      "parts": 1,
+      "columns": [
+        "Comment.id",
+        "Post.id"
+      ]
+    },
+    "comment_replyOf_comment": {
+      "kind": "edge",
+      "rows": 111640566,
+      "parts": 1,
+      "columns": [
+        "Comment.id",
+        "Comment.id"
+      ]
+    },
+    "tag": {
+      "kind": "vertex",
+      "rows": 16080,
+      "parts": 1,
+      "columns": [
+        "id",
+        "name",
+        "url"
+      ]
+    },
+    "tag_hasType_tagclass": {
+      "kind": "edge",
+      "rows": 16080,
+      "parts": 1,
+      "columns": [
+        "Tag.id",
+        "TagClass.id"
+      ]
+    },
+    "tagclass": {
+      "kind": "vertex",
+      "rows": 71,
+      "parts": 1,
+      "columns": [
+        "id",
+        "name",
+        "url"
+      ]
+    },
+    "tagclass_isSubclassOf_tagclass": {
+      "kind": "edge",
+      "rows": 70,
+      "parts": 1,
+      "columns": [
+        "TagClass.id",
+        "TagClass.id"
+      ]
+    },
+    "place": {
+      "kind": "vertex",
+      "rows": 1460,
+      "parts": 1,
+      "columns": [
+        "id",
+        "name",
+        "url",
+        "type"
+      ]
+    },
+    "place_isPartOf_place": {
+      "kind": "edge",
+      "rows": 1454,
+      "parts": 1,
+      "columns": [
+        "Place.id",
+        "Place.id"
+      ]
+    },
+    "organisation": {
+      "kind": "vertex",
+      "rows": 7955,
+      "parts": 1,
+      "columns": [
+        "id",
+        "type",
+        "name",
+        "url"
+      ]
+    },
+    "organisation_isLocatedIn_place": {
+      "kind": "edge",
+      "rows": 7955,
+      "parts": 1,
+      "columns": [
+        "Organisation.id",
+        "Place.id"
+      ]
+    }
+  },
+  "vertices": 282637871,
+  "edges": 1775513741,
+  "rowValidation": "header-and-line-count-only-not-field-or-endpoint-validation",
+  "hugegraphImported": false,
+  "archiveVerification": "same-stream-sha256-and-length-before-publication",
+  "compressedBytesRead": 26153676880
+}

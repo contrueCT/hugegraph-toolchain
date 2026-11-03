@@ -1,0 +1,627 @@
+{
+  "schemaVersion": 1,
+  "id": "hgbench-snb-interactive-v1-sf100",
+  "version": "0.1.0-draft.3",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 635,
+      "sha256": "e7722f1015853937aaf37784cff1992290b41a579c7af9edc055e60840667e4f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6199,
+      "sha256": "bf557f8d8d9787238adf2270077be7c1ac78030d6913063b81aa61f65ff5e422"
+    },
+    {
+      "path": "assets/sf100/initial-sf100.inventory.json",
+      "bytes": 26540,
+      "sha256": "9880733901b2114f58ea8453494bf415732930a9b623fb8b397fec8fcb91e62d"
+    },
+    {
+      "path": "assets/sf100/inventories.json",
+      "bytes": 2023,
+      "sha256": "afaec20c09925bd4a681ab57a82e3d8d8b6c75cf1669d4410a7af8e80bc909d7"
+    },
+    {
+      "path": "assets/sf100/parameters-sf100.inventory.json",
+      "bytes": 7874,
+      "sha256": "fbe7f6416a34573df77fbe2834285e78fcc2778352defae02ab28ca59dd421df"
+    },
+    {
+      "path": "assets/sf100/updates-sf100.inventory.json",
+      "bytes": 2165,
+      "sha256": "8e1756a4b2164f8ce0404bf8ea99c4b748b1b774061a626a624ab07e6f5366c7"
+    },
+    {
+      "path": "calibration-plan.json",
+      "bytes": 3193,
+      "sha256": "1695c6c4fc989407ad058292894929b523e1732d2a224f6067ac6784a556b1d9"
+    },
+    {
+      "path": "candidates/sf1.json",
+      "bytes": 1571,
+      "sha256": "01519f8610936f1fc65e6dd3f7665539c4941ae59691defc743a24984b4eb766"
+    },
+    {
+      "path": "candidates/sf100.json",
+      "bytes": 1893,
+      "sha256": "20e78c86db5afe702a32180ae0cd058fd613291ccffc977bd96fb8062400c463"
+    },
+    {
+      "path": "candidates/sf1000.json",
+      "bytes": 1598,
+      "sha256": "2d0b06eba066292ad31d013e3996526c0873f62532c715e0c45f0cf4e5070556"
+    },
+    {
+      "path": "candidates/sf30.json",
+      "bytes": 1580,
+      "sha256": "87bcab120289c57e5b026cc4046e20c09314a2797b47d5a783de0b183972c829"
+    },
+    {
+      "path": "candidates/sf300.json",
+      "bytes": 1589,
+      "sha256": "0f6d4ca66090623aa3e4b10a9628a37f0acd9fc5ce8b213a38b09c2e0cbfe4c2"
+    },
+    {
+      "path": "catalog.json",
+      "bytes": 2194,
+      "sha256": "23f266aaa6dd9db32d078ff88ca10c38a4849c7ef4861c43a4f0e909d2ad5e40"
+    },
+    {
+      "path": "coverage.json",
+      "bytes": 15454,
+      "sha256": "f08f9757ed437b60c3733e57acbf073dbbdae7cb965be70e6696375102f8dbde"
+    },
+    {
+      "path": "reference/driver/LICENSE.txt",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "path": "reference/driver/NOTICE.txt",
+      "bytes": 616,
+      "sha256": "7e89f1ed740055d3802a05669d8fcf696d9e4f1ee29832b00d059de5eaeb8acb"
+    },
+    {
+      "path": "reference/driver/docs/Driver-Configuration.md",
+      "bytes": 6429,
+      "sha256": "13eac391489bef242ff3c72fc4092d862422f88850b6f360665d1744bba0935f"
+    },
+    {
+      "path": "reference/driver/docs/Reading-Benchmark-Results.md",
+      "bytes": 5001,
+      "sha256": "20e498935fe4d52db19ef9b4944d45c338ba773bff43fc71ed932ff370eac6b6"
+    },
+    {
+      "path": "reference/driver/docs/Running-a-Benchmark.md",
+      "bytes": 1303,
+      "sha256": "75d87c2a1a4bb9a3aa0c37324443151f965f32a3fb46166fbae25a2375371391"
+    },
+    {
+      "path": "reference/driver/docs/Validating-a-Database-Connector.md",
+      "bytes": 3537,
+      "sha256": "63b5d0cf8e2a149741d881b13a020a2399214ae6148d67dc731d074f4e854e75"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/Db.java",
+      "bytes": 6572,
+      "sha256": "81d5cd8c07f935072a85c62047398dbf1731eaa4f6c93d01161f6239390ff0ce"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/DbConnectionState.java",
+      "bytes": 129,
+      "sha256": "e69aee3a80052b1a92225c01caa384b977db59d651fce9b4b345dfbd1802b76a"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/Operation.java",
+      "bytes": 6506,
+      "sha256": "6e59d85a5387f39df1bb5cfc5bdf5bf69cb5f3bb406beaa98a5e94d4bb6db2fd"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/OperationHandler.java",
+      "bytes": 307,
+      "sha256": "d4cd9c650379d892c56da2cb1313fb4ab8b777ef3eca98dabeea43b635c1fb83"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/ResultReporter.java",
+      "bytes": 2867,
+      "sha256": "bfbc6a2c03c0816b327f38806d9a525c274110af88b6dca2358d6186407643e9"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/temporal/TemporalUtil.java",
+      "bytes": 3903,
+      "sha256": "a5edf8674c6d15e652f1a9990df40fff0ddaec69ea8d3e0c0aa2d3107928e493"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/util/ListUtils.java",
+      "bytes": 1077,
+      "sha256": "1217e215c97f7e26ce2fa36d73167f2cb9a5a400f41b20c0a5fabe004424a8c7"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/validation/ResultsLogValidationTolerances.java",
+      "bytes": 765,
+      "sha256": "c28508ad516c849968add153691d7d7b45c6275e9853215c4901b9c815948a3b"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/validation/ValidationEquality.java",
+      "bytes": 582,
+      "sha256": "15be6aba0c5cd293c2041dd9bc68fc875810e8f6f81ae1eaf55f836124e0b3c3"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/validation/ValidationParamsFromCsvRows.java",
+      "bytes": 1995,
+      "sha256": "0da6f8f75bf836feadf25d19cee1981cfa043ec8c31d54539f6b4ea7b8095ea9"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcNoResult.java",
+      "bytes": 424,
+      "sha256": "70749ee13f1e68b03f0850e04006168768254b580c7900d051ee5069a5e6aea6"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcNoResultJsonSerializer.java",
+      "bytes": 879,
+      "sha256": "5ee06d55afdfb16650268d2e8d55fa6de2054a8acd2917cd95677fe544dfe169"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery1.java",
+      "bytes": 3524,
+      "sha256": "a83cb3d681a81886090c29e2b48889ddb7279743c6689849557395eacd5a14ae"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery10.java",
+      "bytes": 3755,
+      "sha256": "26c2b7bddf881741989ea868e634cadd53989697be33407486c288ca15a7ad4e"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery10Result.java",
+      "bytes": 3477,
+      "sha256": "b694db3a684e5e95fba4a23b84b1195c6dffbeb3843e57bab8e48428bfdd22ba"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery11.java",
+      "bytes": 3955,
+      "sha256": "734463f05788b5c716f13e515b58ea28260afd94c600f026a649f897ff27ae07"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery11Result.java",
+      "bytes": 2641,
+      "sha256": "cd4c43bc0011fa86007698bd3853e0e53f465d80fb849ef9355161f5e6b35ba8"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery12.java",
+      "bytes": 3889,
+      "sha256": "e67a35c74652149120ca7257ad3f549ef4fd3011b608f8539a8ff85e9dd34e07"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery12Result.java",
+      "bytes": 2446,
+      "sha256": "4fbcd23b9266ef9a8c6777ed255d5b0a7b235a73dc3eee4fa3770cd8563700b2"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery13.java",
+      "bytes": 3191,
+      "sha256": "8bf956c889992c7508a01196effa2b4eba864421141a99227f384240daffc134"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery13Result.java",
+      "bytes": 930,
+      "sha256": "d4cf3752c8639bcffdcdd01a38a9ed8af3ed7cfa5f81792080333f6f5ec5ef26"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery14.java",
+      "bytes": 4024,
+      "sha256": "de4e2f4d3e2637ccb6c355eb502050573a491fa1e238f3b9bb8d37ac1e318ed7"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery14Result.java",
+      "bytes": 4474,
+      "sha256": "b8d5f07b099b187ee66bcfb07be99d65d8259cc3786f83c63f4662a72c0de200"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery1Result.java",
+      "bytes": 8465,
+      "sha256": "4b1bb44eb01e39d1c3c4498132939dd814cac3db53991920014a6b868dc64cfe"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery2.java",
+      "bytes": 3410,
+      "sha256": "42fab868a28541043968101b676c00d128d2e483da74fad99e1728662437f55a"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery2Result.java",
+      "bytes": 2858,
+      "sha256": "bc3ff5966348b82c07e5e1fe07a11e9ef717abb002040609959d0e9e992b1996"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3.java",
+      "bytes": 5329,
+      "sha256": "5580127064deec916c4e572ba9bb1714bd2cd5c488848b364dda1d1257660662"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3Result.java",
+      "bytes": 2476,
+      "sha256": "f6a97be6b214d33a1b210c621689c6783478ed8859ea0804d3824cf960f76e7a"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery4.java",
+      "bytes": 4012,
+      "sha256": "be4656542818fff3660000fc7434a6bbb8e0f676e4c45d2a89fc8a9315f96d28"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery4Result.java",
+      "bytes": 1154,
+      "sha256": "515a8abe525e9be652505ff83610f66d0c68ce1918909a8f7c146fb1e3c0c50f"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery5.java",
+      "bytes": 3501,
+      "sha256": "5bca3a678ec8a047652bc4e468350c0fbcee93c321147fb33a8feaa2e8dd90fe"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery5Result.java",
+      "bytes": 1200,
+      "sha256": "6632e053c89eadbfa4eef971ba2a9b9a75e34442082d42cfe0504e0a6407daa2"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery6.java",
+      "bytes": 3508,
+      "sha256": "c490f040685c9cbcfbf806dd7a68abc1a72f124348accfd2379f55de8223bd04"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery6Result.java",
+      "bytes": 1154,
+      "sha256": "60f564db69205072796af2e4d780f6cf8bb59143d2ad2ce490042aa30f157652"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery7.java",
+      "bytes": 3229,
+      "sha256": "2c1f618680e62cdf0832c3b88e904adb62cb11aaee19d5663e2f2d58a9a5d0cd"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery7Result.java",
+      "bytes": 3829,
+      "sha256": "2dfd087d84558f2aadf41c342ced0132236aa806c087d7ea6dfa0131c921dc39"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery8.java",
+      "bytes": 2939,
+      "sha256": "621a78c4c4f877939639c2979317dec5a6bae26eccfdd608cbedd2ad9263dc70"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery8Result.java",
+      "bytes": 2837,
+      "sha256": "2980e307c790bbdb3b474ebe3fa933eed76b6aa0fcd42d73b25e49a6fd87b747"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery9.java",
+      "bytes": 3432,
+      "sha256": "a1e0acb693543579cb4e8b9c2767bcc73baeb1f89a129692bf43eee39463d60d"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery9Result.java",
+      "bytes": 2837,
+      "sha256": "77cae6533963be8f85c1ab47b4ee69eab071d83bd9295dc18b4de7512d40f97f"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery1PersonProfile.java",
+      "bytes": 2427,
+      "sha256": "54e2ace370fbb2f0215b0394e92fcbb3056025fba02f1e25080219d586c913a3"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery1PersonProfileResult.java",
+      "bytes": 3919,
+      "sha256": "f6b7ec32cae1b79bbb538d40a0d8b961729f058b2b6c61d1f08f9ce755544ec0"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery2PersonPosts.java",
+      "bytes": 3199,
+      "sha256": "1297dc6547f482d098f464b36bc87230267e0edae53b054031ca6131db4ce3d8"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery2PersonPostsResult.java",
+      "bytes": 4443,
+      "sha256": "3535af6bba61d482b755502c0aa48c01ca0f701669b7edc1109609b4744b2d79"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery3PersonFriends.java",
+      "bytes": 2489,
+      "sha256": "35ed2bd0cb771dfdfb114069742cf8442507de7578c0f8d953d5136f85f95276"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery3PersonFriendsResult.java",
+      "bytes": 2454,
+      "sha256": "9f656ee1c5c849538bb48ddeb478139471315306ca6190672a9cbf7bd285cf70"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery4MessageContent.java",
+      "bytes": 2450,
+      "sha256": "1f544490b719eeddd8f22f264bec82c001c2119ede2a53dd4e1ccbbb5782d2c5"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery4MessageContentResult.java",
+      "bytes": 1708,
+      "sha256": "1a2e471c29d606f7312a7b46e962b28d00dafb3bb6865d14faafc67f419193ba"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery5MessageCreator.java",
+      "bytes": 2431,
+      "sha256": "bc89858d05e70ffbd2719f5ef1518c42d244d89f08459e700d6b6bb51c274a51"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery5MessageCreatorResult.java",
+      "bytes": 1893,
+      "sha256": "97d5d28bf08eb19e684eafe3a785acc8419c487b54aef8c41bbd8078d0f03e4b"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery6MessageForum.java",
+      "bytes": 2608,
+      "sha256": "18a98465f68082fd6c08fa972df6c3de525f609cdbe0481843def6ce9c067e9a"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery6MessageForumResult.java",
+      "bytes": 3019,
+      "sha256": "38a3c47d58ac94779febd9ae74081e2ce12f7693b4c97f98d386dd03a20382e2"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery7MessageReplies.java",
+      "bytes": 2769,
+      "sha256": "80ecff4350e8db0acbb932f66d9150e50f886e73cd86cbb52cd072ad46b14fb0"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcShortQuery7MessageRepliesResult.java",
+      "bytes": 4520,
+      "sha256": "5db40cfc4657649f04bd8bfafa4cb48a4258b723801b503a933b204d831f4260"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcSnbInteractiveWorkload.java",
+      "bytes": 81871,
+      "sha256": "039281733fbe2c3bae268d584fb59d78ad7080d94d5d1aaf98fffe7ccde669a3"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcSnbInteractiveWorkloadConfiguration.java",
+      "bytes": 31780,
+      "sha256": "586cb636a73c3c4f054b51205bcecbf71fe3b37646920c2c3bb39af9d8e62ab6"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate1AddPerson.java",
+      "bytes": 10740,
+      "sha256": "56786c54300ccd25f1e22650a5c6076ba4f3212ea0c56c935aff46d19d19ff1e"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate2AddPostLike.java",
+      "bytes": 2861,
+      "sha256": "586636f114aaba31d755299b36509c39a561f58f756475a0720ecb2bc64a9213"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate3AddCommentLike.java",
+      "bytes": 2944,
+      "sha256": "576c5b55ef9fbb6ce85cb920e28f8b817210daceffb92905cfcd8cc3be193edd"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate4AddForum.java",
+      "bytes": 4239,
+      "sha256": "b46acd72f55a16566eee3f4787bf10765d57c6e66b5d5b81ca23f5b5cc5ce022"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate5AddForumMembership.java",
+      "bytes": 2874,
+      "sha256": "e926b2f6ce0dd75d26bfb1a01016cadd89c76ed0ecd55ceac503ce521cb3096c"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate6AddPost.java",
+      "bytes": 7743,
+      "sha256": "614ff8865eca1cba2245ac750b567ffc79cf52e34653e925d748f183804f5be6"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate7AddComment.java",
+      "bytes": 7519,
+      "sha256": "0b59729563084984c38bae2d2f5af66dd8af43fb104f08d9355e44b1fc1e39af"
+    },
+    {
+      "path": "reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcUpdate8AddFriendship.java",
+      "bytes": 2969,
+      "sha256": "1ed39bad152fc134d409d24eeec5315a622447bc7385b51933a1d763a7126fc8"
+    },
+    {
+      "path": "reference/impls/LICENSE.txt",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "path": "reference/impls/NOTICE.txt",
+      "bytes": 616,
+      "sha256": "ae123faf9c92773ae36a34c6b58a72cbdaf275cf466eabe55566c55cf01017e3"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-1.cypher",
+      "bytes": 1668,
+      "sha256": "511e523567d5cfb0b33a3914aa40f4630473478f90b255f581883d4f5a8ba9a7"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-10.cypher",
+      "bytes": 1099,
+      "sha256": "eca22afe6907cedfc77a80cbb441112ddbc71d63300496159bd070eb7b07b811"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-11.cypher",
+      "bytes": 765,
+      "sha256": "677b80887429445c5319a0d621d86b7df1c07889ae94e40447aacf853729fea1"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-12.cypher",
+      "bytes": 728,
+      "sha256": "eda861f84d905e43433cd8f589212a2f934ad0bd9b6f9e58c19ade52922a9100"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-13.cypher",
+      "bytes": 392,
+      "sha256": "1fc0927090f33b336890090b5ffe65fcd6e40ae90fb8b572173fe239f0689d07"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-14.cypher",
+      "bytes": 1247,
+      "sha256": "081ea034b25c7abf6f462a857ab7babe150902eb414a837f9fd3695edaa6cb5b"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-2.cypher",
+      "bytes": 691,
+      "sha256": "434d4215e299eb00fa4d0bfc9a5111b00f1a806c7b8220044df7963da3f06de2"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-3.cypher",
+      "bytes": 1413,
+      "sha256": "48f03b4d978d9805fedb3af234edfb30c33ed5f4da4f49a31f205a8d211fbdb0"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-4.cypher",
+      "bytes": 718,
+      "sha256": "c95bdd712db43c54cfbaf47573abc5c1eb2db2d9b38d318696eadfa7721d5a5b"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-5.cypher",
+      "bytes": 624,
+      "sha256": "db86d129f842cf7b7f461355bd10698cf0af34b019d018d9267d8adb324e0358"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-6.cypher",
+      "bytes": 705,
+      "sha256": "ea2a20b7095c2f79f7535831b54176a55c30b9d4618589160e4a3a2abc099c6e"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-7.cypher",
+      "bytes": 879,
+      "sha256": "691a4e3ee8f36053a19e7c615327b51102df43d81b2309b6052cc5ce810aec7d"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-8.cypher",
+      "bytes": 472,
+      "sha256": "d393a6d23e5162a4894a4629f9cc18aed69f61c1e6f683b04a2630a26135c357"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-complex-9.cypher",
+      "bytes": 764,
+      "sha256": "84d05a4cc87a0680b490fc98aa303ff211f363204cc81d936cd5d442bf85cfe7"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-1.cypher",
+      "bytes": 366,
+      "sha256": "313fccbebf9ff29880d15514984ddf48d77f921908d1bd42b7b9626bd96479dc"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-2.cypher",
+      "bytes": 632,
+      "sha256": "e278ea45644325be102e0574d8cc7f768633e990aa6c7b3976a84b22e66f996d"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-3.cypher",
+      "bytes": 337,
+      "sha256": "424bda25c79699433d5cf6a18893b6431980155a573a97220867c00be547d323"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-4.cypher",
+      "bytes": 209,
+      "sha256": "b579231518cf36352fe0237f4a36bbce5a9a96a0763565b8e17e07d9b0704642"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-5.cypher",
+      "bytes": 217,
+      "sha256": "28d461db14b3817cfe00140fbabc7f7af796a2661b8c2492d8cf950ffce40fcd"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-6.cypher",
+      "bytes": 346,
+      "sha256": "1ac9125f6817402cd5df456b5201fc44187b646ffe6bf8497070db2abae84bce"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-short-7.cypher",
+      "bytes": 628,
+      "sha256": "7ac858ff9f60f84dfe9833f1f8285cbd2b58cd4834d8eccb2d4beaf7f41656a7"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-1.cypher",
+      "bytes": 724,
+      "sha256": "a6fce2548cef4fc7a1d1ef9ecb0cd585f4b52c93a8b418d648dbdda1d72b6812"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-2.cypher",
+      "bytes": 128,
+      "sha256": "713f88b3b913125c3a37d3eaa08bcb6ea82e2b50c514ec0cea1d141e30eec0d6"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-3.cypher",
+      "bytes": 139,
+      "sha256": "b39450d84fd490a435e80cc09d430fae49a8da5f1ad81e34f0376b50ec5088dc"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-4.cypher",
+      "bytes": 233,
+      "sha256": "e7af9b991a8c6bad671ce3c9a8bc581c366fd5968cce8715f2e681ff3a362071"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-5.cypher",
+      "bytes": 110,
+      "sha256": "ca6f899b24cf989e10ed31b3a9787319f27e198f5a1f96f7deb1ab6d10ff5351"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-6.cypher",
+      "bytes": 600,
+      "sha256": "0d104b513466e4521019c7ad15ff1a7bc54948cc6179be992d9798bde83cba13"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-7.cypher",
+      "bytes": 598,
+      "sha256": "1403f9758945a5b97a5d7435acb7e98bbdc03aaacb396154b43cf92e1e44a886"
+    },
+    {
+      "path": "reference/impls/cypher/queries/interactive-update-8.cypher",
+      "bytes": 122,
+      "sha256": "2af5bc3f2efb7ab200a5161c451e355c2b8fcd8e5612f8cc91d9bc530cd87f46"
+    },
+    {
+      "path": "reference/sources.lock.json",
+      "bytes": 42479,
+      "sha256": "6150a57357371fc94477711679efa1a99f2ab676cbee01aa918d441842ad9661"
+    },
+    {
+      "path": "release.json",
+      "bytes": 1710,
+      "sha256": "84e20e983ac17d3e8e9aa427a0ffee5805f9af6d81767cb3efe8ee7b2f5d4be8"
+    },
+    {
+      "path": "scorecard.schema.json",
+      "bytes": 6153,
+      "sha256": "037d2ba0f41e7da9f8eacce78e1a6fb1bd53f6ad8fc37542c310b0aa4063505e"
+    },
+    {
+      "path": "scoring-policy.json",
+      "bytes": 3535,
+      "sha256": "1b894a49065fb8e5a086899405841dd5c053deee61efc23c77b64fc785d85e4f"
+    },
+    {
+      "path": "sf100-plan.json",
+      "bytes": 1586,
+      "sha256": "fcc2e1b50151257df9603a26065440b8401da54151898a8d01953118f528124a"
+    },
+    {
+      "path": "spec.md",
+      "bytes": 10383,
+      "sha256": "46f8eaa61b259cf4843b4b35ea14c20af2a79f02cd9e215323cba362f9ba0ef4"
+    },
+    {
+      "path": "tasks.json",
+      "bytes": 51373,
+      "sha256": "db6ba440ab182ea8bad4af8df5cd0cfa07a13bc3e6af89cf8a4ed5243285b1d6"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 23919,
+      "sha256": "eaca08a9b920088e076f2fe38100676228731ac9f0ef431ea66f5e33d8e37c69"
+    }
+  ]
+}

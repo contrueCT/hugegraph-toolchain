@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HG-Bench ordered answer evidence scorecard v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scope",
+    "outcome",
+    "counts",
+    "missingOperations",
+    "mismatchExamples",
+    "referenceSha256",
+    "actualSha256",
+    "updateStateVerified",
+    "datasetIdentityVerified",
+    "referenceScale",
+    "fullWorkloadValidated",
+    "performanceVerdict",
+    "officialBenchmarkClaimAllowed"
+  ],
+  "properties": {
+    "scope": {
+      "const": "ordered-answer-evidence"
+    },
+    "outcome": {
+      "enum": [
+        "answers-match",
+        "correctness-failed",
+        "incomplete"
+      ]
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "IC1",
+        "IC2",
+        "IC3",
+        "IC4",
+        "IC5",
+        "IC6",
+        "IC7",
+        "IC8",
+        "IC9",
+        "IC10",
+        "IC11",
+        "IC12",
+        "IC13",
+        "IC14",
+        "IS1",
+        "IS2",
+        "IS3",
+        "IS4",
+        "IS5",
+        "IS6",
+        "IS7",
+        "IU1",
+        "IU2",
+        "IU3",
+        "IU4",
+        "IU5",
+        "IU6",
+        "IU7",
+        "IU8"
+      ],
+      "properties": {
+        "IC1": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC2": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC3": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC4": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC5": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC6": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC7": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC8": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC9": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC10": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC11": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC12": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC13": {
+          "$ref": "#/$defs/counts"
+        },
+        "IC14": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS1": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS2": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS3": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS4": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS5": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS6": {
+          "$ref": "#/$defs/counts"
+        },
+        "IS7": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU1": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU2": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU3": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU4": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU5": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU6": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU7": {
+          "$ref": "#/$defs/counts"
+        },
+        "IU8": {
+          "$ref": "#/$defs/counts"
+        }
+      }
+    },
+    "missingOperations": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "IC1",
+          "IC2",
+          "IC3",
+          "IC4",
+          "IC5",
+          "IC6",
+          "IC7",
+          "IC8",
+          "IC9",
+          "IC10",
+          "IC11",
+          "IC12",
+          "IC13",
+          "IC14",
+          "IS1",
+          "IS2",
+          "IS3",
+          "IS4",
+          "IS5",
+          "IS6",
+          "IS7",
+          "IU1",
+          "IU2",
+          "IU3",
+          "IU4",
+          "IU5",
+          "IU6",
+          "IU7",
+          "IU8"
+        ]
+      }
+    },
+    "mismatchExamples": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sequence",
+          "operationId",
+          "reason"
+        ],
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "operationId": {
+            "enum": [
+              "IC1",
+              "IC2",
+              "IC3",
+              "IC4",
+              "IC5",
+              "IC6",
+              "IC7",
+              "IC8",
+              "IC9",
+              "IC10",
+              "IC11",
+              "IC12",
+              "IC13",
+              "IC14",
+              "IS1",
+              "IS2",
+              "IS3",
+              "IS4",
+              "IS5",
+              "IS6",
+              "IS7",
+              "IU1",
+              "IU2",
+              "IU3",
+              "IU4",
+              "IU5",
+              "IU6",
+              "IU7",
+              "IU8"
+            ]
+          },
+          "reason": {
+            "const": "answer-mismatch"
+          }
+        }
+      }
+    },
+    "referenceSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "actualSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "updateStateVerified": {
+      "const": false
+    },
+    "datasetIdentityVerified": {
+      "const": false
+    },
+    "referenceScale": {
+      "type": "null"
+    },
+    "fullWorkloadValidated": {
+      "const": false
+    },
+    "performanceVerdict": {
+      "const": "not-evaluated"
+    },
+    "officialBenchmarkClaimAllowed": {
+      "const": false
+    }
+  },
+  "$defs": {
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "matched",
+        "wrong",
+        "incomplete",
+        "updateAcknowledged"
+      ],
+      "properties": {
+        "required": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "matched": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "wrong": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "incomplete": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "updateAcknowledged": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  }
+}

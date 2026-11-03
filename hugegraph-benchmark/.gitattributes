@@ -1,0 +1,10 @@
+# Keep authored text portable and preserve byte-locked benchmark inputs.
+* text=auto eol=lf
+/LICENSE -text
+/benchmarks/** -text
+/adapters/** -text
+/tests-normative/fixtures/** -text
+
+# Vendored upstream source is verified byte-for-byte, including whitespace.
+/benchmarks/ldbc-snb-interactive-v1/reference/** -whitespace
+/adapters/ldbc-reference/upstream/** -whitespace

@@ -1,0 +1,14 @@
+{
+    "schemaVersion": 1,
+    "suiteId": "hgbench-core-read-v0.1-draft",
+    "status": "draft",
+    "track": "core-read",
+    "requiredCases": ["CR01", "CR02", "CR03", "CR04", "CR05", "CR06", "CR07", "CR08", "CR09", "CR10", "CR11", "CR12"],
+    "requiredDatasets": ["tiny-numeric", "tiny-string"],
+    "parameters": "parameters.json",
+    "oracle": "expected.json",
+    "reference": "reference.mjs",
+    "profile": "profile.json",
+    "scorePolicy": "scoring-policy.json",
+    "performanceReleaseReady": false
+}

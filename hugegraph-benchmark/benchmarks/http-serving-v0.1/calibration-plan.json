@@ -1,0 +1,59 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-serving-calibration-plan",
+    "status": "pending-real-environment-calibration",
+    "formalParameters": {
+        "warmupMs": null,
+        "durationMs": null,
+        "pairs": null,
+        "openRates": null,
+        "closedConcurrencies": null,
+        "timeoutsAndDrain": null,
+        "minCorrectSamplesPerRun": null,
+        "meaningfulDifference": null,
+        "resourceBudget": null
+    },
+    "requiredEvidence": [
+        {
+            "id": "timing-accounting",
+            "proof": "Delayed body, delay injection, timeout/drain, socket reuse, cancellation, drops and trace corruption tests"
+        },
+        {
+            "id": "preflight-shape-size",
+            "proof": "All exact answers on actual HugeGraph in both modes; record actual encoding and response bytes"
+        },
+        {
+            "id": "warmup-stability",
+            "proof": "Per-window latency/CPU/GC and compilation stabilization; choose and freeze same warmup per arm"
+        },
+        {
+            "id": "driver-headroom",
+            "proof": "At target rates with validation/collector enabled; independent driver resource/headroom experiment; replace runner if inadequate"
+        },
+        {
+            "id": "observer-cost",
+            "proof": "Paired collector/validator/trace cost experiments; validation stays enabled for correctness acceptance"
+        },
+        {
+            "id": "A-A",
+            "proof": "Independent balanced same-mode pairs; noise and empirical false decisions under fixed policy"
+        },
+        {
+            "id": "known-regression",
+            "proof": "Predeclared delay/CPU regression size with matching unmodified control; measure detection and false decisions"
+        },
+        {
+            "id": "load-points",
+            "proof": "Open rate ladder and closed concurrency ladder; choose common sub-saturation rate and higher-load points before A/B"
+        },
+        {
+            "id": "clean-window",
+            "proof": "No co-running conversion/import; record VM contention, background services, resource counters and actual mode"
+        },
+        {
+            "id": "freeze",
+            "proof": "Hash exact profile, build, family, thresholds, schedule, order seed, repeat count and calibration evidence before formal A/B"
+        }
+    ],
+    "releaseAccepted": false
+}

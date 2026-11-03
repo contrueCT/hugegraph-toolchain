@@ -1,0 +1,35 @@
+{
+    "schemaVersion": 1,
+    "sourceCommit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f",
+    "driverCommit": "8c6e849a60397eaced9f3cdd08b0efa430366cb9",
+    "reason": "LdbcQuery3Result xCount/yCount/count are long in the selected driver; avoid int coercion in the older reference handler",
+    "basis": {
+        "path": "benchmarks/ldbc-snb-interactive-v1/reference/driver/src/main/java/org/ldbcouncil/snb/driver/workloads/interactive/LdbcQuery3Result.java",
+        "sha256": "f6a97be6b214d33a1b210c621689c6783478ed8859ea0804d3824cf960f76e7a"
+    },
+    "files": [
+        {
+            "path": "cypher/src/main/java/org/ldbcouncil/snb/impls/workloads/cypher/CypherDb.java",
+            "originalSha256": "1ea022e96352419fc2a6f05e78609783b8f44ecd8cd3fda05c675d3c60def1bf",
+            "patchedSha256": "1b7e2dcbcf095876a131f304e7fdc0dd2704dfc52deb7cd56baa1ea807ed5c3e",
+            "replacements": [
+                {
+                    "old": "int xCount = record.get( 3 ).asInt();",
+                    "new": "// HG-Bench: IC3 counters follow the selected driver's 64-bit result contract.\n            long xCount = record.get( 3 ).asLong();",
+                    "occurrences": 1
+                },
+                {
+                    "old": "int yCount = record.get( 4 ).asInt();",
+                    "new": "long yCount = record.get( 4 ).asLong();",
+                    "occurrences": 1
+                },
+                {
+                    "old": "int count = record.get( 5 ).asInt();",
+                    "new": "long count = record.get( 5 ).asLong();",
+                    "occurrences": 1
+                }
+            ]
+        }
+    ],
+    "querySemanticsModified": false
+}

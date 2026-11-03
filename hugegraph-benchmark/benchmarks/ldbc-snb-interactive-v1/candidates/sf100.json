@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "ldbc-snb-interactive-v1-official",
+  "sourcePage": "https://ldbcouncil.org/benchmarks/snb/datasets/",
+  "workload": "SNB Interactive v1",
+  "serializer": "CsvBasic",
+  "dateFormatter": "LongDateFormatter",
+  "driver": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_driver",
+    "commit": "8c6e849a60397eaced9f3cdd08b0efa430366cb9"
+  },
+  "reference": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_impls",
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f"
+  },
+  "assets": [
+    {
+      "id": "initial-sf100",
+      "role": "initial",
+      "scale": "100",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf100-CsvBasic-LongDateFormatter.tar.zst",
+      "sha256": "9116c6ae0f634076eb56881e8f93cdb64e751726e66d644a5b6e6ab76fb16dac",
+      "bytes": 26153676880,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+    },
+    {
+      "id": "parameters-sf100",
+      "role": "parameters",
+      "scale": "100",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-parameters/substitution_parameters-sf100.tar.zst",
+      "sha256": "575628cedcbf2fdaeafcd9b82ee8f76763bb9448ecee332e5919d230a6bd72b0",
+      "bytes": 1100699,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+    },
+    {
+      "id": "updates-sf100",
+      "role": "updates",
+      "scale": "100",
+      "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-updates/social_network-sf100-numpart-1.tar.zst",
+      "sha256": "d16440a08a5469ef4458ef5edafd9efffc3bb0c714515e80a0fd47bb175238ca",
+      "bytes": 9378149011,
+      "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed",
+      "updatePartitions": 1
+    }
+  ],
+  "validationPolicy": "Reference generation/replay must match this scale, data and driver; never reuse SF0.1 results."
+}

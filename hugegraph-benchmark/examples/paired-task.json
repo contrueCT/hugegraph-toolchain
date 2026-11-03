@@ -1,0 +1,17 @@
+{
+    "schemaVersion": 1,
+    "kind": "component-task",
+    "name": "paired-diagnostic-analysis",
+    "command": ["node", "components/paired/workflow.mjs", "--input", "examples/paired-observations.json"],
+    "cwd": "..",
+    "trackedFiles": [
+        "components/paired/workflow.mjs",
+        "components/paired/analyzer.mjs",
+        "components/paired/core.mjs",
+        "examples/paired-observations.json"
+    ],
+    "effect": "filesystem",
+    "timeoutMs": 30000,
+    "terminateGraceMs": 1000,
+    "maxLogBytes": 1048576
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "asset": {
+    "id": "updates-sf100",
+    "role": "updates",
+    "scale": "100",
+    "url": "https://datasets.ldbcouncil.org/snb-interactive-v1-updates/social_network-sf100-numpart-1.tar.zst",
+    "sha256": "d16440a08a5469ef4458ef5edafd9efffc3bb0c714515e80a0fd47bb175238ca",
+    "bytes": 9378149011,
+    "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed",
+    "updatePartitions": 1
+  },
+  "files": [
+    {
+      "path": "social_network-sf100-numpart-1/updateStream_0_0_forum.csv",
+      "bytes": 28466732836,
+      "sha256": "a36eb8b761b8386d4933b72029e7772b463d0d2b9d3c9430280e1a495a47e5ce",
+      "rows": 323440133
+    },
+    {
+      "path": "social_network-sf100-numpart-1/params.ini",
+      "bytes": 582,
+      "sha256": "e9443e5f36c43b7779ec1f6a376c1529dbd65ed08b41dc0a530dc11f0cee50ee"
+    },
+    {
+      "path": "social_network-sf100-numpart-1/.updateStream.properties.crc",
+      "bytes": 12,
+      "sha256": "cbc8d24f9510f0479df6ee6770e1bc98f1d759794df32cc5e3e2d211add80322"
+    },
+    {
+      "path": "social_network-sf100-numpart-1/updateStream.properties",
+      "bytes": 253,
+      "sha256": "c8a80a6b362672820b2dd02953040afc6703e92718d64a080eec1c0fc5d9cdd9"
+    },
+    {
+      "path": "social_network-sf100-numpart-1/.updateStream_0_0_forum.csv.crc",
+      "bytes": 222396360,
+      "sha256": "9a03cfc526b8830c8112f75d85c2eb670f109a3cf1bb3fff6a2da4cd716cb55e"
+    },
+    {
+      "path": "social_network-sf100-numpart-1/.updateStream_0_0_person.csv.crc",
+      "bytes": 127172,
+      "sha256": "3e80754c7624306e83180c4defc85f0ca49617e82424b9b52fbbe8a0a14dec0c"
+    },
+    {
+      "path": "social_network-sf100-numpart-1/updateStream_0_0_person.csv",
+      "bytes": 16276717,
+      "sha256": "dc2aec2266653f4c34f83f0ba80bfc2aa9da65ebaf5aa25ac62c801b18721295",
+      "rows": 50374
+    }
+  ],
+  "expandedBytes": 28705533932,
+  "tables": {},
+  "vertices": 0,
+  "edges": 0,
+  "rowValidation": "header-and-line-count-only-not-field-or-endpoint-validation",
+  "hugegraphImported": false,
+  "archiveVerification": "same-stream-sha256-and-length-before-publication",
+  "compressedBytesRead": 9378149011
+}

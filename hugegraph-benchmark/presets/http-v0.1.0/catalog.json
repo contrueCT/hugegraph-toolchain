@@ -1,0 +1,22 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-preset-catalog",
+    "version": "0.1.0",
+    "files": [
+        {
+            "id": "quick",
+            "path": "quick.json",
+            "sha256": "a263845988041d19458167c297d93e7f4f96ab3dc46f0de06fa52e1c5bce79d5"
+        },
+        {
+            "id": "standard",
+            "path": "standard.json",
+            "sha256": "507c247aa0d23061ba9b18b8fb94e2c0733fb298ffe19aa06a50a7a42972fd84"
+        },
+        {
+            "id": "full",
+            "path": "full.json",
+            "sha256": "24198bea014867c62611fca14d8795334faeed79b8708fef434cc131d863dd73"
+        }
+    ]
+}

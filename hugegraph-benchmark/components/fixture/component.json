@@ -1,0 +1,8 @@
+{
+    "protocolVersion": 1,
+    "id": "fixture-executor",
+    "version": "1.0.0",
+    "kind": "executor",
+    "command": ["$NODE", "./executor.mjs"],
+    "trackedFiles": ["executor.mjs"]
+}

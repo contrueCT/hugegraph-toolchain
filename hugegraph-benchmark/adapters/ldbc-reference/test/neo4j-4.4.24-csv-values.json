@@ -1,0 +1,30 @@
+{
+    "neo4j": "4.4.24",
+    "observations": [
+        { "input": "", "present": false, "quoted": false, "type": "STRING", "value": null },
+        { "input": "", "present": true, "quoted": false, "type": "STRING[]", "value": [] },
+        { "input": "", "present": true, "quoted": true, "type": "STRING", "value": "" },
+        { "input": "", "present": true, "quoted": true, "type": "STRING[]", "value": [] },
+        { "input": "en", "present": true, "quoted": false, "type": "STRING", "value": "en" },
+        { "input": "en", "present": true, "quoted": false, "type": "STRING[]", "value": ["en"] },
+        { "input": "en", "present": true, "quoted": true, "type": "STRING", "value": "en" },
+        { "input": "en", "present": true, "quoted": true, "type": "STRING[]", "value": ["en"] },
+        { "input": "en;zh", "present": true, "quoted": false, "type": "STRING", "value": "en;zh" },
+        { "input": "en;zh", "present": true, "quoted": false, "type": "STRING[]", "value": ["en", "zh"] },
+        { "input": "en;zh", "present": true, "quoted": true, "type": "STRING", "value": "en;zh" },
+        { "input": "en;zh", "present": true, "quoted": true, "type": "STRING[]", "value": ["en", "zh"] },
+        { "input": ";", "present": true, "quoted": false, "type": "STRING", "value": ";" },
+        { "input": ";", "present": true, "quoted": false, "type": "STRING[]", "value": ["", ""] },
+        { "input": ";", "present": true, "quoted": true, "type": "STRING", "value": ";" },
+        { "input": ";", "present": true, "quoted": true, "type": "STRING[]", "value": ["", ""] },
+        { "input": "a;;b", "present": true, "quoted": false, "type": "STRING", "value": "a;;b" },
+        { "input": "a;;b", "present": true, "quoted": false, "type": "STRING[]", "value": ["a", "", "b"] },
+        { "input": "a;;b", "present": true, "quoted": true, "type": "STRING", "value": "a;;b" },
+        { "input": "a;;b", "present": true, "quoted": true, "type": "STRING[]", "value": ["a", "", "b"] },
+        { "input": " a ", "present": true, "quoted": false, "type": "STRING", "value": " a " },
+        { "input": " a ", "present": true, "quoted": false, "type": "STRING[]", "value": [" a "] },
+        { "input": " a ", "present": true, "quoted": true, "type": "STRING", "value": " a " },
+        { "input": " a ", "present": true, "quoted": true, "type": "STRING[]", "value": [" a "] }
+    ],
+    "databaseOpened": false
+}

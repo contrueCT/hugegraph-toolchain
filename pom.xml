@@ -612,6 +612,8 @@
                         <exclude>**/*.woff2</exclude>
                         <exclude>**/hubble-fe/**/*</exclude>
                         <exclude>**/apache-hugegraph-hubble-*/**/*</exclude>
+                        <!-- HG-Bench has an independent npm check and byte-locked upstream inputs. -->
+                        <exclude>hugegraph-benchmark/**</exclude>
                     </excludes>
                     <!-- All files are included by default:
                     <includes>

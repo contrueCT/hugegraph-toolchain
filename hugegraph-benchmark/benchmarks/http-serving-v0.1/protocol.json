@@ -1,0 +1,67 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-serving-protocol",
+    "method": "POST",
+    "path": "/gremlin",
+    "httpVersion": "1.1",
+    "connection": "keep-alive",
+    "pipelining": false,
+    "retries": 0,
+    "redirects": false,
+    "proxy": false,
+    "contentType": "application/json",
+    "accept": "application/json",
+    "tls": "verified-if-https",
+    "compressionPartitions": [
+        "identity",
+        "gzip"
+    ],
+    "gzipPolicy": "record-actual-encoding; mixed-encoding-is-not-a-common-compression-condition",
+    "authPartitions": [
+        "anonymous",
+        "authorization-env"
+    ],
+    "numericDomain": "safe-integer-only",
+    "answerCanonicalization": "recursive-key-sort-utf16-json-utf8-v1",
+    "answerScope": [
+        "/status/code",
+        "/result/data"
+    ],
+    "excludedEnvelopeFields": [
+        "requestId",
+        "status.message",
+        "status.attributes",
+        "result.meta"
+    ],
+    "sizeSemantics": {
+        "payloadUtf8Bytes": "String content only; includes no JSON quotes, escaping, array or response envelope",
+        "resultDataCanonicalBytes": "UTF-8 bytes of canonical result.data JSON; omits response envelope",
+        "wireBodyBytes": "Observed complete HTTP body after content encoding; excludes headers/TCP/TLS",
+        "decodedBodyBytes": "Observed HTTP body after decompression; includes response envelope"
+    },
+    "dataProtocol": "no-graph-reads-or-writes; dedicated-empty-target; compilation-and-runtime-caches-warmed-per-mode; new-process-per-arm-before-warmup",
+    "profileRules": {
+        "fullSuite": "all catalog cases, exact bodies and answer hashes",
+        "subset": "explicit coverage only; no full-suite score",
+        "serverSettings": [
+            "build-jars",
+            "JDK",
+            "JVM-flags",
+            "graph-backend",
+            "thread-pools",
+            "queues",
+            "serialization",
+            "auth",
+            "compression",
+            "resource-limits",
+            "collector-config"
+        ]
+    },
+    "timing": {
+        "response": "sent-to-complete-body",
+        "openEndToEnd": "scheduled-to-complete-body",
+        "validation": "after-end-timestamp; hash/decode/JSON/check cost measured",
+        "trace": "synchronous-write-cost-measured; driver headroom separately calibrated"
+    },
+    "performanceAccepted": false
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "catalog": "candidates/sf100.json",
+  "catalogSha256": "20e78c86db5afe702a32180ae0cd058fd613291ccffc977bd96fb8062400c463",
+  "inventories": [
+    {
+      "role": "initial",
+      "path": "assets/sf100/initial-sf100.inventory.json",
+      "bytes": 26540,
+      "sha256": "9880733901b2114f58ea8453494bf415732930a9b623fb8b397fec8fcb91e62d"
+    },
+    {
+      "role": "parameters",
+      "path": "assets/sf100/parameters-sf100.inventory.json",
+      "bytes": 7874,
+      "sha256": "fbe7f6416a34573df77fbe2834285e78fcc2778352defae02ab28ca59dd421df"
+    },
+    {
+      "role": "updates",
+      "path": "assets/sf100/updates-sf100.inventory.json",
+      "bytes": 2165,
+      "sha256": "8e1756a4b2164f8ce0404bf8ea99c4b748b1b774061a626a624ab07e6f5366c7"
+    }
+  ],
+  "initialGraphSelection": {
+    "directories": [
+      "static",
+      "dynamic"
+    ],
+    "embeddedUpdates": "verify-and-exclude",
+    "executionUpdateAsset": "updates-sf100"
+  },
+  "embeddedUpdateComparison": [
+    {
+      "file": "updateStream_0_0_person.csv",
+      "embeddedSha256": "dc2aec2266653f4c34f83f0ba80bfc2aa9da65ebaf5aa25ac62c801b18721295",
+      "selectedUpdatesSha256": "dc2aec2266653f4c34f83f0ba80bfc2aa9da65ebaf5aa25ac62c801b18721295",
+      "rowsEqual": true,
+      "bytesEqual": true,
+      "sha256Equal": true
+    },
+    {
+      "file": "updateStream_0_0_forum.csv",
+      "embeddedSha256": "129e72169ba92578b532cae15b471755d1d94d03a646f18687ddbe2cadd4623c",
+      "selectedUpdatesSha256": "a36eb8b761b8386d4933b72029e7772b463d0d2b9d3c9430280e1a495a47e5ce",
+      "rowsEqual": true,
+      "bytesEqual": true,
+      "sha256Equal": false
+    }
+  ],
+  "semanticUpdateCompatibilityVerified": false,
+  "referenceAnswersFrozen": false,
+  "origin": "official HTTPS assets captured and independently streamed on 2026-10-22; hashes are locally observed, not publisher-signed",
+  "verificationScope": "archive/member sha256 and length; graph CSV headers/line counts; update CSV line counts; parameter txt member hashes only"
+}

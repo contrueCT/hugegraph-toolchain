@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "hgbench-sf100-calibration-design-v1",
+  "status": "design-only-not-executed",
+  "scale": "100",
+  "backend": "hstore",
+  "experiments": [
+    {"id":"correctness","procedure":"Restore initial SF100 state; execute the complete frozen mixed validation stream with the official driver; compare all reads and verify update effects","passEvidence":"All 29 classes covered; no wrong, missing or uncommitted operations; import and post-run reconciliation","workload":"SF100"},
+    {"id":"AA","procedure":"Same artifact on both sides; freeze randomized paired order, cache/restore and full comparison family; repeat complete experiments across time periods","passEvidence":"False-positive counts, denominators and binomial intervals; a few clean repeats cannot establish a 5% family error bound","workload":"SF100"},
+    {"id":"known-regression","procedure":"Inject a preregistered delay or resource cost while preserving correct answers; include no-injection control and independent confirmation","passEvidence":"Observed effect against injected effect, detection counts and uncertainty; record injection location and timing boundary","workload":"SF100"},
+    {"id":"driver-headroom","procedure":"Calibrate equivalent response sizes/costs against a controlled endpoint; repeat the target load with increased independent driver resources","passEvidence":"Achieved schedule, queue/late/drop counts, driver CPU/RSS/network; saturation conclusion requires demonstrated driver headroom","workload":"controlled-endpoint-and-SF100"},
+    {"id":"collector-cost","procedure":"Paired collector-on/off runs with identical validation and load policies","passEvidence":"Overhead estimates and uncertainty within preregistered budget; missing counters disclosed","workload":"SF100"},
+    {"id":"failure-detection","procedure":"Unit/contract injection of wrong IDs, missing/duplicate/reordered rows, truncated responses, timeout, unknown commits and corrupted artifacts","passEvidence":"No false valid score; bounded failure diagnostics; no incomplete-run merging","workload":"bounded-local-contract-tests"},
+    {"id":"independent-reproduction","procedure":"Second contributor or independently provisioned environment follows the frozen package; rebuild and reproduce correctness and analysis from evidence","passEvidence":"Commands, environment and artifact identities, observed differences and independent sign-off","workload":"SF100"}
+  ],
+  "freezeBeforeExecution": ["artifacts-and-target", "data-and-reference-lock", "TCR-and-operation-stream-range", "warmup-and-measurement", "cache-and-restore", "independent-block-count-and-seed", "primary-comparisons-and-effect-thresholds", "analysis-algorithm", "time-and-storage-budgets"],
+  "budgetFormula": "sum over experiments and cells of runs * (restore + warmup + measurement + drain), plus asset capture/import/reference generation",
+  "resourceEstimateStatus": "SF100 byte sizes and actual HStore footprint are not established; do not promise a fit on the supplied 152 GiB-free host",
+  "remoteConstraint": "Long-running or resource-heavy jobs require explicit user confirmation before execution",
+  "runAutomatically": false
+}

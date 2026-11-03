@@ -1,0 +1,20 @@
+{
+    "schemaVersion": 1,
+    "id": "conformance-v1",
+    "allRequiredCases": true,
+    "allRequiredParameters": true,
+    "allRequiredPasses": true,
+    "correctnessFailuresAllowed": 0,
+    "timeoutsAllowed": 0,
+    "missingResultsAllowed": 0,
+    "outcomes": ["conformant", "correctness-failed", "incomplete", "invalid"],
+    "performanceVerdict": "not-evaluated",
+    "aggregatePerformanceScore": null,
+    "rules": [
+        "Any wrong result produces correctness-failed, even with other missing results.",
+        "Unsupported, skipped and timed-out operations remain in the coverage denominator.",
+        "Missing required operation/pass produces incomplete when no wrong result is observed.",
+        "Schema, identity or evidence integrity failure produces invalid before scoring.",
+        "Conformant requires all 36 parameters in both passes: 72 verified results."
+    ]
+}

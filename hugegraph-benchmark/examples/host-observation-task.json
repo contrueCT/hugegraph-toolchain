@@ -1,0 +1,12 @@
+{
+    "schemaVersion": 1,
+    "kind": "component-task",
+    "name": "linux-host-observation",
+    "command": ["python3", "tools/sf100-host-probe.py", "--path", ".", "--sample-seconds", "3"],
+    "cwd": "..",
+    "trackedFiles": ["tools/sf100-host-probe.py"],
+    "effect": "read-only",
+    "timeoutMs": 15000,
+    "terminateGraceMs": 1000,
+    "maxLogBytes": 262144
+}

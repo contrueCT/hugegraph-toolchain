@@ -1,0 +1,21 @@
+{
+    "schemaVersion": 1,
+    "id": "tiny-conformance-v1",
+    "purpose": "semantic-conformance",
+    "requiredIdTypes": ["numeric", "string"],
+    "datasetState": "immutable-read-only",
+    "directions": "out",
+    "edgeLabel": "link",
+    "degreeCap": null,
+    "capacityCap": null,
+    "maxConcurrentRequests": 1,
+    "passes": 2,
+    "order": "parameters.json array order, repeated unchanged for each pass",
+    "timeoutMsPerOperation": 30000,
+    "maxPagesPerOperation": 128,
+    "automaticRetries": 0,
+    "validation": "all operations, complete normalized response",
+    "readiness": "all expected vertices and edges present; group index usable",
+    "requiredIndexes": [{ "label": "node", "property": "group", "type": "equality" }],
+    "performanceScoring": false
+}

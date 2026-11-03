@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "kind": "sf100-benchmark-plan",
+  "suite": "hgbench-snb-interactive-v1-sf100",
+  "catalog": "candidates/sf100.json",
+  "workload": {
+    "operations": [
+      "IC1",
+      "IC2",
+      "IC3",
+      "IC4",
+      "IC5",
+      "IC6",
+      "IC7",
+      "IC8",
+      "IC9",
+      "IC10",
+      "IC11",
+      "IC12",
+      "IC13",
+      "IC14",
+      "IS1",
+      "IS2",
+      "IS3",
+      "IS4",
+      "IS5",
+      "IS6",
+      "IS7",
+      "IU1",
+      "IU2",
+      "IU3",
+      "IU4",
+      "IU5",
+      "IU6",
+      "IU7",
+      "IU8"
+    ],
+    "scheduler": "official-ldbc-driver",
+    "parameterPolicy": "same-scale-official-parameters-and-driver-short-reads",
+    "updatePolicy": "official-dependencies-and-timestamps"
+  },
+  "target": null,
+  "budgets": null,
+  "execution": {
+    "timeCompressionRatio": null,
+    "warmupSeconds": null,
+    "measurementSeconds": null,
+    "repetitions": 3,
+    "seed": 3346,
+    "cache": null,
+    "restore": {
+      "method": "reload-initial",
+      "snapshot": null,
+      "beforeEveryRepetition": true,
+      "restartUpdateStream": true
+    }
+  },
+  "validation": {
+    "policy": "ordered-reference-replay-and-import-integrity",
+    "referenceBundle": null,
+    "onFailure": "invalidate-run",
+    "missingOperations": "invalidate-run"
+  },
+  "components": {
+    "converter": null,
+    "loader": null,
+    "driver": null
+  },
+  "evidence": {
+    "retainRawResults": true,
+    "retainScheduledAndActualTimes": true,
+    "retainTopologyAndResources": true,
+    "resumeMeasurement": "new-attempt-from-restored-state"
+  }
+}

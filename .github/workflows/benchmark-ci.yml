@@ -1,0 +1,109 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements. See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership. The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License. You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied. See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+name: HG-Bench component checks
+
+on:
+  pull_request:
+    paths:
+      - 'hugegraph-benchmark/**'
+      - '.github/workflows/benchmark-ci.yml'
+  push:
+    branches: [master, 'release-*']
+    paths:
+      - 'hugegraph-benchmark/**'
+      - '.github/workflows/benchmark-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hgbench-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  components:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: hugegraph-benchmark
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      HGBENCH_GO_BINARY: ${{ runner.temp }}/hgbench-go/hgbench-http-go
+      HGBENCH_GO_GOLDEN: ${{ runner.temp }}/hgbench-go-vectors.json
+      HGBENCH_SCAN_GO_BINARY: ${{ runner.temp }}/hgbench-scan-go/hgbench-ldbc-scan-go
+      GOTOOLCHAIN: local
+      GOPROXY: 'off'
+      GOSUMDB: 'off'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.14.0'
+          cache: npm
+          cache-dependency-path: hugegraph-benchmark/package-lock.json
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: temurin
+          overwrite-settings: false
+      - name: Read locked Go version
+        id: go-version
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync, appendFileSync } from 'node:fs';
+          const { version } = JSON.parse(readFileSync('release/http-go-toolchain.json', 'utf8'));
+          if (!/^go[0-9]+\.[0-9]+\.[0-9]+$/.test(version)) throw Error('Invalid locked Go version');
+          appendFileSync(process.env.GITHUB_OUTPUT, `version=${version.slice(2)}\n`);
+          JS
+      - uses: actions/setup-go@v6
+        with:
+          go-version: ${{ steps.go-version.outputs.version }}
+          cache: false
+      - name: Install locked CLI dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Check dependency lock and source format
+        run: |
+          npm run release:check
+          npm run format:check
+      - name: Build CLI and locked Go executors
+        run: |
+          npm run build
+          node dist/cli.js http engine build --go "$(command -v go)" --out "$RUNNER_TEMP/hgbench-go"
+          node tools/http-go-vectors.mjs --out "$HGBENCH_GO_GOLDEN"
+          node components/ldbc-scan-go/build.mjs --go "$(command -v go)" --out "$RUNNER_TEMP/hgbench-scan-go"
+      - name: Verify versioned benchmark specification
+        run: python3 benchmarks/ldbc-snb-interactive-v1/verify.py verify
+      - name: Test CLI, Python components and real Go protocol
+        run: npm run test:benchmark
+      - name: Test Go codec and executor
+        working-directory: hugegraph-benchmark/components/http-go
+        env:
+          CGO_ENABLED: '0'
+        run: go test -count=1 -timeout=3m ./...
+      - name: Test Go full-content verifier and protocol vectors
+        working-directory: hugegraph-benchmark/components/ldbc-scan-go
+        env:
+          CGO_ENABLED: '0'
+        run: go test -count=1 -timeout=3m ./...

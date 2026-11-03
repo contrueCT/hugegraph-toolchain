@@ -1,0 +1,15 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-benchmark-project",
+    "id": "my-hugegraph-http",
+    "label": "My HugeGraph HTTP project",
+    "description": "Replace the four references once with actual build, host environment, target resources and comparison runtime files.",
+    "comparison": "forward-embedded",
+    "aaMode": "forward",
+    "sources": {
+        "build": "./project/build.json",
+        "settings": "./project/environment-settings.json",
+        "environment": "./project/host-environment.json",
+        "runtime": "./project/comparison-runtime.json"
+    }
+}

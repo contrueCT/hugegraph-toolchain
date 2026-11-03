@@ -1,0 +1,27 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-benchmark-preset",
+    "id": "full",
+    "version": "0.1.0",
+    "planImplemented": false,
+    "realExecutionValidated": false,
+    "scope": "design-only; implementation and calibration pending",
+    "engineeringTargetMilliseconds": { "low": 3600000, "high": null },
+    "design": {
+        "coverage": "all eleven questions, identity/gzip and declared workload strata",
+        "loadDesign": "closed and open ladders through calibrated capacity and overload regions",
+        "repeats": "at least four balanced pairs in independent experiments; freeze the full statistical family",
+        "primary": "qualified P50/P95/P99, goodput, error/drop rate and supported resource diagnostics",
+        "samplePolicy": "P99 minimum 1000 correct observations in each physical run; independent pair/experiment and family-wide rules remain explicit",
+        "calibration": "accepted repeatability, known-regression sensitivity, driver headroom, steady state and observer cost; no automatic qualification"
+    },
+    "workload": null,
+    "analysis": null,
+    "lifecycleBudgets": null,
+    "blockIds": null,
+    "limitations": [
+        "Hours is a design scale, with no validated upper ETA. Full is not executable in this release.",
+        "Strata, budgets and global family allocation require a future versioned implementation; no hidden splitting or sample pooling.",
+        "Fine resource and cross-clock attribution require their own evidence and remain separate from HTTP correctness."
+    ]
+}

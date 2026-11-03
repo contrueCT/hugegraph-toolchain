@@ -1,0 +1,58 @@
+{
+    "name": "@hugegraph/hgbench",
+    "version": "0.1.0",
+    "private": true,
+    "description": "HugeGraph benchmark controller: versioned component protocols and reproducible evidence",
+    "license": "Apache-2.0",
+    "type": "module",
+    "engines": {
+        "node": ">=22.14.0"
+    },
+    "bin": {
+        "hgbench": "dist/cli.js"
+    },
+    "files": [
+        "benchmarks",
+        "presets",
+        "adapters",
+        "tools",
+        "tests-normative",
+        "dist",
+        "src",
+        "release",
+        "components",
+        "examples",
+        "docs",
+        "README.md",
+        "LICENSE",
+        "NOTICE"
+    ],
+    "scripts": {
+        "build": "node components/http/dependency-lock.mjs sync && tsc",
+        "release:check": "node components/http/dependency-lock.mjs verify",
+        "prepack": "node components/http/dependency-lock.mjs verify --quiet && node tools/stamp-build.mjs",
+        "test": "npm run build && npm run test:benchmark",
+        "format": "prettier --write src components examples tests-normative adapters tools/*.mjs benchmarks/*/*.mjs package.json tsconfig.json",
+        "format:check": "prettier --check src components examples tests-normative adapters tools/*.mjs benchmarks/*/*.mjs package.json tsconfig.json",
+        "check": "npm run format:check && npm test",
+        "test:ldbc-java": "python3 tools/ldbc-driver-contract.py && python3 tools/ldbc-short-read-contract.py",
+        "test:benchmark": "node benchmarks/core-read-v0.1/reference.mjs verify && node tools/test-normative.mjs && python3 -m unittest discover -s tests-normative -p 'test_*.py'",
+        "test:ldbc-full": "python3 tools/ldbc-full-contract.py"
+    },
+    "dependencies": {
+        "commander": "14.0.3",
+        "zod": "4.6.7"
+    },
+    "devDependencies": {
+        "@types/node": "22.20.5",
+        "prettier": "3.9.10",
+        "typescript": "5.9.3"
+    },
+    "hgbenchRelease": {
+        "dependencyLock": {
+            "path": "release/dependency-lock.json",
+            "bytes": 3432,
+            "sha256": "d6a1973f2c22de7c2a4e7850da78405d0701167a734c35450c66495704763fce"
+        }
+    }
+}

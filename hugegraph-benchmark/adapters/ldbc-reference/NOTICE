@@ -1,0 +1,14 @@
+HG-Bench reference integration
+
+This integration includes LDBC SNB Interactive v1 implementation sources from
+commit 11db98cc2ba14c33492f6c0c34e68c8be7e22e5f. Their original LICENSE.txt and
+NOTICE.txt are retained in upstream/ and in the compiled reference jar.
+
+HG-Bench applies the separately recorded compatibility-overlay.json at build
+time. It changes IC3 xCount, yCount and count extraction from Java int to long
+to match the selected LDBC driver's 64-bit result contract. Query text and
+query semantics are unchanged. The upstream source files remain unmodified.
+
+Dependency jars retain their upstream licensing metadata. The distribution
+uses explicit dependency and content locks; it does not resolve mutable Maven
+versions during the reference build.

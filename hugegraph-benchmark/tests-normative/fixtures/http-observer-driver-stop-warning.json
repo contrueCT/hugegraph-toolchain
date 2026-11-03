@@ -1,0 +1,15 @@
+{
+    "argv": [
+        "/usr/bin/docker",
+        "stop",
+        "--time",
+        "5",
+        "8b26a048e46897ad5635345e66c18e947f3b10c0527e780b6cc4df7bc2f0a94d"
+    ],
+    "error": null,
+    "exitCode": 0,
+    "finishedMonotonicNs": "206748446246393",
+    "startedMonotonicNs": "206748240880602",
+    "stderr": "",
+    "stdout": "Flag --time has been deprecated, use --timeout instead\n8b26a048e46897ad5635345e66c18e947f3b10c0527e780b6cc4df7bc2f0a94d\n"
+}

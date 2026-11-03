@@ -1,0 +1,76 @@
+{
+    "schemaVersion": 2,
+    "kind": "http-capacity-policy",
+    "id": "capacity-single-observation-v2",
+    "scope": "all-eleven-single-case",
+    "status": "provisional-calibration-pending",
+    "rates": [10, 20, 40, 80],
+    "http": {
+        "responseEncoding": "gzip",
+        "maxInFlight": 64,
+        "maxStartDelayMs": 1000,
+        "requestTimeoutMs": 5000,
+        "drainMs": 5000,
+        "maxRequestsPerPhase": 10000,
+        "maxResponseBytes": 2097152,
+        "maxTraceBytes": 16777216
+    },
+    "exploration": {
+        "mode": "single-run",
+        "runs": 1,
+        "warmupMs": 10000,
+        "durationMs": 30000
+    },
+    "confirmation": {
+        "warmupMs": 30000,
+        "durationMs": 120000,
+        "pairs": 4,
+        "selection": "candidate-and-adjacent-points",
+        "requiresNewPlan": true
+    },
+    "tailPolicy": {
+        "p99MinimumObservations": 1000,
+        "belowMinimum": "unknown"
+    },
+    "analysis": {
+        "familyAlpha": 0.05,
+        "minimumPairs": 2,
+        "bootstrapReplicates": 10000,
+        "minimumTailDraws": 20,
+        "maxWork": 10000000,
+        "maxMilliseconds": 60000,
+        "latency": {
+            "quantile": "p50",
+            "relativeBudget": 0.2,
+            "absoluteBudget": 2,
+            "minimumObservations": 100
+        },
+        "goodput": {
+            "relativeBudget": 0.2,
+            "absoluteBudget": 1,
+            "minimumObservations": 100
+        }
+    },
+    "pointBudgets": {
+        "prepareMs": 120000,
+        "startMs": 180000,
+        "modeProbeMs": 45000,
+        "settleMs": 1000,
+        "stopMs": 60000,
+        "sealAndAnalyzeMs": 300000,
+        "maxEvidenceBytesPerArm": 268435456,
+        "maxTotalEvidenceBytes": 1140850688,
+        "maxTotalMilliseconds": 900000
+    },
+    "controllerBudgets": {
+        "perPointMilliseconds": 780000,
+        "totalMilliseconds": 300000
+    },
+    "studyBudgets": {
+        "maxTotalMilliseconds": 7200000,
+        "maxEvidenceBytes": 137438953472,
+        "maxPlanBytes": 268435456
+    },
+    "slo": null,
+    "budgetMode": "total"
+}

@@ -1,0 +1,16 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-serving-release",
+    "version": "0.1.0-draft.1",
+    "status": "local-specification-candidate",
+    "performanceAccepted": false,
+    "gates": {
+        "deterministicQuestions": "offline-verifier-available",
+        "realServiceAllQuestions": "pending",
+        "formalParameters": "pending-calibration",
+        "actualModeVerification": "pending",
+        "pairedExecution": "pending",
+        "AAAndKnownRegression": "pending",
+        "independentReproduction": "pending"
+    }
+}

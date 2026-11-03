@@ -1,0 +1,414 @@
+[
+  {
+    "parameterId": "CR01-numeric-hit",
+    "caseId": "CR01",
+    "datasetId": "tiny-numeric",
+    "operation": "point",
+    "args": {
+      "id": 100
+    },
+    "policy": "exact-value"
+  },
+  {
+    "parameterId": "CR01-numeric-miss",
+    "caseId": "CR01",
+    "datasetId": "tiny-numeric",
+    "operation": "point",
+    "args": {
+      "id": 9999
+    },
+    "policy": "exact-value"
+  },
+  {
+    "parameterId": "CR02-numeric-one",
+    "caseId": "CR02",
+    "datasetId": "tiny-numeric",
+    "operation": "filter",
+    "args": {
+      "group": "hub"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR02-numeric-many",
+    "caseId": "CR02",
+    "datasetId": "tiny-numeric",
+    "operation": "filter",
+    "args": {
+      "group": "wide-leaf"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR02-numeric-empty",
+    "caseId": "CR02",
+    "datasetId": "tiny-numeric",
+    "operation": "filter",
+    "args": {
+      "group": "missing"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR03-numeric-ordinary",
+    "caseId": "CR03",
+    "datasetId": "tiny-numeric",
+    "operation": "neighbors",
+    "args": {
+      "source": 10
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR03-numeric-hub",
+    "caseId": "CR03",
+    "datasetId": "tiny-numeric",
+    "operation": "neighbors",
+    "args": {
+      "source": 4000
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR04-numeric-pages",
+    "caseId": "CR04",
+    "datasetId": "tiny-numeric",
+    "operation": "paged-neighbors",
+    "args": {
+      "source": 4000,
+      "pageSize": 7
+    },
+    "policy": "paged-set"
+  },
+  {
+    "parameterId": "CR05-numeric-wide",
+    "caseId": "CR05",
+    "datasetId": "tiny-numeric",
+    "operation": "kout",
+    "args": {
+      "source": 1,
+      "depth": 2,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR06-numeric-convergent",
+    "caseId": "CR06",
+    "datasetId": "tiny-numeric",
+    "operation": "kout",
+    "args": {
+      "source": 1000,
+      "depth": 2,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR07-numeric-bounded",
+    "caseId": "CR07",
+    "datasetId": "tiny-numeric",
+    "operation": "kout",
+    "args": {
+      "source": 1,
+      "depth": 2,
+      "nearest": true,
+      "limit": 4
+    },
+    "policy": "bounded-set"
+  },
+  {
+    "parameterId": "CR08-numeric-nearest",
+    "caseId": "CR08",
+    "datasetId": "tiny-numeric",
+    "operation": "kout",
+    "args": {
+      "source": 2004,
+      "depth": 4,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR08-numeric-revisit",
+    "caseId": "CR08",
+    "datasetId": "tiny-numeric",
+    "operation": "kout",
+    "args": {
+      "source": 2004,
+      "depth": 4,
+      "nearest": false,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR08-numeric-empty",
+    "caseId": "CR08",
+    "datasetId": "tiny-numeric",
+    "operation": "kout",
+    "args": {
+      "source": 3999,
+      "depth": 2,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR09-numeric-intersection",
+    "caseId": "CR09",
+    "datasetId": "tiny-numeric",
+    "operation": "common",
+    "args": {
+      "sources": [
+        1010,
+        1011
+      ]
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR10-numeric-tie",
+    "caseId": "CR10",
+    "datasetId": "tiny-numeric",
+    "operation": "shortest",
+    "args": {
+      "source": 3000,
+      "target": 3004,
+      "maxDepth": 6
+    },
+    "policy": "shortest-path"
+  },
+  {
+    "parameterId": "CR11-numeric-unreachable",
+    "caseId": "CR11",
+    "datasetId": "tiny-numeric",
+    "operation": "shortest",
+    "args": {
+      "source": 3000,
+      "target": 3999,
+      "maxDepth": 6
+    },
+    "policy": "shortest-path"
+  },
+  {
+    "parameterId": "CR12-numeric-materialize",
+    "caseId": "CR12",
+    "datasetId": "tiny-numeric",
+    "operation": "materialize",
+    "args": {
+      "group": "wide-leaf"
+    },
+    "policy": "vertex-set"
+  },
+  {
+    "parameterId": "CR01-string-hit",
+    "caseId": "CR01",
+    "datasetId": "tiny-string",
+    "operation": "point",
+    "args": {
+      "id": "v100"
+    },
+    "policy": "exact-value"
+  },
+  {
+    "parameterId": "CR01-string-miss",
+    "caseId": "CR01",
+    "datasetId": "tiny-string",
+    "operation": "point",
+    "args": {
+      "id": "v9999"
+    },
+    "policy": "exact-value"
+  },
+  {
+    "parameterId": "CR02-string-one",
+    "caseId": "CR02",
+    "datasetId": "tiny-string",
+    "operation": "filter",
+    "args": {
+      "group": "hub"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR02-string-many",
+    "caseId": "CR02",
+    "datasetId": "tiny-string",
+    "operation": "filter",
+    "args": {
+      "group": "wide-leaf"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR02-string-empty",
+    "caseId": "CR02",
+    "datasetId": "tiny-string",
+    "operation": "filter",
+    "args": {
+      "group": "missing"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR03-string-ordinary",
+    "caseId": "CR03",
+    "datasetId": "tiny-string",
+    "operation": "neighbors",
+    "args": {
+      "source": "v10"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR03-string-hub",
+    "caseId": "CR03",
+    "datasetId": "tiny-string",
+    "operation": "neighbors",
+    "args": {
+      "source": "v4000"
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR04-string-pages",
+    "caseId": "CR04",
+    "datasetId": "tiny-string",
+    "operation": "paged-neighbors",
+    "args": {
+      "source": "v4000",
+      "pageSize": 7
+    },
+    "policy": "paged-set"
+  },
+  {
+    "parameterId": "CR05-string-wide",
+    "caseId": "CR05",
+    "datasetId": "tiny-string",
+    "operation": "kout",
+    "args": {
+      "source": "v1",
+      "depth": 2,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR06-string-convergent",
+    "caseId": "CR06",
+    "datasetId": "tiny-string",
+    "operation": "kout",
+    "args": {
+      "source": "v1000",
+      "depth": 2,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR07-string-bounded",
+    "caseId": "CR07",
+    "datasetId": "tiny-string",
+    "operation": "kout",
+    "args": {
+      "source": "v1",
+      "depth": 2,
+      "nearest": true,
+      "limit": 4
+    },
+    "policy": "bounded-set"
+  },
+  {
+    "parameterId": "CR08-string-nearest",
+    "caseId": "CR08",
+    "datasetId": "tiny-string",
+    "operation": "kout",
+    "args": {
+      "source": "v2004",
+      "depth": 4,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR08-string-revisit",
+    "caseId": "CR08",
+    "datasetId": "tiny-string",
+    "operation": "kout",
+    "args": {
+      "source": "v2004",
+      "depth": 4,
+      "nearest": false,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR08-string-empty",
+    "caseId": "CR08",
+    "datasetId": "tiny-string",
+    "operation": "kout",
+    "args": {
+      "source": "v3999",
+      "depth": 2,
+      "nearest": true,
+      "limit": null
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR09-string-intersection",
+    "caseId": "CR09",
+    "datasetId": "tiny-string",
+    "operation": "common",
+    "args": {
+      "sources": [
+        "v1010",
+        "v1011"
+      ]
+    },
+    "policy": "exact-set"
+  },
+  {
+    "parameterId": "CR10-string-tie",
+    "caseId": "CR10",
+    "datasetId": "tiny-string",
+    "operation": "shortest",
+    "args": {
+      "source": "v3000",
+      "target": "v3004",
+      "maxDepth": 6
+    },
+    "policy": "shortest-path"
+  },
+  {
+    "parameterId": "CR11-string-unreachable",
+    "caseId": "CR11",
+    "datasetId": "tiny-string",
+    "operation": "shortest",
+    "args": {
+      "source": "v3000",
+      "target": "v3999",
+      "maxDepth": 6
+    },
+    "policy": "shortest-path"
+  },
+  {
+    "parameterId": "CR12-string-materialize",
+    "caseId": "CR12",
+    "datasetId": "tiny-string",
+    "operation": "materialize",
+    "args": {
+      "group": "wide-leaf"
+    },
+    "policy": "vertex-set"
+  }
+]

@@ -1,0 +1,47 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-serving-bundle",
+    "version": "0.1.0-draft.1",
+    "files": [
+        {
+            "path": "catalog.json",
+            "bytes": 4603,
+            "sha256": "71bd00fac718d61a091a07fdc3435808b0fba9e56c73e4300c36a098b90c7b45"
+        },
+        {
+            "path": "answers.json",
+            "bytes": 3020,
+            "sha256": "12a5a045fb587620751460612c14f04db53eb46e531666cf5860627e9eb28dda"
+        },
+        {
+            "path": "protocol.json",
+            "bytes": 2365,
+            "sha256": "af82268825095192ad07730d48a368d9cb5b7522ec838493f523fd37c309a254"
+        },
+        {
+            "path": "scoring-policy.json",
+            "bytes": 2037,
+            "sha256": "d2c0d13a010ff2528e18fe0a02614c89a8896bd159eb5ff1e0d30426d828ed2a"
+        },
+        {
+            "path": "calibration-plan.json",
+            "bytes": 2378,
+            "sha256": "6f77cbc891c19b4bb374a6b4e201213cbb6943e63d0307ae2b904a24203a6a06"
+        },
+        {
+            "path": "release.json",
+            "bytes": 530,
+            "sha256": "154c2d3cf60f1a8eef74a6b8502579ccbcc6a3e781c9731a140c98d19cc54b85"
+        },
+        {
+            "path": "spec.md",
+            "bytes": 8807,
+            "sha256": "0883be5d42cca94ac6935dd8d12d76e6b1d382ae0afc120009c81345cff94f92"
+        },
+        {
+            "path": "reference.mjs",
+            "bytes": 6847,
+            "sha256": "dd25888d04168ca28c6d7ebb59a226110ac5c1bc3af7d7ec36d49f4d8f1d7628"
+        }
+    ]
+}

@@ -1,0 +1,303 @@
+{
+  "schemaVersion": 1,
+  "workload": "SNB Interactive v1",
+  "reference": {
+    "repository": "ldbc/ldbc_snb_interactive_v1_impls",
+    "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f"
+  },
+  "operations": [
+    {
+      "id": "IC1",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-1.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC2",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-2.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC3",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-3.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC4",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-4.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC5",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-5.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC6",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-6.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC7",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-7.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC8",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-8.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC9",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-9.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC10",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-10.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC11",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-11.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC12",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-12.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC13",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-13.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IC14",
+      "family": "complex",
+      "referencePath": "cypher/queries/interactive-complex-14.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS1",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-1.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": true,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS2",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-2.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS3",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-3.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS4",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-4.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": true,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS5",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-5.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": true,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS6",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-6.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IS7",
+      "family": "short",
+      "referencePath": "cypher/queries/interactive-short-7.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU1",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-1.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU2",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-2.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU3",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-3.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU4",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-4.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU5",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-5.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU6",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-6.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU7",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-7.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    },
+    {
+      "id": "IU8",
+      "family": "update",
+      "referencePath": "cypher/queries/interactive-update-8.cypher",
+      "adapterStatus": "implemented-unit-verified-tinkergraph-and-hugegraph-memory",
+      "initialStateCrosscheck": false,
+      "fullDriverValidation": "unit-validator-passed; sf100-hstore-not-run",
+      "semanticUnitTest": "tests-normative/ldbc-full.groovy; tests-normative/ldbc-hugegraph.groovy",
+      "driverUnitEvidence": "evidence/phase1-adapter/driver-http.json (tool repository)"
+    }
+  ],
+  "fullWorkloadValidated": false,
+  "officialBenchmarkClaimAllowed": false,
+  "validationScope": "44 ordered unit records; actual official DbValidator; no SF100/HStore performance acceptance"
+}

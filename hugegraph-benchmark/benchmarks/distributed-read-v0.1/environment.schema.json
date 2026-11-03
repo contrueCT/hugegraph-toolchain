@@ -1,0 +1,43 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "HG-Bench distributed environment disclosure",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["schemaVersion", "sutRevision", "backend", "route", "nodes", "partitionCount", "replicationFactor", "placementEvidence", "trafficEvidence", "uniqueDataBytes", "aggregateCacheBudgetBytes", "cacheProcedure", "clientRevision", "effectiveConfigEvidence", "metricsEvidence", "backgroundState"],
+    "properties": {
+        "schemaVersion": { "const": 1 },
+        "sutRevision": { "type": "string", "minLength": 1 },
+        "backend": { "enum": ["hstore", "rocksdb"] },
+        "route": { "enum": ["graph-rest", "gremlin-rest", "gremlin-direct"] },
+        "partitionCount": { "type": "integer", "minimum": 1 },
+        "replicationFactor": { "type": "integer", "minimum": 1 },
+        "uniqueDataBytes": { "type": "integer", "minimum": 0 },
+        "aggregateCacheBudgetBytes": { "type": "integer", "minimum": 1 },
+        "cacheProcedure": { "type": "string", "minLength": 1 },
+        "clientRevision": { "type": "string", "minLength": 1 },
+        "backgroundState": { "enum": ["stable", "compaction-active", "disturbed", "unknown"] },
+        "placementEvidence": { "type": "string", "minLength": 1 },
+        "trafficEvidence": { "type": "string", "minLength": 1 },
+        "effectiveConfigEvidence": { "type": "string", "minLength": 1 },
+        "metricsEvidence": { "type": "string", "minLength": 1 },
+        "nodes": {
+            "type": "array", "minItems": 1,
+            "items": {
+                "type": "object", "additionalProperties": false,
+                "required": ["id", "roles", "host", "cpu", "memoryBytes", "disk", "network", "os", "jdk", "resourceLimits"],
+                "properties": {
+                    "id": { "type": "string", "minLength": 1 },
+                    "roles": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["load-generator", "server", "pd", "store"] } },
+                    "host": { "type": "string", "minLength": 1 },
+                    "cpu": { "type": "string", "minLength": 1 },
+                    "memoryBytes": { "type": "integer", "minimum": 1 },
+                    "disk": { "type": "string", "minLength": 1 },
+                    "network": { "type": "string", "minLength": 1 },
+                    "os": { "type": "string", "minLength": 1 },
+                    "jdk": { "type": "string", "minLength": 1 },
+                    "resourceLimits": { "type": "string", "minLength": 1 }
+                }
+            }
+        }
+    }
+}

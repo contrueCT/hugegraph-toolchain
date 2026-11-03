@@ -1,0 +1,15 @@
+{
+  "suiteId": "hgbench-core-read-v0.1-draft",
+  "files": {
+    "spec.md": "644378931fe531234b44445ae62d4009b28b2e8b304879fc7dc4148ca1d81f30",
+    "suite.json": "ef3b789bc083538b349058c98e77f1193fd40d6b6203d935abedf6a53b08f153",
+    "profile.json": "9430a0d7815ee3195f9a10f95a44f9f359776f6d58f8c82e6e52d916dd824b67",
+    "scoring-policy.json": "c13149ce6d593006bb3582081496e4e47b43b3c2c10a87c392561135c67c8f4c",
+    "scorecard.schema.json": "045b67190daf192131304e85afe43d689642575fa51da002933cfe41fb6ac54c",
+    "reference.mjs": "3dbda83dfe0eb11ca2134fc50e3a20d8a5338dc16e6d891b7a7bf9f0ef1beba9",
+    "datasets.json": "1d7cad608b2581a71d8115ba578972c1764fc88790a7c76cfac4b33d4654d3db",
+    "parameters.json": "49618d66cfd4a3ee6bebdc7ec00befba24e5976bc540d958a4950f52742654d6",
+    "expected.json": "1912609391c3ef39aea6bdfc6666702782e8b5667fad2ec6e175ef68b4f2d7b8"
+  },
+  "suiteDigest": "6eea66da0d5ff2182aed02377e513ec64d6c49a24c422c4c42151ddb3dc17619"
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "scopeAuthority": "Current suite roles; historical locked synthetic specifications retain their original bytes for evidence replay.",
+  "suites": [
+    {
+      "id": "ldbc-snb-interactive-v1-official",
+      "path": "ldbc-snb-interactive-v1",
+      "role": "primary-standard-baseline",
+      "status": "29-operation-adapter-locally-verified; SF100-live-validation-pending",
+      "developmentScale": "0.1",
+      "scaleSelectionStatus": "SF100-confirmed; no-local-pilot-download",
+      "largeScaleReadiness": "SF100-assets-and-member-inventories-frozen; archive-converters-locally-verified; import-and-HStore-execution-pending",
+      "performanceScale": "100",
+      "performanceAssetDescriptor": "ldbc-snb-interactive-v1/candidates/sf100.json"
+    },
+    {
+      "id": "hgbench-distributed-read-v0.1-draft",
+      "path": "distributed-read-v0.1",
+      "role": "synthetic-diagnostics",
+      "status": "local-data-oracle-verified; performance-uncalibrated"
+    },
+    {
+      "id": "hgbench-core-read-v0.1-draft",
+      "path": "core-read-v0.1",
+      "role": "semantic-conformance",
+      "status": "local-reference-and-transport-tested"
+    },
+    {
+      "id": "hgbench-http-serving-v0.1",
+      "path": "http-serving-v0.1",
+      "role": "current-http-serving-baseline",
+      "status": "local-specification-candidate; real-calibration-pending",
+      "version": "0.1.0-draft.1"
+    }
+  ]
+}

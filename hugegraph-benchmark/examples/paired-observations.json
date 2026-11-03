@@ -1,0 +1,845 @@
+{
+    "schemaVersion": 1,
+    "kind": "normalized-paired-observations",
+    "origin": "simulated-distribution-not-a-database-benchmark",
+    "policy": {
+        "schemaVersion": 1,
+        "kind": "paired-analysis-policy",
+        "id": "p0-iid-normal-0",
+        "algorithm": "paired-median-percentile-bootstrap-v1",
+        "blockIds": [
+            "b0001",
+            "b0002",
+            "b0003",
+            "b0004",
+            "b0005",
+            "b0006",
+            "b0007",
+            "b0008",
+            "b0009",
+            "b0010",
+            "b0011",
+            "b0012",
+            "b0013",
+            "b0014",
+            "b0015",
+            "b0016",
+            "b0017",
+            "b0018",
+            "b0019",
+            "b0020"
+        ],
+        "metrics": [
+            {
+                "id": "latency-1",
+                "unit": "ms",
+                "better": "lower",
+                "relativeBudget": 0.05,
+                "absoluteBudget": 5,
+                "minimumObservations": 10000
+            },
+            {
+                "id": "latency-2",
+                "unit": "ms",
+                "better": "lower",
+                "relativeBudget": 0.05,
+                "absoluteBudget": 10,
+                "minimumObservations": 10000
+            }
+        ],
+        "familyAlpha": 0.05,
+        "minimumPairs": 20,
+        "bootstrapReplicates": 4000,
+        "minimumTailDraws": 20,
+        "maxWork": 1000000000,
+        "maxMilliseconds": 60000,
+        "resampleSeed": "example-frozen-v1:resample:iid-normal:0:0.2",
+        "orderSeed": "example-frozen-v1:order:0",
+        "baselineDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+        "candidateDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+        "contexts": {
+            "b0001": "230b7d3a4ea07e1cd74dfa9758286ae6d34ddf0ae0c84f3f74d4af509cf155f3",
+            "b0002": "a56162e1a82dac791627c1288bf876ccc37c2856a57104d81b2c5464bd0fb742",
+            "b0003": "c1d6f13c8312013d5a84d4ae84b1c888a03fa7c3863a54715660c53ec1e1f321",
+            "b0004": "c69328a5979ff8732bee91879b2c7ffba180a0ebaa4e6ccc2a4c8d9b98d1be94",
+            "b0005": "14ed99d1bc9abdc74aede18fa7d26e057d0ab1e5bad7cbe2f7c5b65a2bbbbe02",
+            "b0006": "6502ee21c5a42081cea7e83c032a16786f6213b0d9e9be96675872c8ee1d8b62",
+            "b0007": "4ca32cc092834b34f77e3b8506690c660c389c47b04aba4980932b00338dcacb",
+            "b0008": "047af5895590230b41371fc874f9d490168ed582f920e4f27c68b5c7ec7539ef",
+            "b0009": "8ce89416027615eaaf153fbec0ab9e775c47b1a1265737d3137e41f08101d2bc",
+            "b0010": "84e16445a07bf2e581477458156fb6103d3d571065c94e097246b27024e8d975",
+            "b0011": "50583a270910502aeb0b6a395c92d9e69cac04c5efb3b1b6102dd30b47e2b935",
+            "b0012": "92cb1b6381af34a175273630bf3374c4805420ee2b2276d6cdcbb064ea3b2417",
+            "b0013": "6618f05aeef90962a04f00e5a0bff77784f4fe58e9f523005221830a5b6be1f9",
+            "b0014": "174dd5c3a8c50dfc9dbf823f850c94b3cdd0f708da70ec7dee665edffced8437",
+            "b0015": "6fa313099e8f3d6e77a42736a49a46baf71b02bdee5c38da5840d771cf9476c5",
+            "b0016": "a8a36b66f2f348495216541d759f6a3187f8203174151a77e65a740e72ffb368",
+            "b0017": "4bb4ffc464dc43938d5ad7cbc08b0cee096d3409d8296f891f9e04fbbfa17a66",
+            "b0018": "9104a6098a04f4cb0e19f6c74a3a06e7c84ed01b1620c850d54c6cf3149143bd",
+            "b0019": "fa1f95ff39fe3f8b12b344cf40ca44056550790665b247693ad94781ad72041d",
+            "b0020": "feac9ffe7b5b5155766b87e0f2de6f7a7dc1d0d8921715c47320491d4fb57d23"
+        }
+    },
+    "blocks": [
+        {
+            "id": "b0001",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0001-A",
+                "evidenceSha256": "e8040288e1e9fdd61d96c0eea2d8b278e1790aaf58d4fba03bb39a9a6f242361",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "230b7d3a4ea07e1cd74dfa9758286ae6d34ddf0ae0c84f3f74d4af509cf155f3",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0001-B",
+                "evidenceSha256": "a6f9c1c372810451529a8a248ba5d529d03ab7bf8994152c4841e4913a262e4e",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "230b7d3a4ea07e1cd74dfa9758286ae6d34ddf0ae0c84f3f74d4af509cf155f3",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 122.83207432684907,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 229.9311380936637,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0002",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0002-A",
+                "evidenceSha256": "0605a41186d33fe736d81e166e3efa800c3fb19e8b53ad8078656700590e7f6a",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "a56162e1a82dac791627c1288bf876ccc37c2856a57104d81b2c5464bd0fb742",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0002-B",
+                "evidenceSha256": "78d6cad5ba3dae6a004c91eba964108da682c3951bb3ec9e46c8cfab972dcf3a",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "a56162e1a82dac791627c1288bf876ccc37c2856a57104d81b2c5464bd0fb742",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 150.8355823410079,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 270.4870680338592,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0003",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0003-A",
+                "evidenceSha256": "d83434cb0e958bad2495e225ad34eac1ed507c8349bce2f01ab3f7d492adae43",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "c1d6f13c8312013d5a84d4ae84b1c888a03fa7c3863a54715660c53ec1e1f321",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0003-B",
+                "evidenceSha256": "dd79031b320ef80697106ba84d414106f13467dacb659fdd0dd4160c7e029a39",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "c1d6f13c8312013d5a84d4ae84b1c888a03fa7c3863a54715660c53ec1e1f321",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 121.04945806738559,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 241.03243357602997,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0004",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0004-A",
+                "evidenceSha256": "ffd3a44c2884441444f9bfb74e2ac51e26d98a92d01717715cc504c9aa699151",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "c69328a5979ff8732bee91879b2c7ffba180a0ebaa4e6ccc2a4c8d9b98d1be94",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0004-B",
+                "evidenceSha256": "63eb0c07dc751978bbf205464e11415dc51f14997daa90e8805efa4d0984cc0d",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "c69328a5979ff8732bee91879b2c7ffba180a0ebaa4e6ccc2a4c8d9b98d1be94",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 125.38210437051873,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 239.82091143436804,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0005",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0005-A",
+                "evidenceSha256": "acf8bbfdb72529644c30066529bc603863bde3a495c1c59701a76aff26b9b5aa",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "14ed99d1bc9abdc74aede18fa7d26e057d0ab1e5bad7cbe2f7c5b65a2bbbbe02",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0005-B",
+                "evidenceSha256": "af65483252ba52d9558b6f88a0a96e06bf35bddc5052c21a9c6c924834cd75a8",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "14ed99d1bc9abdc74aede18fa7d26e057d0ab1e5bad7cbe2f7c5b65a2bbbbe02",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 115.29786513842544,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 218.74733689343256,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0006",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0006-A",
+                "evidenceSha256": "f7537dae5a43f8fd8bd43a7b7dbb5bd6bfdf2ba50dcea8d0a968ab535dece549",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "6502ee21c5a42081cea7e83c032a16786f6213b0d9e9be96675872c8ee1d8b62",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0006-B",
+                "evidenceSha256": "5e92795dc3f8eb580daf50bbcc1861c52983892cb4837327fb183151b2787eda",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "6502ee21c5a42081cea7e83c032a16786f6213b0d9e9be96675872c8ee1d8b62",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 124.81651052814414,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 242.42893376040686,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0007",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0007-A",
+                "evidenceSha256": "8fcc38a9817fd32074d435994d4571b00eb69b2049a356bfeeb99f2fdbccbc14",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "4ca32cc092834b34f77e3b8506690c660c389c47b04aba4980932b00338dcacb",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0007-B",
+                "evidenceSha256": "1f5b7a2182a04fcd47b9312937c1aa1968017a64cfca87898fa0ef821ac0e77f",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "4ca32cc092834b34f77e3b8506690c660c389c47b04aba4980932b00338dcacb",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 134.3172973340102,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 257.19435706747277,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0008",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0008-A",
+                "evidenceSha256": "0588508b7ad0ec5b7b860d48ff4f5b5d3b5e4b8c555d134a9a2fc3c5b2987450",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "047af5895590230b41371fc874f9d490168ed582f920e4f27c68b5c7ec7539ef",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0008-B",
+                "evidenceSha256": "2d7d43c1f37f2b5516ea74c0a17a87ed52748904f29019a5378d4dc0b05b3e99",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "047af5895590230b41371fc874f9d490168ed582f920e4f27c68b5c7ec7539ef",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 116.57312941790686,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 247.969156644833,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0009",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0009-A",
+                "evidenceSha256": "190378a54cfd8b0b1c87584085cbe86bbf0c8d66d868872422760c152e999229",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "8ce89416027615eaaf153fbec0ab9e775c47b1a1265737d3137e41f08101d2bc",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0009-B",
+                "evidenceSha256": "d37a7a34f69f756fcd02f597e64402348b029f97f397c9064856c60d9e55e4b2",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "8ce89416027615eaaf153fbec0ab9e775c47b1a1265737d3137e41f08101d2bc",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 134.61639391964974,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 257.989012474617,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0010",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0010-A",
+                "evidenceSha256": "fa74b92ac19e6c5260996b30e67ebf3a25f9d07d23d897f4707b506259290b70",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "84e16445a07bf2e581477458156fb6103d3d571065c94e097246b27024e8d975",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0010-B",
+                "evidenceSha256": "a187384ae613e1dfcfbc000c3bcc3c70a24faab27cfcf0c43a1d3756f3b521ed",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "84e16445a07bf2e581477458156fb6103d3d571065c94e097246b27024e8d975",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 142.31370016603267,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 273.55400454132234,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0011",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0011-A",
+                "evidenceSha256": "82126b0ad199c6214d905ffc33cc9c1b7e729581ff17df1196b4a5d9b3204705",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "50583a270910502aeb0b6a395c92d9e69cac04c5efb3b1b6102dd30b47e2b935",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0011-B",
+                "evidenceSha256": "5c0e45259b8aba3f777b864b0f5b47fb86bef3f0565df68e10b0a2e29c7c0201",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "50583a270910502aeb0b6a395c92d9e69cac04c5efb3b1b6102dd30b47e2b935",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 122.27782488100219,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 228.11415194902102,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0012",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0012-A",
+                "evidenceSha256": "f8ab5c6a6ea2cd9706aab803eaac962ba7bc805cf4f95e721edc3d8d39e016d6",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "92cb1b6381af34a175273630bf3374c4805420ee2b2276d6cdcbb064ea3b2417",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0012-B",
+                "evidenceSha256": "5f3dfd7e6e013166423c4d13faffca1bf378fa8f1184ec8f0c968552903515b7",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "92cb1b6381af34a175273630bf3374c4805420ee2b2276d6cdcbb064ea3b2417",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 131.56989710108712,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 245.10141387547924,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0013",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0013-A",
+                "evidenceSha256": "fecfff41f069c7c7bf5c14bb9f5f57f0f71c79cfafa701ef71b4ff35c30c3809",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "6618f05aeef90962a04f00e5a0bff77784f4fe58e9f523005221830a5b6be1f9",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0013-B",
+                "evidenceSha256": "e68ae09097d8f66614387434c9c5679b27bf791ac62c87bca55f0fd364145f7b",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "6618f05aeef90962a04f00e5a0bff77784f4fe58e9f523005221830a5b6be1f9",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 104.25333017542881,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 209.1190344874055,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0014",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0014-A",
+                "evidenceSha256": "0f60cae638c54a8c1c3e07e6ee4ca392c9be3b12446804f6daabc377fc0e7360",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "174dd5c3a8c50dfc9dbf823f850c94b3cdd0f708da70ec7dee665edffced8437",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0014-B",
+                "evidenceSha256": "74237795fdb8aa0d1cb8b2b0444a77365824e927195cbcfde44265b4929bba36",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "174dd5c3a8c50dfc9dbf823f850c94b3cdd0f708da70ec7dee665edffced8437",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 121.5635524140633,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 206.28602638329278,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0015",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0015-A",
+                "evidenceSha256": "0a4e570c88884d33c083efe9e453ac86791b7af3e9904e526a3389ed3629d023",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "6fa313099e8f3d6e77a42736a49a46baf71b02bdee5c38da5840d771cf9476c5",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0015-B",
+                "evidenceSha256": "401c0d6b0071a43fd0db67c4cf556f62244a4d7830920c38907f4dbfc7c2cc46",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "6fa313099e8f3d6e77a42736a49a46baf71b02bdee5c38da5840d771cf9476c5",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 136.91200825063768,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 278.8813078199278,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0016",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0016-A",
+                "evidenceSha256": "831ddb415c87dfe0f46e7f0f8bf0a9bcd6eef7f66196bd4241e1278ddc22e506",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "a8a36b66f2f348495216541d759f6a3187f8203174151a77e65a740e72ffb368",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0016-B",
+                "evidenceSha256": "8811cc283b52ee8145f54ac49019c9a60ad8168a6847b0d18ba86bd62871b809",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "a8a36b66f2f348495216541d759f6a3187f8203174151a77e65a740e72ffb368",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 128.17697028359981,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 267.6473105436485,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0017",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0017-A",
+                "evidenceSha256": "4a3856c873008fcdc2ef994a70711c0260a98b0846d33d56566267d145384648",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "4bb4ffc464dc43938d5ad7cbc08b0cee096d3409d8296f891f9e04fbbfa17a66",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0017-B",
+                "evidenceSha256": "cefa64878e2e93d557e5090c1ce606803b30833852ab79b59b069fb885d8df4b",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "4bb4ffc464dc43938d5ad7cbc08b0cee096d3409d8296f891f9e04fbbfa17a66",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 109.892596664023,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 231.0462626151319,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0018",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0018-A",
+                "evidenceSha256": "311f7db5817dbffecdc40d39aad0f6daed34b060b06710149ce43c9e7998bedf",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "9104a6098a04f4cb0e19f6c74a3a06e7c84ed01b1620c850d54c6cf3149143bd",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0018-B",
+                "evidenceSha256": "a3815968b28026d12293718a2336737cc03b6cab5018b68f6a9e35b2008c0bd3",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "9104a6098a04f4cb0e19f6c74a3a06e7c84ed01b1620c850d54c6cf3149143bd",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 120.92304945979326,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 243.14007934077023,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0019",
+            "observedOrder": "BA",
+            "baseline": {
+                "runId": "b0019-A",
+                "evidenceSha256": "029f4328ae24c20c6275b30d1afad9346063cf1883f9a347e02fe60e3f239064",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "fa1f95ff39fe3f8b12b344cf40ca44056550790665b247693ad94781ad72041d",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0019-B",
+                "evidenceSha256": "a33fe35c4b16b74030a9684c23618e2662d371a29e218dbaf140f2f40eaf6691",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "fa1f95ff39fe3f8b12b344cf40ca44056550790665b247693ad94781ad72041d",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 125.17330706174062,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 280.7941201490686,
+                        "observations": 20000
+                    }
+                }
+            }
+        },
+        {
+            "id": "b0020",
+            "observedOrder": "AB",
+            "baseline": {
+                "runId": "b0020-A",
+                "evidenceSha256": "3e1205ae7dbd14bc85a2e551e3de4d6b3d8934a9cb63e5b9ecb8a7a5e15ec87f",
+                "variantDigest": "42c8c2293ba3783a730265f34232d5c079cb7847045c04349a9524c37fcb3355",
+                "conditionsDigest": "feac9ffe7b5b5155766b87e0f2de6f7a7dc1d0d8921715c47320491d4fb57d23",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 100,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 200,
+                        "observations": 20000
+                    }
+                }
+            },
+            "candidate": {
+                "runId": "b0020-B",
+                "evidenceSha256": "7c6951f5048aab57effc2c16a546996daac90294fe8dac5e46b2969ed0269423",
+                "variantDigest": "9f2b2f7fe4a357c0beba609fec7c5071acc2241c662e9c9db56904524f741b50",
+                "conditionsDigest": "feac9ffe7b5b5155766b87e0f2de6f7a7dc1d0d8921715c47320491d4fb57d23",
+                "status": "ok",
+                "values": {
+                    "latency-1": {
+                        "value": 117.23080623840194,
+                        "observations": 20000
+                    },
+                    "latency-2": {
+                        "value": 242.06780162193317,
+                        "observations": 20000
+                    }
+                }
+            }
+        }
+    ]
+}

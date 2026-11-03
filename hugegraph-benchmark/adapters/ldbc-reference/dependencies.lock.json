@@ -1,0 +1,35 @@
+{
+    "schemaVersion": 1,
+    "files": [
+        {
+            "path": "neo4j-java-driver-4.4.3.jar",
+            "scope": "runtime",
+            "url": "https://repo.maven.apache.org/maven2/org/neo4j/driver/neo4j-java-driver/4.4.3/neo4j-java-driver-4.4.3.jar",
+            "bytes": 4890898,
+            "sha256": "92b45904053dc11829d711e22407fdef16ff4d0ba4d22c509b841679e3696d27"
+        },
+        {
+            "path": "reactive-streams-1.0.3.jar",
+            "scope": "runtime",
+            "url": "https://repo.maven.apache.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
+            "bytes": 11369,
+            "sha256": "1dee0481072d19c929b623e155e14d2f6085dc011529a0a0dbefc84cf571d865"
+        },
+        {
+            "path": "junit-4.12.jar",
+            "scope": "compile-only-upstream-test-support",
+            "url": "https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar",
+            "bytes": 314932,
+            "sha256": "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a"
+        },
+        {
+            "path": "hamcrest-core-1.3.jar",
+            "scope": "compile-only-upstream-test-support",
+            "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "bytes": 45024,
+            "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9"
+        }
+    ],
+    "source": "Neo4j 4.4.3 POM/parent POM and LDBC common POM; no mutable dependency resolution",
+    "checksumAuthority": "locally-observed-repository-HTTPS-or-existing-Maven-cache"
+}

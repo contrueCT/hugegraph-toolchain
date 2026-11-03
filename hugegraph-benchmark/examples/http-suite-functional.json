@@ -1,0 +1,46 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-suite-settings",
+    "name": "http-serving-functional",
+    "endpoint": "http://127.0.0.1:18080/gremlin",
+    "responseEncoding": "identity",
+    "authorizationEnv": null,
+    "target": {
+        "label": "replace-with-actual-target",
+        "build": "record-exact-candidate-build",
+        "mode": "record-and-verify-actual-mode",
+        "environment": "Functional correctness only; collect actual build/configuration evidence before execution.",
+        "evidenceFiles": []
+    },
+    "caseIds": [
+        "scalar-add",
+        "structured-one",
+        "rows-0016",
+        "rows-0256",
+        "rows-4096",
+        "string-0001k",
+        "string-0016k",
+        "string-0064k",
+        "string-0256k",
+        "string-1024k",
+        "string-unicode"
+    ],
+    "purpose": "functional",
+    "loads": [
+        {
+            "id": "open-2",
+            "model": "open",
+            "ratePerSecond": 2,
+            "maxInFlight": 1,
+            "maxStartDelayMs": 1000
+        }
+    ],
+    "repeats": 1,
+    "warmupMs": 0,
+    "durationMs": 1000,
+    "requestTimeoutMs": 5000,
+    "drainMs": 5000,
+    "maxRequestsPerPhase": 100,
+    "maxResponseBytes": 2097152,
+    "maxTraceBytes": 1048576
+}

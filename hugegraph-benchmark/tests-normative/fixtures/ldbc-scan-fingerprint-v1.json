@@ -1,0 +1,399 @@
+{
+    "schemaVersion": 1,
+    "kind": "ldbc-scan-fingerprint-v1-wire-vectors",
+    "license": "Apache-2.0",
+    "protocol": "hgbench-keyed-logical-multiset-v1",
+    "buckets": 64,
+    "challengeHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+    "labels": {
+        "edges": ["knows", "replyOf"],
+        "vertices": ["person", "comment", "post", "类<>&𐐀"]
+    },
+    "referenceSources": {
+        "tools/ldbc-reconcile.py": "9421359b8b42a76bff38d3aed1535efdf7e3033bc3ce16a798e4ef5f5b671233",
+        "tools/ldbc-scan.py": "0e09588b2c7ae7a78aa70a6ed8875cc860fbb8be1b843dba5b583cb898a874f4"
+    },
+    "scope": "Fixed logical-record wire vectors; no graph or SF100 qualification.",
+    "cases": [
+        {
+            "id": "bench-0-logical",
+            "category": "vertices",
+            "accepted": true,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}",
+            "expected": {
+                "identityUtf8": "[\"vertices\",\"person\",\"person:9007199254740993>甲\"]",
+                "recordUtf8": "[\"vertices\",[\"object\",[[\"id\",[\"str\",\"person:9007199254740993>甲\"]],[\"label\",[\"str\",\"person\"]],[\"properties\",[\"object\",[[\"emails\",[\"array\",[[\"str\",\"a\"],[\"str\",\"b\"]]]],[\"firstName\",[\"str\",\" \\t甲\\n \"]],[\"languages\",[\"array\",[[\"str\",\"en\"],[\"str\",\"中文\"]]]],[\"lastName\",[\"str\",\"A<&>\\\\\\\"\"]],[\"ldbcId\",[\"int\",9007199254740993]]]]]]]]",
+                "bucketTagHex": "9f7814668d25703954833c00589ee3bd538223a40bc17151d26327e27d02771f",
+                "sumAHex": "9996c5695456f1001f870fca24116880086b52e77ddd21916fc3380c6a7cb9f5",
+                "sumBHex": "51f99fcc193b938242431de2bcba929b8e0073dd9cbb61c66a377f082d1bbb15",
+                "bucket": 56
+            }
+        },
+        {
+            "id": "bench-1-logical",
+            "category": "vertices",
+            "accepted": true,
+            "rawUtf8": "{\"id\":\"message:23\",\"label\":\"comment\",\"properties\":{\"browserUsed\":\"fixture\",\"content\":\"Long protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\n\",\"creationDate\":\"2011-01-01T00:00:00Z\",\"ldbcId\":23,\"locationIP\":\"127.0.0.1\"}}",
+            "expected": {
+                "identityUtf8": "[\"vertices\",\"comment\",\"message:23\"]",
+                "recordUtf8": "[\"vertices\",[\"object\",[[\"id\",[\"str\",\"message:23\"]],[\"label\",[\"str\",\"comment\"]],[\"properties\",[\"object\",[[\"browserUsed\",[\"str\",\"fixture\"]],[\"content\",[\"str\",\"Long protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\nLong protocol text 甲> &\\n\"]],[\"creationDate\",[\"str\",\"2011-01-01T00:00:00Z\"]],[\"ldbcId\",[\"int\",23]],[\"locationIP\",[\"str\",\"127.0.0.1\"]]]]]]]]",
+                "bucketTagHex": "b8045eaccbdad26bade97c2802e60a907e7dad757ef3ff5bafff5da6158efa92",
+                "sumAHex": "542624af7300dad330efd849a4f0885c6f8179d8fd062d338ac5603bcbe05fee",
+                "sumBHex": "f039408a385e046a698fb68b7e9c6bc0a5b866ae454f642611b17b17ae7f2b2a",
+                "bucket": 4
+            }
+        },
+        {
+            "id": "bench-2-logical",
+            "category": "edges",
+            "accepted": true,
+            "rawUtf8": "{\"label\":\"knows\",\"properties\":{\"creationDate\":\"2011-01-01T00:00:00Z\",\"edgeKey\":9223372036854775807},\"sourceId\":\"person:9007199254740993>甲\",\"targetId\":\"person:2\"}",
+            "expected": {
+                "identityUtf8": "[\"edges\",\"knows\",\"person:9007199254740993>甲\",\"person:2\",9223372036854775807]",
+                "recordUtf8": "[\"edges\",[\"object\",[[\"label\",[\"str\",\"knows\"]],[\"properties\",[\"object\",[[\"creationDate\",[\"str\",\"2011-01-01T00:00:00Z\"]],[\"edgeKey\",[\"int\",9223372036854775807]]]]],[\"sourceId\",[\"str\",\"person:9007199254740993>甲\"]],[\"targetId\",[\"str\",\"person:2\"]]]]]",
+                "bucketTagHex": "dbe236cbd6e97c3f2fcb600b032b15d4461c25eaaa172c4b6b2bbda81836b541",
+                "sumAHex": "eff8e5b7dbb19e9fb325c914624b52f6add1e3da93d555b623b1185655139f7d",
+                "sumBHex": "326dc2a723e74d442e5a449b8597aa8abd9abb97bdc43f7cb9f12f14c9efa659",
+                "bucket": 34
+            }
+        },
+        {
+            "id": "bench-3-logical",
+            "category": "edges",
+            "accepted": true,
+            "rawUtf8": "{\"label\":\"replyOf\",\"properties\":{\"edgeKey\":-9223372036854775808},\"sourceId\":\"message:23\",\"targetId\":\"message:42\"}",
+            "expected": {
+                "identityUtf8": "[\"edges\",\"replyOf\",\"message:23\",\"message:42\",-9223372036854775808]",
+                "recordUtf8": "[\"edges\",[\"object\",[[\"label\",[\"str\",\"replyOf\"]],[\"properties\",[\"object\",[[\"edgeKey\",[\"int\",-9223372036854775808]]]]],[\"sourceId\",[\"str\",\"message:23\"]],[\"targetId\",[\"str\",\"message:42\"]]]]]",
+                "bucketTagHex": "a9a81cd12316367c72d3571df71b5703d4a471330666048341908b31d92c85e8",
+                "sumAHex": "1929c63cfbae04b0acf3ea410bc1d2b542e390ff50924067863fda85cb0cbfed",
+                "sumBHex": "1a19658c84002f2a1b10377a334925f1f006583816b7dabc0855c37e80ea95b7",
+                "bucket": 40
+            }
+        },
+        {
+            "id": "unicode-0-logical",
+            "category": "vertices",
+            "accepted": true,
+            "rawUtf8": "{\"id\":\"x\\u0000\\n\",\"label\":\"类<>&𐐀\",\"properties\":{\"ldbcId\":-9223372036854775808,\"text\":\"\\b\\f\\n\\r\\t\\\"\\\\/\\u001f  😀\",\"\":\"BMP\",\"𐀀\":\"astral\"}}",
+            "expected": {
+                "identityUtf8": "[\"vertices\",\"类<>&𐐀\",\"x\\u0000\\n\"]",
+                "recordUtf8": "[\"vertices\",[\"object\",[[\"id\",[\"str\",\"x\\u0000\\n\"]],[\"label\",[\"str\",\"类<>&𐐀\"]],[\"properties\",[\"object\",[[\"ldbcId\",[\"int\",-9223372036854775808]],[\"text\",[\"str\",\"\\b\\f\\n\\r\\t\\\"\\\\/\\u001f  😀\"]],[\"\",[\"str\",\"BMP\"]],[\"𐀀\",[\"str\",\"astral\"]]]]]]]]",
+                "bucketTagHex": "599502f46e4099d2b29b7077a022a9ed42e88115cbf8c40df27423481daa66f9",
+                "sumAHex": "3a3eccc22b86447912f88616a575e90cf2ea494317e688a25954c0c6f8bd8175",
+                "sumBHex": "6e3ea6c42f95ab07899858e3b697b5d8a25f1895036e7bcb3876f8b01cb206e4",
+                "bucket": 21
+            }
+        },
+        {
+            "id": "unicode-1-logical",
+            "category": "vertices",
+            "accepted": true,
+            "rawUtf8": "{\"id\":\"person:0\",\"label\":\"person\",\"properties\":{\"emails\":[],\"languages\":[\"\",\"甲\"],\"ldbcId\":0}}",
+            "expected": {
+                "identityUtf8": "[\"vertices\",\"person\",\"person:0\"]",
+                "recordUtf8": "[\"vertices\",[\"object\",[[\"id\",[\"str\",\"person:0\"]],[\"label\",[\"str\",\"person\"]],[\"properties\",[\"object\",[[\"emails\",[\"array\",[]]],[\"languages\",[\"array\",[[\"str\",\"\"],[\"str\",\"甲\"]]]],[\"ldbcId\",[\"int\",0]]]]]]]]",
+                "bucketTagHex": "dddb65919419091538c0042bc641eaf8db527d92f4cc5d39296520f5dc9d0413",
+                "sumAHex": "2eea53d60f7db70dc2418841f6be671e783612f4db9b4bac29cb11022ce76b52",
+                "sumBHex": "9d980093bceedefcee487434181edb520ac13777204d37b1b527852bd3d14758",
+                "bucket": 27
+            }
+        },
+        {
+            "id": "bad-long-268",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":true}}"
+        },
+        {
+            "id": "bad-long-269",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":false}}"
+        },
+        {
+            "id": "bad-long-270",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":1.0}}"
+        },
+        {
+            "id": "bad-long-271",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":null}}"
+        },
+        {
+            "id": "bad-long-272",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9223372036854775808}}"
+        },
+        {
+            "id": "bad-long-273",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":-9223372036854775809}}"
+        },
+        {
+            "id": "bad-long-274",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":[]}}"
+        },
+        {
+            "id": "bad-long-275",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":{}}}"
+        },
+        {
+            "id": "bad-shape-276",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-shape-277",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":5,\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-shape-278",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"unconfigured\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-shape-279",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-shape-280",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":[]}"
+        },
+        {
+            "id": "bad-shape-281",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":null}"
+        },
+        {
+            "id": "bad-property-282",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"same\",\"same\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-283",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[1],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-284",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":null,\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-285",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[false],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-286",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"\":\"bad-key\",\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-287",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"extra\":{},\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-288",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"extra\":[],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-289",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"extra\":2.5,\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-property-290",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"extra\":true,\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}"
+        },
+        {
+            "id": "bad-raw-291",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"id\":\"y\",\"label\":\"person\",\"properties\":{\"ldbcId\":1}}"
+        },
+        {
+            "id": "bad-raw-292",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":1,\"x\":\"a\",\"\\u0078\":\"b\"}}"
+        },
+        {
+            "id": "bad-raw-293",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"\\ud800\",\"label\":\"person\",\"properties\":{\"ldbcId\":1}}"
+        },
+        {
+            "id": "bad-raw-294",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":1,\"emails\":[\"\\udc00\"]}}"
+        },
+        {
+            "id": "bad-raw-295",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":NaN}}"
+        },
+        {
+            "id": "bad-raw-296",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":Infinity}}"
+        },
+        {
+            "id": "bad-raw-297",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":01}}"
+        },
+        {
+            "id": "bad-raw-298",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":1e0}}"
+        },
+        {
+            "id": "bad-raw-299",
+            "category": "vertices",
+            "accepted": false,
+            "rawHex": "7b226964223a2278222c226c6162656c223a22706572736f6e222c2270726f70657274696573223a7b226c6462634964223a312c2278223a22ff227d7d"
+        },
+        {
+            "id": "bad-raw-300",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "{} {}"
+        },
+        {
+            "id": "bad-raw-301",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "[]"
+        },
+        {
+            "id": "bad-raw-302",
+            "category": "vertices",
+            "accepted": false,
+            "rawUtf8": "null"
+        },
+        {
+            "id": "negative-zero",
+            "category": "vertices",
+            "accepted": true,
+            "rawUtf8": "{\"id\":\"x\",\"label\":\"person\",\"properties\":{\"ldbcId\":-0}}",
+            "expected": {
+                "identityUtf8": "[\"vertices\",\"person\",\"x\"]",
+                "recordUtf8": "[\"vertices\",[\"object\",[[\"id\",[\"str\",\"x\"]],[\"label\",[\"str\",\"person\"]],[\"properties\",[\"object\",[[\"ldbcId\",[\"int\",0]]]]]]]]",
+                "bucketTagHex": "ca2bf71fc6a8d895b356c6f637ea41cf5ff3c43d5cf89a23b8262630f9adadd4",
+                "sumAHex": "401a523a8af1c02e198d181a75c64c5d83c17031714e9ed59b7052533be3fd46",
+                "sumBHex": "2fbd818de2f73167ee034d9f53b68d68e00ebe9a495b7e27c5e42bad85282b8e",
+                "bucket": 43
+            }
+        },
+        {
+            "id": "utf8-bom",
+            "category": "vertices",
+            "accepted": true,
+            "rawUtf8": "﻿{\"id\":\"person:9007199254740993>甲\",\"label\":\"person\",\"properties\":{\"emails\":[\"b\",\"a\"],\"firstName\":\" \\t甲\\n \",\"languages\":[\"中文\",\"en\"],\"lastName\":\"A<&>\\\\\\\"\",\"ldbcId\":9007199254740993}}",
+            "expected": {
+                "identityUtf8": "[\"vertices\",\"person\",\"person:9007199254740993>甲\"]",
+                "recordUtf8": "[\"vertices\",[\"object\",[[\"id\",[\"str\",\"person:9007199254740993>甲\"]],[\"label\",[\"str\",\"person\"]],[\"properties\",[\"object\",[[\"emails\",[\"array\",[[\"str\",\"a\"],[\"str\",\"b\"]]]],[\"firstName\",[\"str\",\" \\t甲\\n \"]],[\"languages\",[\"array\",[[\"str\",\"en\"],[\"str\",\"中文\"]]]],[\"lastName\",[\"str\",\"A<&>\\\\\\\"\"]],[\"ldbcId\",[\"int\",9007199254740993]]]]]]]]",
+                "bucketTagHex": "9f7814668d25703954833c00589ee3bd538223a40bc17151d26327e27d02771f",
+                "sumAHex": "9996c5695456f1001f870fca24116880086b52e77ddd21916fc3380c6a7cb9f5",
+                "sumBHex": "51f99fcc193b938242431de2bcba929b8e0073dd9cbb61c66a377f082d1bbb15",
+                "bucket": 56
+            }
+        }
+    ],
+    "expectedAggregateNonzero": [
+        {
+            "category": "edges",
+            "label": "knows",
+            "bucket": 34,
+            "records": "1",
+            "sumA": "eff8e5b7dbb19e9fb325c914624b52f6add1e3da93d555b623b1185655139f7d",
+            "sumB": "326dc2a723e74d442e5a449b8597aa8abd9abb97bdc43f7cb9f12f14c9efa659"
+        },
+        {
+            "category": "edges",
+            "label": "replyOf",
+            "bucket": 40,
+            "records": "1",
+            "sumA": "1929c63cfbae04b0acf3ea410bc1d2b542e390ff50924067863fda85cb0cbfed",
+            "sumB": "1a19658c84002f2a1b10377a334925f1f006583816b7dabc0855c37e80ea95b7"
+        },
+        {
+            "category": "vertices",
+            "label": "comment",
+            "bucket": 4,
+            "records": "1",
+            "sumA": "542624af7300dad330efd849a4f0885c6f8179d8fd062d338ac5603bcbe05fee",
+            "sumB": "f039408a385e046a698fb68b7e9c6bc0a5b866ae454f642611b17b17ae7f2b2a"
+        },
+        {
+            "category": "vertices",
+            "label": "person",
+            "bucket": 27,
+            "records": "1",
+            "sumA": "2eea53d60f7db70dc2418841f6be671e783612f4db9b4bac29cb11022ce76b52",
+            "sumB": "9d980093bceedefcee487434181edb520ac13777204d37b1b527852bd3d14758"
+        },
+        {
+            "category": "vertices",
+            "label": "person",
+            "bucket": 43,
+            "records": "1",
+            "sumA": "401a523a8af1c02e198d181a75c64c5d83c17031714e9ed59b7052533be3fd46",
+            "sumB": "2fbd818de2f73167ee034d9f53b68d68e00ebe9a495b7e27c5e42bad85282b8e"
+        },
+        {
+            "category": "vertices",
+            "label": "person",
+            "bucket": 56,
+            "records": "2",
+            "sumA": "332d8ad2a8ade2003f0e1f944822d10010d6a5cefbba4322df867018d4f973ea",
+            "sumB": "a3f33f983277270484863bc5797525371c00e7bb3976c38cd46efe105a37762a"
+        },
+        {
+            "category": "vertices",
+            "label": "类<>&𐐀",
+            "bucket": 21,
+            "records": "1",
+            "sumA": "3a3eccc22b86447912f88616a575e90cf2ea494317e688a25954c0c6f8bd8175",
+            "sumB": "6e3ea6c42f95ab07899858e3b697b5d8a25f1895036e7bcb3876f8b01cb206e4"
+        }
+    ]
+}

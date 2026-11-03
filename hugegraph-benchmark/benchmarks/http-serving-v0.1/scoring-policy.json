@@ -1,0 +1,57 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-serving-scoring-policy",
+    "aggregateScore": null,
+    "statisticalUnit": "independent-paired-run; never pooled requests",
+    "primaryMetrics": {
+        "open": [
+            "correctEndToEndMs.p99",
+            "correctCompletedInWindowPerSecond"
+        ],
+        "closed": [
+            "correctResponseMs.p99",
+            "correctCompletedInWindowPerSecond"
+        ]
+    },
+    "secondaryMetrics": [
+        "correctResponseMs.p50",
+        "correctResponseMs.p95",
+        "correctResponseMs.p99",
+        "failed",
+        "dropped",
+        "late",
+        "server-CPU",
+        "driver-CPU",
+        "RSS",
+        "GC",
+        "wire-body-bytes",
+        "decoded-body-bytes"
+    ],
+    "family": "freeze full case x load x primary-metric family before measurement; report every member",
+    "minimumMeaningfulDifference": null,
+    "thresholdStatus": "must-be-frozen-with-calibration-before-formal-comparison",
+    "qualityOrder": [
+        "correctness",
+        "evidence-integrity-and-accounting",
+        "mode-and-environment-window",
+        "driver-and-collector-calibration",
+        "comparability",
+        "paired-inference"
+    ],
+    "verdicts": [
+        "invalid",
+        "inconclusive",
+        "improved",
+        "regressed",
+        "tradeoff"
+    ],
+    "rules": [
+        "Timeouts, drops and errors remain explicit; no fabricated latency for unsent arrivals",
+        "Any expected case or pair missing invalidates the declared family; never select only favorable cases",
+        "Compression/auth/protocol/backend and process/cache reset are separate comparison strata",
+        "Current paired percentile-bootstrap implementation is a candidate; real A/A and known-regression calibration required",
+        "An overlapping SF100 conversion/import window is not accepted as a controlled HTTP performance window",
+        "Task exit zero and absence of HTTP errors are insufficient for performance acceptance"
+    ],
+    "automaticGateEnabled": false
+}

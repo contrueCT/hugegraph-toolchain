@@ -1,0 +1,8 @@
+{
+    "protocolVersion": 1,
+    "id": "descriptive-analyzer",
+    "version": "1.0.0",
+    "kind": "analyzer",
+    "command": ["$NODE", "./analyzer.mjs"],
+    "trackedFiles": ["analyzer.mjs"]
+}

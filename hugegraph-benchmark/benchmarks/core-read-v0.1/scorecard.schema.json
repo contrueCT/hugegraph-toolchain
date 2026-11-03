@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "HG-Bench Core Read draft conformance scorecard",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["schemaVersion", "suiteId", "suiteDigest", "profile", "sut", "route", "adapterRevision", "outcome", "performanceVerdict", "operations", "evidence"],
+    "properties": {
+        "schemaVersion": { "const": 1 },
+        "suiteId": { "const": "hgbench-core-read-v0.1-draft" },
+        "suiteDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "profile": { "const": "tiny-conformance-v1" },
+        "sut": { "type": "object", "additionalProperties": false, "required": ["name", "revision", "backend", "environmentRef"], "properties": {
+            "name": { "type": "string", "minLength": 1 }, "revision": { "type": "string", "minLength": 1 },
+            "backend": { "type": "string", "minLength": 1 }, "environmentRef": { "type": "string", "minLength": 1 }
+        } },
+        "route": { "enum": ["graph-rest", "gremlin-rest", "gremlin-direct", "reference"] },
+        "adapterRevision": { "type": "string", "minLength": 1 },
+        "outcome": { "enum": ["conformant", "correctness-failed", "incomplete", "invalid"] },
+        "performanceVerdict": { "const": "not-evaluated" },
+        "operations": { "type": "array", "items": { "type": "object", "additionalProperties": false,
+            "required": ["parameterId", "pass", "status", "resultRef"], "properties": {
+                "parameterId": { "type": "string", "minLength": 1 }, "pass": { "type": "integer", "minimum": 1, "maximum": 2 },
+                "status": { "enum": ["correct", "wrong", "unsupported", "timeout", "error"] },
+                "resultRef": { "type": ["string", "null"] }
+            }
+        } },
+        "evidence": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "schemaVersion": 1,
+    "kind": "http-go-toolchain",
+    "version": "go1.27.3",
+    "url": "https://go.dev/dl/go1.27.3.linux-amd64.tar.gz",
+    "bytes": 70588678,
+    "sha256": "65efbc80fdc1fa2cd2631cad5b481777a68e8725f34e89f50fc6ac714e379b40",
+    "runtimeDependencies": [],
+    "build": ["CGO_ENABLED=0", "GOTOOLCHAIN=local", "GOPROXY=off", "-trimpath", "-buildvcs=false"]
+}

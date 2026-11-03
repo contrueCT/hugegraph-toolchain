@@ -1,0 +1,18 @@
+{
+    "schemaVersion": 1,
+    "name": "controller-smoke",
+    "suite": "controller-fixture-v1",
+    "executor": "builtin:fixture",
+    "analyzer": "builtin:descriptive",
+    "cases": [
+        { "id": "sum-small", "config": { "size": 1000, "samples": 8 } },
+        { "id": "sum-large", "config": { "size": 10000, "samples": 8 } }
+    ],
+    "variants": [
+        { "id": "baseline", "config": { "delayMs": 1 } },
+        { "id": "candidate", "config": { "delayMs": 2 } }
+    ],
+    "blocks": 2,
+    "seed": 3346,
+    "componentTimeoutMs": 10000
+}
