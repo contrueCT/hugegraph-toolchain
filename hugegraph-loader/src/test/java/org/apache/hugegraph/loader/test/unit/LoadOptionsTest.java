@@ -41,6 +41,23 @@ import org.apache.hugegraph.testutil.Assert;
 public class LoadOptionsTest {
 
     @Test
+    public void testRetriesCanBeDisabled() throws Exception {
+        File mapping = createTempMapping();
+        try {
+            String[] args = {"--file", mapping.getPath(), "--retry-times", "0",
+                             "--batch-failure-fallback", "false"};
+            assertParserExit(true, false, args);
+            Assert.assertEquals(0, LoadOptions.parseOptions(args).retryTimes);
+            Assert.assertFalse(LoadOptions.parseOptions(args).batchFailureFallback);
+            Assert.assertEquals(3, new LoadOptions().retryTimes);
+            Assert.assertTrue(new LoadOptions().batchFailureFallback);
+            assertParserExit(false, "--file", mapping.getPath(), "--retry-times", "-1");
+        } finally {
+            mapping.delete();
+        }
+    }
+
+    @Test
     public void testInvalidArgumentsExitNonzeroAndHelpExitsZero() throws Exception {
         File mapping = createTempMapping();
         try {

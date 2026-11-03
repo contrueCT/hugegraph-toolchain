@@ -90,6 +90,10 @@ public final class HugeClientHolder {
                                 .configPool(options.maxConnections,
                                             options.maxConnectionsPerRoute);
 
+            if (options.retryTimes == 0) {
+                builder.configHttpBuilder(NoRetryHttpClient::configure);
+            }
+
             if (useHttps) {
                 String trustFile;
                 if (options.trustStoreFile == null) {

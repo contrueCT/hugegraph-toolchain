@@ -45,7 +45,8 @@ import org.junit.runners.Suite;
         DataTypeUtilTest.class,
         LineParserTest.class,
         LoadMappingTest.class,
-        BatchInsertRetryTest.class
+        BatchInsertRetryTest.class,
+        NoRetryHttpClientTest.class
 })
 public class UnitTestSuite {
 }

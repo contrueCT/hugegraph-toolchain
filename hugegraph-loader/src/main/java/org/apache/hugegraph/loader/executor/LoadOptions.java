@@ -247,8 +247,8 @@ public final class LoadOptions implements Cloneable {
     public int timeout = 60;
 
     @Parameter(names = {"--retry-times"}, arity = 1,
-               validateWith = {PositiveValidator.class},
-               description = "Setting the max retry times when loading timeout")
+               validateWith = {NonNegativeValidator.class},
+               description = "Maximum retries after loading failures; 0 disables retries")
     public int retryTimes = 3;
 
     @Parameter(names = {"--retry-interval"}, arity = 1,
@@ -521,6 +521,18 @@ public final class LoadOptions implements Cloneable {
                 throw new ParameterException(String.format("Ensure the file exists and is " +
                                                            "indeed a file instead of a " +
                                                            "directory: '%s'", value));
+            }
+        }
+    }
+
+    public static class NonNegativeValidator implements IParameterValidator {
+
+        @Override
+        public void validate(String name, String value) {
+            int number = Integer.parseInt(value);
+            if (number < 0) {
+                throw new ParameterException(String.format("Parameter '%s' should be non-negative, " +
+                                                           "but got '%s'", name, value));
             }
         }
     }
