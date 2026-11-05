@@ -41,7 +41,7 @@ const targetSchema = z.strictObject({ targetDigest: sha, epoch: id });
 export const sf100RequestSchema = z.strictObject({
     protocolVersion: z.literal(1),
     kind: z.literal("sf100-request"),
-    suite: z.literal(sf100SuiteId),
+    suite: z.union([z.literal(sf100SuiteId), z.literal("hgbench-graph-query-v0.1")]),
     requestId: id,
     attemptId: id,
     identity: sf100IdentitySchema,
@@ -95,6 +95,8 @@ function paths(artifacts: { path: string; name?: string }[]) {
 }
 export function validateSf100Request(input: unknown): Sf100Request {
     const r = sf100RequestSchema.parse(input);
+    if (r.suite === "hgbench-graph-query-v0.1" && r.stage !== "load")
+        fail("The graph-query Loader protocol only dispatches load requests");
     paths(r.inputs);
     if ((r.stage === "convert" || r.stage === "load") !== (r.shard !== null))
         fail("Only convert/load requests must name a shard");

@@ -18,6 +18,7 @@
 """Manage immutable LDBC assets: lock, resume, verify, inspect and extract with explicit byte budgets."""
 
 import argparse
+from contextlib import ExitStack
 import hashlib
 import json
 import os
@@ -547,11 +548,11 @@ def extract(asset, cache, output, max_bytes, prefix=None):
     return {"asset": asset["id"], "files": len(inventory), "expandedBytes": sum(f["bytes"] for f in inventory)}
 
 
-def inspect_stream(stream, max_bytes, max_files=100000):
+def inspect_stream(stream, max_bytes, max_files=100000, projection=None, projection_limit=None, check=None):
     """Count unquoted CsvBasic rows and hash every tar member without materializing the expanded dataset."""
     entities = {"person", "post", "comment", "forum", "place", "organisation", "tag", "tagclass"}
     multi = {"person_email_emailaddress", "person_speaks_language"}
-    inventory, tables, seen, total = [], {}, set(), 0
+    inventory, tables, seen, total, projected_bytes = [], {}, set(), 0, 0
     # Scan through tar end markers so appended valid members cannot escape the inventory.
     with tarfile.open(fileobj=stream, mode="r|", ignore_zeros=True) as archive:
         for entry in archive:
@@ -570,8 +571,22 @@ def inspect_stream(stream, max_bytes, max_files=100000):
                 raise ValueError("Expanded archive exceeds byte budget")
             digest, size, lines, last, header = hashlib.sha256(), 0, 0, b"", b""
             csv_file = path.suffix == ".csv" and not path.name.startswith("._")
-            with archive.extractfile(entry) as source:
+            with ExitStack() as opened:
+                source = opened.enter_context(archive.extractfile(entry))
+                projected = None
+                if (projection is not None and path.parent.name == 'dynamic' and
+                        re.fullmatch(r'(person|person_knows_person)_\d+_\d+\.csv', path.name)):
+                    destination = Path(projection) / 'dynamic' / path.name
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    projected = opened.enter_context(destination.open('xb'))
                 for chunk in iter(lambda: source.read(1024 * 1024), b""):
+                    if projected is not None:
+                        projected_bytes += len(chunk)
+                        if projection_limit is not None and projected_bytes > projection_limit:
+                            raise ValueError('Reference projection exceeds the workspace budget')
+                        if check is not None:
+                            check()
+                        projected.write(chunk)
                     digest.update(chunk)
                     size += len(chunk)
                     if csv_file:
@@ -622,7 +637,7 @@ def inspect_stream(stream, max_bytes, max_files=100000):
             "rowValidation": "header-and-line-count-only-not-field-or-endpoint-validation"}
 
 
-def inspect_asset(asset, cache, output, max_bytes):
+def inspect_asset(asset, cache, output, max_bytes, projection=None, projection_limit=None, check=None):
     archive = Path(cache) / (asset["sha256"] + ".tar.zst")
     if archive.is_symlink() or not archive.is_file() or archive.stat().st_size != asset["bytes"]:
         raise ValueError("Cached asset missing, not regular, or size differs from frozen catalog")
@@ -659,7 +674,8 @@ def inspect_asset(asset, cache, output, max_bytes):
         worker = threading.Thread(target=feed, daemon=True)
         worker.start()
         try:
-            report = inspect_stream(process.stdout, max_bytes)
+            report = inspect_stream(process.stdout, max_bytes, projection=projection,
+                                    projection_limit=projection_limit, check=check)
             # Finish the decoder even when the tar reader stopped at a partial padding block.
             trailing = 0
             for chunk in iter(lambda: process.stdout.read(65536), b""):

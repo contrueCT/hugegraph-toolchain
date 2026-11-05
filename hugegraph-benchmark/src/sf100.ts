@@ -146,7 +146,7 @@ export const sf100ComponentManifestSchema = z.strictObject({
     command: z.array(z.string().min(1)).min(1),
     trackedFiles: z.array(artifact).min(1),
     capabilities: z.strictObject({
-        scale: z.literal("100"),
+        scale: z.enum(["1", "10", "100"]),
         serializer: z.literal("CsvBasic"),
         operations: z.array(z.string()),
         checkpoint: z.enum(["immutable-shard", "reconcile-before-retry", "restart-from-restored-state"]),
@@ -260,6 +260,7 @@ export async function inspectSf100Plan(file: string) {
         if ((await fileHash(resolve(base, ref.path))) !== ref.sha256)
             invalid(`Component manifest digest mismatch: ${role}`);
         if (manifest.role !== role) invalid(`Component role mismatch: ${role}`);
+        if (manifest.capabilities.scale !== "100") invalid(`SF100 component scale mismatch: ${role}`);
         const checkpoints = {
             converter: "immutable-shard",
             loader: "reconcile-before-retry",

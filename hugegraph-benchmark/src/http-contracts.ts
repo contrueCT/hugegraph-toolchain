@@ -86,7 +86,7 @@ export const graphBindingSchema = z.strictObject({
     bundleSha256: sha256,
     dataset: z.strictObject({
         id: z.string().min(1).max(256),
-        scaleFactor: z.literal(100),
+        scaleFactor: z.union([z.literal(1), z.literal(10), z.literal(100)]),
         manifestSha256: sha256,
         vertices: integer(1, Number.MAX_SAFE_INTEGER),
         edges: integer(1, Number.MAX_SAFE_INTEGER),

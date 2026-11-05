@@ -16,6 +16,7 @@
  */
 
 import { httpGeneratorRequestSchema } from "./http-generator-contracts.js";
+import { graphProjectSchema } from "./graph-project-contracts.js";
 import { z } from "zod";
 import {
     httpProfileSchema,
@@ -197,6 +198,7 @@ export const schemas: Record<string, z.ZodType> = {
     "sf100-loader-config": loaderConfigSchema,
     "sf100-loader-job": loaderJobSchema,
     "graph-import-snapshot": graphImportSnapshotSchema,
+    "graph-project": graphProjectSchema,
     "sf100-plan": sf100PlanSchema,
     "sf100-component": sf100ComponentManifestSchema,
     plan: planSchema,

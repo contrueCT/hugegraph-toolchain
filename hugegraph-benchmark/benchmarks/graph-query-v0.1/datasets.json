@@ -1,0 +1,75 @@
+{
+    "schemaVersion": 1,
+    "defaultScale": 1,
+    "workload": "SNB Interactive v1",
+    "serializer": "CsvBasic",
+    "dateFormatter": "LongDateFormatter",
+    "sourcePage": "https://ldbcouncil.org/benchmarks/snb/datasets/",
+    "driver": {
+        "repository": "ldbc/ldbc_snb_interactive_v1_driver",
+        "commit": "8c6e849a60397eaced9f3cdd08b0efa430366cb9"
+    },
+    "reference": {
+        "repository": "ldbc/ldbc_snb_interactive_v1_impls",
+        "commit": "11db98cc2ba14c33492f6c0c34e68c8be7e22e5f"
+    },
+    "datasets": [
+        {
+            "scaleFactor": 1,
+            "asset": {
+                "id": "initial-sf1",
+                "role": "initial",
+                "scale": "1",
+                "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf1-CsvBasic-LongDateFormatter.tar.zst",
+                "sha256": "3c34eca7f8e8632d5f3bf95921d3adc9cf0dce080acd6a94e3d2624ab704eb63",
+                "bytes": 230446796,
+                "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+            },
+            "limits": {
+                "downloadBytes": 536870912,
+                "expandedBytes": 8589934592,
+                "workspaceBytes": 17179869184,
+                "reserveBytes": 4294967296,
+                "seconds": 7200
+            }
+        },
+        {
+            "scaleFactor": 10,
+            "asset": {
+                "id": "initial-sf10",
+                "role": "initial",
+                "scale": "10",
+                "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf10-CsvBasic-LongDateFormatter.tar.zst",
+                "sha256": null,
+                "bytes": null,
+                "checksumAuthority": "capture-from-official-https-on-first-use"
+            },
+            "limits": {
+                "downloadBytes": 6442450944,
+                "expandedBytes": 68719476736,
+                "workspaceBytes": 137438953472,
+                "reserveBytes": 10737418240,
+                "seconds": 21600
+            }
+        },
+        {
+            "scaleFactor": 100,
+            "asset": {
+                "id": "initial-sf100",
+                "role": "initial",
+                "scale": "100",
+                "url": "https://datasets.ldbcouncil.org/snb-interactive-v1/social_network-sf100-CsvBasic-LongDateFormatter.tar.zst",
+                "sha256": "9116c6ae0f634076eb56881e8f93cdb64e751726e66d644a5b6e6ab76fb16dac",
+                "bytes": 26153676880,
+                "checksumAuthority": "locally-observed-from-official-https-not-publisher-signed"
+            },
+            "limits": {
+                "downloadBytes": 34359738368,
+                "expandedBytes": 549755813888,
+                "workspaceBytes": 1099511627776,
+                "reserveBytes": 85899345920,
+                "seconds": 172800
+            }
+        }
+    ]
+}

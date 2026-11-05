@@ -95,7 +95,7 @@ program
     .name("hgbench")
     .version(TOOL_VERSION)
     .description(
-        "HugeGraph benchmark contracts and component task controller. Full SF100 experiment orchestration is pending.",
+        "HugeGraph HTTP and graph benchmark controller; versioned workloads, bounded tasks and offline reports.",
     )
     .helpOption("-h, --help", "Show help without contacting a target")
     .option("--root <directory>", "Local task/evidence store", ".hgbench")
@@ -109,6 +109,13 @@ program
         `
 AGENT QUICKSTART
   hgbench benchmark list
+  hgbench graph describe
+  hgbench graph dataset list
+  hgbench schema graph-project
+  hgbench graph benchmark graph-project.json --out ./graph-test --dry-run
+  hgbench graph status ./graph-test
+
+FULL LDBC SPECIFICATION (optional advanced track)
   hgbench benchmark spec
   hgbench benchmark questions --id IC14
   hgbench schema sf100-plan
@@ -133,6 +140,8 @@ CONTROLLER FIXTURE (separate development commands)
 Components are trusted local programs, invoked without a shell. Inspect their manifests first.
 GRAPH QUERY TOOLCHAIN
   hgbench graph describe
+  hgbench graph dataset prepare --out ./sf1 --dry-run
+  hgbench graph benchmark graph-project.json --out ./graph-test --dry-run
   hgbench graph reference --help
   hgbench graph run graph.json --preset quick --out ./graph-quick --dry-run
 
@@ -331,7 +340,134 @@ throughput
 
 const graph = program
     .command("graph")
-    .description("Large-graph query throughput: five semantic workloads, SF100, shared quick/standard scheduler");
+    .description("Graph queries: default SF1, optional SF10/SF100, shared quick/standard scheduler");
+const graphDataset = graph.command("dataset").description("Official data preparation; default SF1, no target requests");
+graph
+    .command("status")
+    .argument("<directory>", "Original project, dataset, import or query output")
+    .description("Read local stage, imported prefix and query task status; no target requests")
+    .action(async (directory) =>
+        output("graph.status", await (await import("./graph-project.js")).graphStatus(directory)),
+    );
+graphDataset
+    .command("list")
+    .description("Offline sources, scales and resource ceilings")
+    .action(async () => output("graph.dataset.list", await (await import("./graph-project.js")).graphDatasets()));
+graphDataset
+    .command("prepare")
+    .requiredOption("--out <directory>", "New prepared dataset and independent reference directory")
+    .addOption(
+        new Option("--scale <n>", "Official scale factor; quick/standard use the same graph")
+            .choices(["1", "10", "100"])
+            .default("1"),
+    )
+    .option("--cache <directory>", "Archive cache; default .hgbench/graph-cache/sf<SCALE>")
+    .option("--python <path>", "Trusted Python executable", "python3")
+    .option("--resume", "Reuse completed stages of the same preparation; never imports a graph")
+    .option("--max-seconds <n>", "Whole preparation time ceiling; see dataset list for scale defaults")
+    .option("--max-bytes <n>", "Prepared workspace byte ceiling")
+    .option("--max-download-bytes <n>", "Initial archive download ceiling; no update stream is fetched")
+    .option("--reserve-free-bytes <n>", "Filesystem free-space floor")
+    .option("--dry-run", "Show stages, source and limits without network, writes or archive reads")
+    .description("Download, convert and prepare independent five-query answers in one command")
+    .addHelpText(
+        "after",
+        "\nExample: hgbench graph dataset prepare --out ./sf1\nRequires Python3, curl and zstd. The official archive is cached by SHA-256.\nOnly Person/knows CSV is retained for reference; no full CSV copy or reference database deployment.\nSource digest/count/endpoint checks remain; target full-content scans are optional advanced tools.\nInspect prepare-state.json after interruption and use --resume with identical options. Contract: docs/graph-query.md\n",
+    )
+    .action(async (options) => {
+        const abort = new AbortController(),
+            stop = () => abort.abort();
+        process.on("SIGINT", stop);
+        process.on("SIGTERM", stop);
+        try {
+            for (const key of ["scale", "maxSeconds", "maxBytes", "maxDownloadBytes", "reserveFreeBytes"])
+                if (options[key] !== undefined) options[key] = Number(options[key]);
+            output(
+                "graph.dataset.prepare",
+                await (await import("./graph-project.js")).prepareGraphDataset(options, abort.signal),
+            );
+        } finally {
+            process.off("SIGINT", stop);
+            process.off("SIGTERM", stop);
+        }
+    });
+graph
+    .command("import")
+    .argument("<dataset>", "Directory from graph dataset prepare")
+    .requiredOption("--out <directory>", "Import state, per-shard receipts and snapshot")
+    .requiredOption("--loader-home <directory>", "Built Loader installation supporting --retry-times 0")
+    .requiredOption("--graph-url <url>", "Dedicated existing benchmark graph; initially empty, including user schema")
+    .requiredOption("--traversal-source <alias>", "Target traversal-source alias")
+    .option("--authorization-env <name>", "Environment containing Bearer authorization; values are not saved")
+    .option("--min-edge-coverage <fraction>", "Required edge fraction; knows must be complete", "0.95")
+    .option("--budget-ms <n>", "Whole import time ceiling", "21600000")
+    .option("--resume", "Reuse acknowledged prefix; unknown write outcomes stop without replay")
+    .option("--dry-run", "Metadata-only preview; no requests, writes or Loader launches")
+    .description("Apply schema and import shards with lightweight acknowledgements and coverage checks")
+    .addHelpText(
+        "after",
+        "\nExample: hgbench graph import ./sf1 --loader-home /opt/hg-loader --graph-url http://localhost:8080/graphs/bench_sf1 --traversal-source __g_bench_sf1 --out ./sf1-import\nThe database is already running; only the named dedicated graph is written. No service restarts or graph deletion.\nDefault: all vertices, complete Person/knows and at least 95% of total edges; --min-edge-coverage 1 selects all.\nSource-validated endpoints plus successful vertex writes allow disabling per-edge endpoint reads.\nNo full target scan is forced. state.json and snapshot.json distinguish acknowledgements from content verification.\nOn interruption inspect the SAME output and use --resume; ambiguous writes require explicit recovery.\n",
+    )
+    .action(async (dataset, options) => {
+        const abort = new AbortController(),
+            stop = () => abort.abort();
+        process.on("SIGINT", stop);
+        process.on("SIGTERM", stop);
+        try {
+            output(
+                "graph.import",
+                await (
+                    await import("./graph-project.js")
+                ).importGraphDataset(dataset, {
+                    ...options,
+                    minimumEdgeCoverage: Number(options.minEdgeCoverage),
+                    budgetMs: Number(options.budgetMs),
+                    signal: abort.signal,
+                }),
+            );
+        } finally {
+            process.off("SIGINT", stop);
+            process.off("SIGTERM", stop);
+        }
+    });
+graph
+    .command("benchmark")
+    .argument("<project>", "Saved graph-project JSON; inspect hgbench schema graph-project")
+    .requiredOption("--out <directory>", "New preparation/import/test workspace")
+    .addOption(
+        new Option("--preset <name>", "Query measurement presets; dataset scale is independent")
+            .choices(["quick", "standard", "both"])
+            .default("both"),
+    )
+    .option("--budget-ms <n>", "Whole chain time ceiling, including preparation and both presets", "21600000")
+    .option("--resume", "Reuse completed preparation/import; incomplete measurements are never replayed")
+    .option("--dry-run", "Offline project preview; no requests, writes or downloads")
+    .description("Prepare default SF1, import and run graph quick/standard from one project")
+    .addHelpText(
+        "after",
+        "\nExample: hgbench graph benchmark examples/graph-project.json --out ./graph-test --dry-run\nScale defaults to 1; set scaleFactor:10 or 100 explicitly. An optional dataset path reuses prepared input/reference.\nUses your running instance and Loader installation. Requires a dedicated empty graph on first import.\nQuery answers are checked; full target scans remain optional. Before formal measurement disable swap and HG memory-monitor manual GC.\nA failed import stops measurements. Results retain selected scale, imported coverage, errors and limitations.\n",
+    )
+    .action(async (file, options) => {
+        const abort = new AbortController(),
+            stop = () => abort.abort();
+        process.on("SIGINT", stop);
+        process.on("SIGTERM", stop);
+        try {
+            const result = await (
+                await import("./graph-project.js")
+            ).runGraphProject(file, {
+                ...options,
+                root: root(),
+                budgetMs: Number(options.budgetMs),
+                signal: abort.signal,
+            });
+            output("graph.benchmark", result);
+            if ("status" in result && result.status !== "completed") process.exitCode = 6;
+        } finally {
+            process.off("SIGINT", stop);
+            process.off("SIGTERM", stop);
+        }
+    });
 graph
     .command("describe")
     .description("Offline defaults, reference contract and known qualification limits")
@@ -346,20 +482,21 @@ graph
                 Object.entries(graphThroughputPresets).map(([k, v]) => [k, throughputFixedMs(5, v)]),
             ),
             reference: "independent CSV adjacency; no SUT-derived answers",
-            dataset: "SF100 in both presets",
+            dataset: "SF1 by default; optional SF10/SF100; both presets use the same selected graph",
+            defaultScaleFactor: 1,
             performanceAccepted: false,
         });
     });
 const graphReference = graph
     .command("reference")
-    .description("Independent full-SF100 CSV reference preparation; local Python component, no target calls");
+    .description("Independent SF1/SF10/SF100 CSV reference preparation; local Python component, no target calls");
 for (const action of ["index", "export"] as const) {
     const cmd = graphReference
         .command(action)
         .requiredOption("--out <path>", "New index directory or reference JSON; never overwritten")
         .option("--max-seconds <n>", "Whole preparation deadline in seconds", "7200")
         .option("--max-bytes <n>", "Own output budget", "8589934592")
-        .option("--min-free-bytes <n>", "Disk free-space floor", "85899345920")
+        .option("--min-free-bytes <n>", "Disk free-space floor", "4294967296")
         .option("--python <path>", "Trusted Python executable", "python3")
         .option("--dry-run", "Show component argv without writing or reading data")
         .description(
@@ -369,12 +506,12 @@ for (const action of ["index", "export"] as const) {
         )
         .addHelpText(
             "after",
-            "\nUse a CPU/memory/disk-bounded Docker environment for remote SF100 preparation.\nNo database or smaller dataset is created. Incomplete indexes are refused; use a new output after failure.\nCSV projection verification does not verify a loaded HG instance. Contract: docs/graph-query.md\n",
+            "\nUse a CPU/memory/disk-bounded Docker environment for remote data preparation.\nNo database is created. Incomplete indexes are refused; use a new output after failure.\nCSV projection verification does not verify a loaded HG instance. Contract: docs/graph-query.md\n",
         );
     if (action === "index")
-        cmd.requiredOption("--manifest <file>", "Locked independent SF100 CSV manifest")
+        cmd.requiredOption("--manifest <file>", "Locked independent same-scale CSV manifest")
             .requiredOption("--data <directory>", "CSV root")
-            .requiredOption("--hg-manifest <file>", "Full SF100 HG conversion manifest");
+            .requiredOption("--hg-manifest <file>", "Same-scale HG conversion manifest");
     else
         cmd.requiredOption("--index <directory>", "Complete independent adjacency index")
             .option("--seed <n>", "Fixed parameter seed", "3346")
@@ -437,7 +574,7 @@ for (const action of ["run", "calibrate"] as const)
         .command(action)
         .argument("<profile>", "Frozen graph profile from graph prepare")
         .requiredOption("--out <directory>", "New attempt; never replay an existing output")
-        .option("--preset <name>", "quick or standard; both cover all five cases on the same SF100", "quick")
+        .option("--preset <name>", "quick or standard; both cover all five cases on the same selected graph", "quick")
         .option("--settings <file>", "Partial scheduling limits; recorded as custom")
         .option("--cache <directory>", "Graph-aware calibration cache, separately keyed from HTTP")
         .option("--refresh-calibration", "Collect new graph-specific representative checks")
@@ -451,7 +588,7 @@ for (const action of ["run", "calibrate"] as const)
         )
         .addHelpText(
             "after",
-            "\nExample: hgbench graph run graph.json --preset standard --out ./graph-standard --dry-run\nRun against an already imported, identity-verified SF100 snapshot. No import, server restart or downscaling occurs.\nCalibration is graph-specific and bounded to its stated representative rates/shapes.\nSIGINT/SIGTERM cancels the original child and retains partial evidence. Contract: docs/graph-query.md\n",
+            "\nExample: hgbench graph run graph.json --preset standard --out ./graph-standard --dry-run\nRun against an already imported snapshot bound to the selected dataset. No import, server restart or downscaling occurs.\nCalibration is graph-specific and bounded to its stated representative rates/shapes.\nSIGINT/SIGTERM cancels the original child and retains partial evidence. Contract: docs/graph-query.md\n",
         )
         .action(async (file, options) => {
             if (!["total", "stage-sum"].includes(options.budgetMode))
@@ -1462,8 +1599,19 @@ const sf100Suite = {
     example: join(packageRoot, "benchmarks/ldbc-snb-interactive-v1/sf100-plan.json"),
     description: "Official LDBC SNB Interactive v1 sources, all 29 operations; offline validation and planning.",
 };
+const graphSuite = {
+    id: "hgbench-graph-query-v0.1",
+    maturity: "engineering-candidate",
+    defaultScaleFactor: 1,
+    optionalScaleFactors: [10, 100],
+    executionSupported: true,
+    performanceAccepted: false,
+    discover: ["hgbench", "graph", "describe"],
+    description: "Five graph queries; prepare/import and quick/standard share the selected dataset",
+};
 benchmark.command("list").action(() =>
     output("benchmark.list", [
+        graphSuite,
         {
             id: "hgbench-http-serving-v0.1",
             maturity: "local-specification-candidate",
@@ -1630,8 +1778,9 @@ benchmark
     .command("show")
     .argument("<id>")
     .action((id) => {
-        const selected = [sf100Suite, suite].find((item) => item.id === id);
-        if (!selected) throw new BenchError("UNKNOWN_SUITE", `Available suites: ${sf100Suite.id}, ${suite.id}`);
+        const selected = [graphSuite, sf100Suite, suite].find((item) => item.id === id);
+        if (!selected)
+            throw new BenchError("UNKNOWN_SUITE", `Available suites: ${graphSuite.id}, ${sf100Suite.id}, ${suite.id}`);
         output("benchmark.show", selected);
     });
 

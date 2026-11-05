@@ -26,7 +26,6 @@ import { readTargetDiagnostics } from "./target-diagnostics.mjs";
 export async function reportThroughput(directory, out, options = {}) {
     const state = JSON.parse(await readFile(join(directory, "state.json"), "utf8"));
     const graph = state.track === "graph";
-    const title = graph ? "图查询" : "HTTP";
     if (
         state.kind !== (graph ? "graph-throughput-run" : "http-throughput-run") ||
         state.version !== "0.2.0" ||
@@ -38,6 +37,9 @@ export async function reportThroughput(directory, out, options = {}) {
     if (state.planSha256 !== createHash("sha256").update(planRaw).digest("hex"))
         throw new Error("Frozen plan digest changed");
     const plan = JSON.parse(planRaw);
+    const scale = plan.profile.graph?.dataset.scaleFactor;
+    if (graph && ![1, 10, 100].includes(scale)) throw new Error("Unknown graph dataset scale");
+    const title = graph ? `图查询 SF${scale}` : "HTTP";
     for (const k of [
         "version",
         "track",
@@ -281,7 +283,7 @@ export async function reportThroughput(directory, out, options = {}) {
             maxY = Math.max(...rows.map((r) => r.correctCompletedInWindowPerSecond), 1);
         const px = (x) => 70 + (620 * x) / maxX,
             py = (y) => 245 - (190 * y) / maxY;
-        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300"><rect width="760" height="300" fill="white"/><g font-family="sans-serif" font-size="13" fill="#24334b"><text x="30" y="26">${escape(c.caseId)} / correct throughput (req/s)</text><path d="M70 45V245H700" fill="none" stroke="#8995a5"/>${[0, 0.25, 0.5, 0.75, 1].map((k) => `<text x="8" y="${py(k * maxY) + 4}">${(k * maxY).toFixed(1)}</text><path d="M70 ${py(k * maxY)}H700" stroke="#edf0f5"/>`).join("")}${[...new Set(rows.map((r) => r.concurrency))].map((x) => `<text x="${px(x)}" y="267">${x}</text>`).join("")}<text x="300" y="289">concurrency</text>${[
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300"><title>${escape(title)} ${escape(state.preset)} / ${escape(c.caseId)}</title><rect width="760" height="300" fill="white"/><g font-family="sans-serif" font-size="13" fill="#24334b"><text x="30" y="26">${escape(c.caseId)} / correct throughput (req/s)</text><path d="M70 45V245H700" fill="none" stroke="#8995a5"/>${[0, 0.25, 0.5, 0.75, 1].map((k) => `<text x="8" y="${py(k * maxY) + 4}">${(k * maxY).toFixed(1)}</text><path d="M70 ${py(k * maxY)}H700" stroke="#edf0f5"/>`).join("")}${[...new Set(rows.map((r) => r.concurrency))].map((x) => `<text x="${px(x)}" y="267">${x}</text>`).join("")}<text x="300" y="289">concurrency</text>${[
             "exploration",
             "confirmation",
         ]

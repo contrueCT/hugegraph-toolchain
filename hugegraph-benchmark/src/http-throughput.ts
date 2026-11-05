@@ -270,7 +270,7 @@ export async function runHttpThroughput(
         traceCapPerChild: settings.maxTraceBytes,
         maxTotalTraceBytes: settings.maxTotalTraceBytes,
         scope: graph
-            ? "End-to-end large-graph queries over HTTP; declared SF100 source and recorded target import coverage, deterministic frozen pools, independent semantic references. Observed throughput, no automatic capacity certification."
+            ? `End-to-end graph queries over HTTP; declared SF${input.profile.graph!.dataset.scaleFactor} source and recorded target import coverage, deterministic frozen pools, independent semantic references. Observed throughput, no automatic capacity certification.`
             : "Closed-loop HTTP service throughput; existing endpoint, same JVM unless externally changed. No graph queries or automatic capacity certification.",
         refreshCalibration: Boolean(options.refreshCalibration),
         performanceAccepted: false,

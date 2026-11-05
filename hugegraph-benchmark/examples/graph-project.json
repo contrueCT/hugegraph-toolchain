@@ -1,0 +1,10 @@
+{
+    "schemaVersion": 1,
+    "kind": "graph-benchmark-project",
+    "scaleFactor": 1,
+    "profile": "./go-profile.json",
+    "graphUrl": "http://127.0.0.1:8080/graphspaces/DEFAULT/graphs/bench_sf1",
+    "traversalSource": "__g_DEFAULT-bench_sf1",
+    "loaderHome": "/opt/apache-hugegraph-loader",
+    "minimumEdgeCoverage": 0.95
+}

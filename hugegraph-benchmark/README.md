@@ -2,7 +2,7 @@
 
 HG-Bench 定义可复现的图数据库基准规范与题集；`hgbench` 负责组织执行、收集证据和生成报告。
 已有服务可使用[普通 HTTP 入口](docs/http-run.md)，吞吐评测使用[HTTP quick/standard](docs/http-throughput.md)；
-大图查询使用[图查询 quick/standard](docs/graph-query.md)。两轨共用调度、执行器和离线 SVG 报告，每张图可独立导出。
+图查询使用[图查询 quick/standard](docs/graph-query.md)，默认 SF1，可选 SF10/SF100；项目入口统一准备、导入和测试。两轨共用调度、执行器和离线 SVG 报告，每张图可独立导出。
 HTTP 已有真实 HG 功能与描述性测量证据；图查询五题已通过协议功能链，真实 SF100/HStore 已完成全部顶点内容核验和部分边导入，图查询测量尚未开始。
 完整29类官方 driver 适配、离线转换、Loader封装和校验组件已有实现。
 规范与工具仍为本地候选，完整SF100、工程校准、独立复现和[阶段一发布门](docs/phase1-acceptance.md)尚未全部通过，未对外发布。
@@ -73,7 +73,7 @@ node dist/cli.js graph run /absolute/graph-profile.json \
 
 省略`--dry-run`执行对应负载并生成报告。profile准备、完整题义、默认窗口、校准缓存和恢复方法分别见
 [HTTP指南](docs/http-throughput.md)与[图查询指南](docs/graph-query.md)。HTTP standard默认整任务上限90分钟；
-图quick/standard要求同一SF100源的实际快照达到所选完整度，并完整导入查询依赖的关系；本次选择95%，可配置100%，详见图查询指南。
+图quick/standard要求所选规模的同一快照达到导入完整度，并完整导入查询依赖关系；默认依据 Loader 回执达到95%，可配置100%，全量内容扫描为高级可选步骤，详见图查询指南。
 正式测试需要按指南关闭HG内存监控触发的手动GC及宿主swap，并保留测量窗证据。
 
 旧[`http preset` v0.1](docs/http-presets.md)继续提供三题forward/embedded配对quick，旧standard/full为设计状态。
@@ -102,7 +102,7 @@ node dist/cli.js benchmark questions --id IC14
 
 主基准优先接入 [官方 LDBC SNB Interactive v1](benchmarks/ldbc-snb-interactive-v1/README.md)：
 固定官方数据、参数、更新流、参考结果与 driver 版本；SF0.1 资产锁定和初始图离线转换保留为历史经验。
-正式大图源规模固定为 **SF100**，源图为282,637,871顶点与1,775,513,741边；部分导入快照按实际范围披露，当前等待新机器安排。
+图查询默认 **SF1**；`hgbench graph benchmark graph-project.json --out ./graph-test` 统一组织准备、导入及 quick/standard。旧完整 LDBC 候选和大图专项保留 SF100，原数据与证据保持。
 当前定位见 [套件注册表](benchmarks/registry.json)。
 
 [Distributed Read](benchmarks/distributed-read-v0.1/spec.md) 调整为面向 HStore 的合成专项诊断集：

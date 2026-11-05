@@ -71,6 +71,7 @@ export async function prepareGraphProfile(
         traversalSource: string;
         importSnapshot?: string;
         minEdgeCoverage?: string | number;
+        reuse?: boolean;
     },
 ) {
     const raw = await readFile(resolve(reference));
@@ -80,7 +81,10 @@ export async function prepareGraphProfile(
             "Reference exceeds 3 MiB; reduce the declared pool or split a custom suite",
         );
     const source = graphReferenceSchema.parse(JSON.parse(raw.toString()));
-    if (source.dataset.vertices !== 282637871 || source.dataset.edges !== 1775513741)
+    if (
+        source.dataset.scaleFactor === 100 &&
+        (source.dataset.vertices !== 282637871 || source.dataset.edges !== 1775513741)
+    )
         throw new BenchError("GRAPH_SCALE", "Full SF100 counts must be declared in the independent reference");
     let imported: z.infer<typeof graphBindingSchema>["imported"];
     if (options.importSnapshot) {
@@ -232,7 +236,19 @@ export async function prepareGraphProfile(
     verifyGraphProfile(result);
     validateHttpProfile(goBaseProfile(result));
     await mkdir(dirname(resolve(options.out)), { recursive: true });
-    await writeFile(resolve(options.out), JSON.stringify(result, null, 2) + "\n", { flag: "wx", mode: 0o600 });
+    let reused = false;
+    if (options.reuse) {
+        try {
+            const previous = JSON.parse(await readFile(resolve(options.out), "utf8"));
+            if (hash(previous) !== hash(result))
+                throw new BenchError("GRAPH_PROFILE_CHANGED", "Existing graph profile differs from the current inputs");
+            reused = true;
+        } catch (e) {
+            if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e;
+        }
+    }
+    if (!reused)
+        await writeFile(resolve(options.out), JSON.stringify(result, null, 2) + "\n", { flag: "wx", mode: 0o600 });
     return {
         profile: resolve(options.out),
         graph: result.graph,

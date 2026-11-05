@@ -1,9 +1,60 @@
 # 图查询 quick / standard v0.1
 
-本入口复用 TS 调度、Go HTTP 执行器、任务生命周期、离线分析及 SVG 报告；无新增服务、前端或依赖。两档都覆盖 SF100 上的五类查询，使用完全相同的数据、参数池与独立参考。本文描述工具协议；真实 SF100 正在导入，尚未完成全图核验或运行默认图查询两档。已有功能联验使用固定响应协议服务，没有加载或测量小图；验收范围及未完成项见[阶段一验收边界](phase1-acceptance.md)。
+默认采用官方 **SF1**，可选 **SF10 / SF100**。quick 与 standard 在同一规模、同一数据快照上执行五类查询，区别是并发阶梯、时间窗口和重复次数。入口复用 TS 调度、Go HTTP 执行器、Loader、离线分析及可单图导出的 SVG 报告。
+
+## 一份项目配置运行全链
+
+先准备一个正在运行的 HugeGraph、专用空图、支持 `--retry-times 0` 的当前分支 Loader 安装目录，以及已经注册 Go 执行器的 profile。工具仅操作所填图，不部署或重启数据库。参照 [项目配置](../examples/graph-project.json) 填好路径、图 URL 和实际 traversal-source alias：
+
+```sh
+hgbench schema graph-project
+hgbench graph benchmark graph-project.json --out ./graph-test --dry-run
+hgbench graph benchmark graph-project.json --out ./graph-test
+```
+
+默认 `scaleFactor: 1`，依次准备数据、应用 schema、导入，再跑 quick / standard；`--preset quick` 或 `standard` 只选择一档。`--budget-ms` 默认六小时，覆盖整条链，包括下载、转换、导入、测试与收尾；不缩短测量窗口以凑预算。已有独立准备目录时，在项目中填写 `dataset`，复用原分片和参考答案。已有自定义调度参数可用 `settings` 引用现有 settings JSON，实际窗口进入报告。
+
+配置中的相对路径相对于项目 JSON。Loader 默认批次 2000、8 个写线程、2 个解析线程、1 GiB heap，可通过项目的 `loader` 配置调整。源端点已验证且全部顶点写入成功后，禁用每条边的重复端点读取。需要认证时复用 Go profile 的 `authorizationEnv`，值为 `Bearer <token>`，不保存 token 值；Loader 使用相同 token。目标需要调用者独占，首次导入只接受数据和用户 schema 均为空的图。
 
 ```text
-官方 SF100 独立参考 CSV ── SHA/行数核验 ── SQLite Person/knows 索引
+官方初始图压缩包 → 内容寻址缓存 → 分片转换 ───→ Loader 写入 → 回执 / 完整度
+                       └→ Person/knows CSV → SQLite 独立答案 ───┘
+                                                            ↓
+                                          同一快照 quick / standard → SVG
+```
+
+只下载所选规模的初始图，保留 Person/knows 两类参考 CSV；不复制完整展开 CSV 或部署参考数据库。SF1 初始包锁定 SHA-256 和长度；SF10 首次从官方 HTTPS 获取并记录摘要，后续使用冻结的本地锁。`dataset list` 显示来源及各规模资源上限，上限不代表预计占用。SF100 旧资产和旧规范候选保留兼容，独立的 29 操作 LDBC track 不进入这条五题执行链。
+
+## 分步执行与恢复
+
+准备与导入需要 Linux/macOS、Python3、curl 和 zstd。
+
+```sh
+hgbench graph dataset list
+hgbench graph dataset prepare --out ./sf1
+# 显式选择较大规模：--scale 10 或 --scale 100
+hgbench graph import ./sf1 --loader-home /opt/apache-hugegraph-loader \
+  --graph-url http://localhost:8080/graphspaces/DEFAULT/graphs/bench_sf1 \
+  --traversal-source __g_DEFAULT-bench_sf1 --out ./sf1-import
+```
+
+`hgbench graph status ./graph-test` 或 `./sf1-import` 只读查看阶段、已确认分片及查询子任务；不查询目标。
+
+`graph import` 输出 `snapshot.json`，用于下面的 `graph prepare`。准备阶段的 `--resume` 复用完整产物和已完成阶段；导入阶段的 `--resume` 复用已确认分片，保持原目标和配置。未知写入效果会停止，保留原分片请求、日志与回执，不自动重复提交。中断的 schema 写入同样需要先检查目标。`graph benchmark --resume` 会复用已完成的数据准备、导入和测试；未完成的测量保留原任务与部分结果，需要检查后用 `graph run` 的新输出目录开始新测量。
+
+默认核验只包括：
+
+- 官方来源与资产摘要、转换时行数和端点检查；每个待导入分片在发送前核对一次摘要。
+- Loader 正常完成、解析与写入成功数匹配、失败数为零；不把进程退出 0 单独当作导入成功。
+- 已确认源记录的实际导入比例，及五题依赖的完整 Person/knows 关系。
+- 每次查询的答案与独立参考一致，保留错误、超时和未完成项。
+
+不强制全图 count 或逐条读回。`snapshot.json` 分别披露成功写入回执依据与内容核验状态。全量内容扫描继续由现有高级核验工具显式执行，不加入默认路径。Loader 运行文件在同次导入中复用已核对结果，文件元数据改变时重新核对。
+
+以下独立参考命令也可用于已经准备的 CSV。已有真实结果只覆盖其实际数据规模；SF1 的回归结果不直接代表超内存大图或跨机扩展能力。正式查询测量前仍需关闭 HG memory monitor 的主动 GC 与宿主 swap。真实 HugeGraph 图查询结果及阶段一剩余范围见[验收边界](phase1-acceptance.md)。
+
+```text
+所选规模独立参考 CSV ── SHA/行数核验 ── SQLite Person/knows 索引
                                                 │
                                 分层参数 + 精确独立答案 + 内容摘要
                                                 │
@@ -16,7 +67,7 @@
 
 ## 准备一次
 
-参考构建只读取已转换的完整 SF100 独立 CSV，逐字节核对 Person 与 knows 文件的 SHA、行数、大小、ID、方向、重复边和悬空端点。完整图 manifest 必须声明 282,637,871 顶点及 1,775,513,741 边，并与同一官方 SF100 初始资产绑定。索引只覆盖 Person/knows 投影；这不能替代完整图导入核对，也不产生官方 LDBC SNB 成绩。
+参考构建核对所选初始资产的 Person 与 knows CSV 摘要、行数、大小、ID、方向、重复边和端点。数据规模、图计数与对应转换 manifest 绑定，SF100 旧入口还保留原始资产与精确计数约束。索引只覆盖 Person/knows 投影，不产生官方完整 LDBC SNB 成绩。
 
 ```sh
 hgbench graph reference index \
@@ -30,7 +81,7 @@ hgbench graph prepare /new-reference.json --profile /current-go-profile.json \
   --traversal-source __g_sf100 --out /new-graph-profile.json
 ```
 
-索引/导出默认整任务上限 7200 秒、独占输出上限 8 GiB、剩余磁盘下限 80 GiB；这些可显式配置。SQLite cache 64 MiB，临时索引文件放入自有输出目录。正式远端准备放入有 CPU/内存/磁盘保护的 Docker 环境；当前 CLI 不自动部署数据库。保护为定期检查和 SQLite progress handler，非文件系统硬配额。输出目录/文件必须是新的；失败索引保留 failure.json，缺少完整 index.json 时拒绝导出，无隐式续跑或重建。实际 SF100 首次索引在反向排序时暴露 SQLite 3.40.1 缓存临时目录：晚设 `SQLITE_TMPDIR` 仍落到容器 `/tmp`。
+独立索引/导出默认整任务上限 7200 秒、独占输出上限 8 GiB、剩余磁盘下限 4 GiB；这些可显式配置。SQLite cache 64 MiB，临时索引文件放入自有输出目录。正式远端准备放入有 CPU/内存/磁盘保护的 Docker 环境；当前 CLI 不自动部署数据库。保护为定期检查和 SQLite progress handler，非文件系统硬配额。输出目录/文件必须是新的；失败索引保留 failure.json，缺少完整 index.json 时拒绝导出，无隐式续跑或重建。实际 SF100 首次索引在反向排序时暴露 SQLite 3.40.1 缓存临时目录：晚设 `SQLITE_TMPDIR` 仍落到容器 `/tmp`。
 当前源码为单进程、单连接独立工具，使用并检查 `temp_store_directory` 显式绑定，并统计 Linux 已 unlink 但仍打开的临时文件；
 SQLite 无法确认绑定时直接失败。该 SQLite 设置为进程全局，不支持把此模块嵌入并发、不同临时目录的 SQLite 工作负载。
 macOS 检查 3 通过 / 1 Linux 专项跳过；同 Linux 镜像四项全通过。远端独立参考已完成，索引和五题参数/答案已验收，见已接受的参考原件（本机记录未随包分发）；它只证明独立 Person/knows 投影，目标完整图核验仍待完成。
@@ -42,7 +93,7 @@ macOS 检查 3 通过 / 1 Linux 专项跳过；同 Linux 镜像四项全通过�
 
 ## 数据完整度
 
-允许在同一 SF100 源数据的部分导入快照上运行两档查询。导入调度设置
+允许在同一所选规模初始源数据的部分导入快照上运行两档查询。导入调度设置
 `minimumEdgeCoverage: 0.95`，在完成一个分片、收到成功写入确认后判断记录数比例；
 设置为 `1` 要求100%。已确认分片保持，未知写入结果仍停止处理，不能算入已确认记录。
 `tools/ldbc-import-sequence.mjs` 的 `finalVerification: "write-acknowledgements"`
@@ -59,7 +110,7 @@ hgbench graph prepare reference.json --profile go.json \
 
 `--min-edge-coverage 1` 选择100%。`hgbench schema graph-import-snapshot`可查看快照格式。快照记录源清单摘要、已确认写入清单摘要、
 顶点与边计数、每种标签的已导入/预期/缺失数量及内容核验状态。计数来自 Loader
-成功回执时，报告明确标注该依据，不宣称逐条内容已核验。源SF100计数和目标实际导入数分别保存；
+成功回执时，报告明确标注该依据，不宣称逐条内容已核验。源图计数和目标实际导入数分别保存；
 快照进入 profile 摘要、原始证据和离线报告，跨版本比较应使用相同快照。
 
 本版五题依赖 `person_knows_person` 的完整邻接关系，导入调度可先完成这类边，

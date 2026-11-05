@@ -50,7 +50,7 @@ export const preparedSchema = z
         schemaVersion: z.union([z.literal(1), z.literal(2)]),
         scope: z.literal("sharded-loader-input"),
         sourceConverterSha256: sha,
-        sourceAsset: z.object({ scale: z.literal("100"), role: z.literal("initial"), sha256: sha }),
+        sourceAsset: z.object({ scale: z.enum(["1", "10", "100"]), role: z.literal("initial"), sha256: sha }),
         files: z.record(z.string(), artifact),
         shards: z
             .array(
@@ -82,6 +82,10 @@ export const loaderConfigSchema = z.strictObject({
         host: z.string().regex(/^https?:\/\/[a-zA-Z0-9.-]+$/),
         port: positive.max(65535),
         graph: z.string().regex(/^[a-zA-Z][a-zA-Z0-9_-]*$/),
+        graphSpace: z
+            .string()
+            .regex(/^[a-zA-Z][a-zA-Z0-9_-]*$/)
+            .optional(),
         epoch: z.string().min(1),
         topologyDigest: sha,
     }),
@@ -95,6 +99,10 @@ export const loaderConfigSchema = z.strictObject({
     timeoutSeconds: positive,
     processTimeoutMs: positive.max(86400000),
     maxLogBytes: positive.max(64 * 1024 * 1024),
+    tokenEnv: z
+        .string()
+        .regex(/^[A-Z][A-Z0-9_]{0,63}$/)
+        .optional(),
 });
 const runtimeSchema = z.strictObject({
     command: z.array(z.string()).min(1),
@@ -123,6 +131,7 @@ export async function planLoaderJobs(preparedFile: string, configFile: string) {
     const manifest = await readJson(manifestPath, sf100ComponentManifestSchema);
     if (
         manifest.role !== "loader" ||
+        manifest.capabilities.scale !== prepared.sourceAsset.scale ||
         manifest.capabilities.checkpoint !== "reconcile-before-retry" ||
         (await fileHash(manifestPath)) !== config.componentSha256
     ) {
@@ -186,7 +195,7 @@ export async function planLoaderJobs(preparedFile: string, configFile: string) {
         const request = validateSf100Request({
             protocolVersion: 1,
             kind: "sf100-request",
-            suite: sf100SuiteId,
+            suite: prepared.sourceAsset.scale === "100" ? sf100SuiteId : "hgbench-graph-query-v0.1",
             requestId: `load-${hash({ config, prepared: preparedDigest, shard: shard.id }).slice(0, 32)}`,
             attemptId: "initial",
             identity: {
@@ -241,6 +250,7 @@ export function loaderArguments(job: LoaderJob, mappingPath: string): string[] {
         String(c.target.port),
         "--graph",
         c.target.graph,
+        ...(c.target.graphSpace ? ["--graphspace", c.target.graphSpace] : []),
         "--batch-size",
         String(c.batchSize),
         "--batch-insert-threads",
@@ -270,7 +280,12 @@ export function loaderArguments(job: LoaderJob, mappingPath: string): string[] {
     ];
 }
 
-export async function runLoaderJob(jobFile: string, output: string, execute = false) {
+export async function runLoaderJob(
+    jobFile: string,
+    output: string,
+    execute = false,
+    options: { signal?: AbortSignal; runtimeCache?: Map<string, string> } = {},
+) {
     const job = await readJson(jobFile, loaderJobSchema, 32 * 1024 * 1024);
     const { digest, ...content } = job;
     if (hash(content) !== digest) throw new BenchError("LOADER_JOB_CHANGED", "Loader job digest mismatch", 5);
@@ -308,9 +323,19 @@ export async function runLoaderJob(jobFile: string, output: string, execute = fa
         throw new BenchError("UNSUPPORTED_PLATFORM", "Loader supervision requires POSIX process groups", 3);
     await verifyProtocolArtifacts(job.inputRoot, job.request.inputs);
     for (const f of job.runtime.files) {
-        if (!(await lstat(f.path)).isFile() || (await fileHash(f.path)) !== f.sha256)
+        const info = await lstat(f.path, { bigint: true });
+        const signature = `${f.sha256}:${info.dev}:${info.ino}:${info.size}:${info.mtimeNs}:${info.ctimeNs}`;
+        if (
+            !info.isFile() ||
+            (options.runtimeCache?.get(f.path) !== signature && (await fileHash(f.path)) !== f.sha256)
+        )
             throw new BenchError("LOADER_COMPONENT_CHANGED", `Tracked runtime file changed: ${f.path}`, 5);
+        options.runtimeCache?.set(f.path, signature);
     }
+    options.signal?.throwIfAborted();
+    const token = job.config.tokenEnv ? process.env[job.config.tokenEnv] : undefined;
+    if (job.config.tokenEnv && !token)
+        throw new BenchError("LOADER_AUTH", "Configured Loader token environment variable is missing");
     await mkdir(out, { recursive: false, mode: 0o700 }); // Never replay into an existing attempt directory.
     const mapping = structuredClone(job.mapping) as {
         vertices: { input: { path: string } }[];
@@ -322,12 +347,16 @@ export async function runLoaderJob(jobFile: string, output: string, execute = fa
     await writeJson(join(out, "request.json"), job.request);
     await checkpointSf100(out, join(out, "request.json"));
     const logs = await Promise.all(["stdout.log", "stderr.log"].map((name) => open(join(out, name), "wx", 0o600)));
-    const child = spawn(job.runtime.command[0]!, args, {
-        cwd: out,
-        env: { ...process.env, JVM_OPTS: `-Xmx${job.config.heapMiB}m` },
-        stdio: ["ignore", "pipe", "pipe"],
-        detached: true,
-    });
+    const child = spawn(
+        job.runtime.command[0]!,
+        [...args, ...(token ? ["--token", token.replace(/^Bearer /, "")] : [])],
+        {
+            cwd: out,
+            env: { ...process.env, JVM_OPTS: `-Xmx${job.config.heapMiB}m` },
+            stdio: ["ignore", "pipe", "pipe"],
+            detached: true,
+        },
+    );
     let reason = "RECONCILIATION_REQUIRED",
         bytes = 0,
         killer: NodeJS.Timeout | undefined;
@@ -350,6 +379,8 @@ export async function runLoaderJob(jobFile: string, output: string, execute = fa
     const cancelled = () => stop("CANCELLED");
     process.on("SIGINT", cancelled);
     process.on("SIGTERM", cancelled);
+    options.signal?.addEventListener("abort", cancelled, { once: true });
+    if (options.signal?.aborted) cancelled();
     const timer = setTimeout(() => stop("PROCESS_TIMEOUT"), job.config.processTimeoutMs);
     let spawnFailed = false;
     const completion = new Promise<number | null>((resolveDone) => {
@@ -383,6 +414,7 @@ export async function runLoaderJob(jobFile: string, output: string, execute = fa
         if (killer) clearTimeout(killer);
         process.off("SIGINT", cancelled);
         process.off("SIGTERM", cancelled);
+        options.signal?.removeEventListener("abort", cancelled);
         await Promise.all(logs.map((log) => log.close()));
     }
     if (exitCode !== 0 && reason === "RECONCILIATION_REQUIRED") reason = "LOADER_PROCESS_FAILED";

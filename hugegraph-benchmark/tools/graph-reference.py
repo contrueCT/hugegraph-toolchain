@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Independent directed Person/knows reference from locked full SF100 CSV.
+"""Independent directed Person/knows reference from locked SF1/SF10/SF100 CSV.
 
 No SUT requests. Build once, export frozen pools repeatedly. Resource limits stop
 with a failed receipt; an incomplete reference search never becomes an unreachable answer.
@@ -23,6 +23,7 @@ import json
 import os
 from pathlib import Path
 import random
+import re
 import shutil
 import sqlite3
 import stat
@@ -119,7 +120,8 @@ def ingest(db, path, receipt, kind, budget):
     reader = csv.reader(lines(), delimiter='|', strict=True)
     header = next(reader)
     expected = ['id:ID(Person)'] if kind == 'person' else [':START_ID(Person)', ':END_ID(Person)']
-    if header[:len(expected)] != expected: raise ValueError('Reference CSV header mismatch')
+    raw_expected = ['id'] if kind == 'person' else ['Person.id', 'Person.id']
+    if header[:len(expected)] not in (expected, raw_expected): raise ValueError('Reference CSV header mismatch')
     for row in reader:
         if len(row) != len(header) or any(not s.isdigit() or str(int(s)) != s or int(s) > 2**63-1 for s in row[:len(expected)]): raise ValueError('Invalid CSV identity or row width')
         ids = ['person:' + s for s in row[:len(expected)]]
@@ -138,12 +140,24 @@ def index(args):
     budget = Budget(out, args)
     manifest_path = Path(args.manifest).resolve()
     manifest = json.loads(manifest_path.read_text())
-    if manifest['inputAsset']['sha256'] != ASSET_SHA or manifest['inputAsset']['scale'] != '100': raise ValueError('Requires locked official SF100 initial asset')
+    asset = manifest['inputAsset']
+    scale = str(asset['scale'])
+    if scale not in ('1', '10', '100') or not re.fullmatch('[0-9a-f]{64}', asset['sha256']):
+        raise ValueError('Requires locked SF1, SF10 or SF100 initial asset')
+    if scale == '100' and asset['sha256'] != ASSET_SHA:
+        raise ValueError('Requires locked official SF100 initial asset')
     hg = Path(args.hg_manifest).resolve()
     hg_manifest = json.loads(hg.read_text())
     # Counts are bound to the full converted graph; this tool verifies only the
     # independent Person/knows projection, never the loaded target database.
-    if hg_manifest.get('vertices') != VERTICES or hg_manifest.get('edges') != EDGES or hg_manifest.get('sourceAsset', {}).get('sha256') != ASSET_SHA or hg_manifest.get('danglingEdges') != 0: raise ValueError('HG manifest must declare the full SF100 vertex/edge counts')
+    vertices, edges = hg_manifest.get('vertices'), hg_manifest.get('edges')
+    if (type(vertices) is not int or vertices < 1 or type(edges) is not int or edges < 1 or
+            hg_manifest.get('sourceAsset', {}).get('sha256') != asset['sha256'] or
+            hg_manifest.get('sourceAsset', {}).get('scale', scale) != scale or
+            hg_manifest.get('danglingEdges') != 0):
+        raise ValueError('HG manifest source, scale or counts differ')
+    if scale == '100' and (vertices, edges) != (VERTICES, EDGES):
+        raise ValueError('HG manifest must declare the full SF100 vertex/edge counts')
     receipts = []
     os.environ['SQLITE_TMPDIR'] = str(out)
     db = connect(out / 'adjacency.sqlite')
@@ -152,14 +166,16 @@ def index(args):
         db.execute('CREATE TABLE person(id TEXT PRIMARY KEY) WITHOUT ROWID')
         db.execute('CREATE TABLE edge(source TEXT, target TEXT, PRIMARY KEY(source,target)) WITHOUT ROWID')
         for name in ['person', 'person_knows_person']:
-            matches = [r for r in manifest['files'] if r['path'] == 'dynamic/' + name + '_0_0.csv']
-            if len(matches) != 1: raise ValueError('Missing unique reference CSV')
-            r = matches[0]
-            root = Path(args.data).resolve(); path = (root / r['path']).resolve()
-            if root not in path.parents: raise ValueError('CSV path escape')
-            receipts.append(ingest(db, path, r, name, budget))
+            matches = sorted([r for r in manifest['files'] if re.fullmatch(
+                r'dynamic/' + name + r'_\d+_\d+\.csv', r['path'])], key=lambda r: r['path'])
+            if not matches or len({r['path'] for r in matches}) != len(matches):
+                raise ValueError('Missing or duplicate reference CSV')
+            for r in matches:
+                root = Path(args.data).resolve(); path = (root / r['path']).resolve()
+                if root not in path.parents: raise ValueError('CSV path escape')
+                receipts.append(ingest(db, path, r, name, budget))
         finish_index(db, budget)
-        save(out / 'index.json', {'schemaVersion': 1, 'status': 'complete', 'dataset': {'id': 'LDBC-SNB-Interactive-v1-SF100-initial', 'scaleFactor': 100, 'manifestSha256': digest(hg), 'vertices': VERTICES, 'edges': EDGES}, 'csvManifestSha256': digest(manifest_path), 'files': receipts, 'generatorSha256': digest(__file__), 'adjacencySha256': digest(out / 'adjacency.sqlite', budget.check), 'scope': 'Directed Person/knows projection from independent CSV; target and all properties unverified'})
+        save(out / 'index.json', {'schemaVersion': 1, 'status': 'complete', 'dataset': {'id': 'LDBC-SNB-Interactive-v1-SF' + scale + '-initial', 'scaleFactor': int(scale), 'manifestSha256': digest(hg), 'vertices': vertices, 'edges': edges}, 'csvManifestSha256': digest(manifest_path), 'files': receipts, 'generatorSha256': digest(__file__), 'adjacencySha256': digest(out / 'adjacency.sqlite', budget.check), 'scope': 'Directed Person/knows projection from independent CSV; target and all properties unverified'})
     except BaseException as e:
         if budget.error is not None: e = budget.error
         save(out / 'failure.json', {'status': 'failed', 'error': str(e)})
@@ -261,7 +277,7 @@ def main():
     e = sub.add_parser('export', help='Export deterministic degree/intersection/path-stratified pools; no target requests')
     e.add_argument('--index', required=True); e.add_argument('--out', required=True); e.add_argument('--seed', type=int, default=3346); e.add_argument('--pool-size', type=int, default=128); e.add_argument('--max-visited', type=int, default=1000000)
     for x in [p, e]:
-        x.add_argument('--max-seconds', type=int, default=7200); x.add_argument('--min-free-bytes', type=int, default=80 * 1024**3); x.add_argument('--max-bytes', type=int, default=8 * 1024**3)
+        x.add_argument('--max-seconds', type=int, default=7200); x.add_argument('--min-free-bytes', type=int, default=4 * 1024**3); x.add_argument('--max-bytes', type=int, default=8 * 1024**3)
     a = parser.parse_args()
     if a.max_seconds < 1 or a.min_free_bytes < 0 or a.max_bytes < 4096: parser.error('Invalid resource bounds')
     if a.command == 'export' and not (2 <= a.pool_size <= 100000 and 1 <= a.max_visited <= 10000000): parser.error('Invalid pool/search bounds')
